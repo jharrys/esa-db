@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">88580f18-6657-4626-99e6-742da3532465</identifier>
+  </ID>
+  <name>TEMPLATE_SEQUENCE1</name>
+  <cycleFlag>false</cycleFlag>
+  <orderFlag>false</orderFlag>
+  <schema>
+    <name>TEMPLATES</name>
+  </schema>
+</sequence>

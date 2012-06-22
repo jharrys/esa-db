@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <value n="id" v="0e360b66-5377-4bb3-a3ce-5aa35f699c29"/>
+   <value n="name" v="OracleESA"/>
+   <value n="offlineDBSchema" v="ESA"/>
+   <hash n="oracle.jdeveloper.offlinedb.model.ProviderDefaultTemplateSettings">
+      <hash n="default-template-ids">
+         <value n="FUNCTION" v="N:FUNCTION:TEMPLATE_FUNCTION1:SCHEMA:TEMPLATES"/>
+         <value n="MATERIALIZED VIEW" v="I:MATERIALIZED VIEW:6f957a6f-a2ac-488f-a542-e6efdd05f939"/>
+         <value n="MATERIALIZED VIEW LOG" v="I:MATERIALIZED VIEW LOG:fb4054d9-dbc2-408d-a9a3-43f32c43a888"/>
+         <value n="PACKAGE" v="N:PACKAGE:TEMPLATE_PACKAGE1:SCHEMA:TEMPLATES"/>
+         <value n="PACKAGE BODY" v="N:PACKAGE BODY:TEMPLATE_PACKAGE1:SCHEMA:TEMPLATES"/>
+         <value n="PROCEDURE" v="N:PROCEDURE:TEMPLATE_PROCEDURE1:SCHEMA:TEMPLATES"/>
+         <value n="SCHEMA" v="TEMPLATES"/>
+         <value n="SEQUENCE" v="I:SEQUENCE:88580f18-6657-4626-99e6-742da3532465"/>
+         <value n="SYNONYM" v="I:SYNONYM:5375cbfe-50d6-4fce-a1e7-0f183c7f5a03"/>
+         <value n="TABLE" v="I:TABLE:89c3ff1b-397e-4342-8ba1-727c8037428f"/>
+         <value n="TABLESPACE"/>
+         <value n="TRIGGER" v="N:TRIGGER:TEMPLATE_TRIGGER1:SCHEMA:TEMPLATES"/>
+         <value n="TYPE" v="N:TYPE:TEMPLATE_TYPE1:SCHEMA:TEMPLATES"/>
+         <value n="TYPE BODY" v="N:TYPE BODY:TEMPLATE_TYPE1:SCHEMA:TEMPLATES"/>
+         <value n="VIEW" v="I:VIEW:d57e5c42-6cb7-420e-9a96-0f40a3f36986"/>
+      </hash>
+   </hash>
+</ProviderSettings>
