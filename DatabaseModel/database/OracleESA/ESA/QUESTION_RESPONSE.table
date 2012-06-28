@@ -167,7 +167,7 @@
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
-          <typeName>DOUBLE PRECISION</typeName>
+          <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
       <notNull>false</notNull>
@@ -194,7 +194,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">3d561e35-53f0-45f0-83ae-cd6615f47492</identifier>
       </ID>
-      <name>QUESTION_RESPONSE_DOCUMENT_FK</name>
+      <name>PART_OF_DOCUMENT_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>DOCUMENT_ID</name>
@@ -227,7 +227,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">726c6b86-ccde-42f7-b3d6-ed63660dff22</identifier>
       </ID>
-      <name>QUESTION_RESPONSE_FK</name>
+      <name>RESPONSE_TO_QUESTION_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>FORM_FIELD_ID</name>

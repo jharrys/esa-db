@@ -189,7 +189,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">aed6f351-d0f4-4877-8cca-f8115436c905</identifier>
       </ID>
-      <name>ITEM_UNITS_CONVERSION_ITEM_FK</name>
+      <name>ITEM_CONVERSIONS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ITEM_ID</name>

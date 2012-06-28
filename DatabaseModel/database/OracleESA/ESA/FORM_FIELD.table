@@ -221,9 +221,41 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6be491bc-d7b6-4ff1-a10c-f6badd6b2a39</identifier>
+      </ID>
+      <name>FIELD_LOOKUP_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>LOOKUP_LIST_ID</name>
+          <identifier class="java.lang.String">412ded1d-05ca-47f3-a463-87427cf1ebc5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>FORM_FIELD</name>
+            <identifier class="java.lang.String">f8bbd442-b923-46e1-a9b5-f0c580275cff</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>LOOKUP_LIST_PK</name>
+        <identifier class="java.lang.String">92dea510-d693-44a9-9247-983e8f2598cf</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>LOOKUP_LIST</name>
+          <identifier class="java.lang.String">5bfd7866-de93-4ba4-a064-6ab20a569a42</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">675b13fb-f1a6-4716-a2a3-2f857e061532</identifier>
       </ID>
-      <name>FORM_FIELD_FORM_FK</name>
+      <name>FORM_FIELDS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>FORM_ID</name>
@@ -249,38 +281,6 @@
           <type>TABLE</type>
         </parent>
         <schemaName>ESA</schemaName>
-        <type>CONSTRAINT</type>
-      </referenceID>
-    </constraint>
-    <constraint class="oracle.javatools.db.FKConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">6be491bc-d7b6-4ff1-a10c-f6badd6b2a39</identifier>
-      </ID>
-      <name>FORM_FIELD_LOOKUP_LIST_FK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>LOOKUP_LIST_ID</name>
-          <identifier class="java.lang.String">412ded1d-05ca-47f3-a463-87427cf1ebc5</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>FORM_FIELD</name>
-            <identifier class="java.lang.String">f8bbd442-b923-46e1-a9b5-f0c580275cff</identifier>
-            <schemaName>ESA</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <deleteMode>0</deleteMode>
-      <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>LOOKUP_LIST_PK</name>
-        <identifier class="java.lang.String">92dea510-d693-44a9-9247-983e8f2598cf</identifier>
-        <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>LOOKUP_LIST</name>
-          <identifier class="java.lang.String">5bfd7866-de93-4ba4-a064-6ab20a569a42</identifier>
-          <schemaName>ESA</schemaName>
-          <type>TABLE</type>
-        </parent>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>

@@ -22,6 +22,5 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="DatabaseModel/DatabaseModel.jpr"/></hash>
-      <hash><url n="URL" path="../view/ViewController/ViewController.jpr"/></hash>
    </list>
 </jws:workspace>

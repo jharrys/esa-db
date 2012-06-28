@@ -138,42 +138,9 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">bf98cd96-79f8-4d41-b700-97075609bfe3</identifier>
-      </ID>
-      <name>ROLE_PRIVLIGES_FK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>ROLE_ID</name>
-          <identifier class="java.lang.String">7bae95ce-56f4-46b5-bae9-b224e0383905</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>ROLE_SERVICE</name>
-            <identifier class="java.lang.String">ff06696c-3ab8-46d9-a8f9-d6d76cf26361</identifier>
-            <schemaName>ESA</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <deleteMode>0</deleteMode>
-      <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>TABLE1_PK</name>
-        <identifier class="java.lang.String">95432afe-d329-42d9-a11f-f83a2ee57bc2</identifier>
-        <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>APPLICATION_ROLE</name>
-          <identifier class="java.lang.String">82dd87e5-17b0-4479-a822-5dc6386d83f1</identifier>
-          <schemaName>ESA</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <schemaName>ESA</schemaName>
-        <type>CONSTRAINT</type>
-      </referenceID>
-    </constraint>
-    <constraint class="oracle.javatools.db.FKConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">6f0ca455-5e0d-4687-9d79-00c4fdef5b15</identifier>
       </ID>
-      <name>ROLE_PRIVLIGES_FK1</name>
+      <name>PART_OF_ROLE_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>SERVICE_ID</name>
@@ -195,6 +162,39 @@
         <parent class="oracle.javatools.db.IdentifierBasedID">
           <name>APPLICATION_SERVICE</name>
           <identifier class="java.lang.String">90c4a61b-4d75-4fab-8503-19318f333a7d</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>ESA</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bf98cd96-79f8-4d41-b700-97075609bfe3</identifier>
+      </ID>
+      <name>ROLE_SERVICE_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLE_ID</name>
+          <identifier class="java.lang.String">7bae95ce-56f4-46b5-bae9-b224e0383905</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROLE_SERVICE</name>
+            <identifier class="java.lang.String">ff06696c-3ab8-46d9-a8f9-d6d76cf26361</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>TABLE1_PK</name>
+        <identifier class="java.lang.String">95432afe-d329-42d9-a11f-f83a2ee57bc2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>APPLICATION_ROLE</name>
+          <identifier class="java.lang.String">82dd87e5-17b0-4479-a822-5dc6386d83f1</identifier>
           <schemaName>ESA</schemaName>
           <type>TABLE</type>
         </parent>

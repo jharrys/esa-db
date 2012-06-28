@@ -199,7 +199,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">7894a58d-8b87-4058-96c2-26a627af6d26</identifier>
       </ID>
-      <name>ITEM_VERSION_ITEM_FK</name>
+      <name>ITEM_VERSIONS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ITEM_ID</name>

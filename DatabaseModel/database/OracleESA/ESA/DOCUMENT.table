@@ -250,7 +250,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">f55ee267-9f7a-42cf-823e-8518f21be439</identifier>
       </ID>
-      <name>DOCUMENT_FORM_FK</name>
+      <name>AN_INSTANCE_OF_FORM_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>FORM_ID</name>
@@ -283,7 +283,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">238ecd1d-b72a-4fdd-9f6b-c96c93524b29</identifier>
       </ID>
-      <name>DOCUMENT_PARTY_FK</name>
+      <name>VENDOR_REPRESENTATIVE_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>VENDOR_REPRESENTATIVE_PARTY_ID</name>

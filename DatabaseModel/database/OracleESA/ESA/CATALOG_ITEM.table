@@ -60,22 +60,6 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">40583966-4e94-4fd0-9221-66ce80a77f65</identifier>
-      </ID>
-      <name>VENDOR_PARTY_ID</name>
-      <dataTypeUsage>
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">d2fd5402-52d1-4b81-ab5c-88b31e2b9243</identifier>
-        </ID>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
-          <typeName>NUMBER</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">c6f180f4-203b-45a9-8b1e-e007ed2a96a5</identifier>
       </ID>
       <name>ITEM_VERSION_ID</name>
@@ -170,42 +154,9 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">c4e96e7a-8f63-4e27-80b2-1bc4822fb1a1</identifier>
-      </ID>
-      <name>CATALOG_ITEM_CATALOG_FK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>CATALOG_ID</name>
-          <identifier class="java.lang.String">3b874f08-9a7c-4f8f-a887-621f8ac28e5c</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>CATALOG_ITEM</name>
-            <identifier class="java.lang.String">c9434cc5-b22f-49e6-a3d0-d1db7e61d69c</identifier>
-            <schemaName>ESA</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <deleteMode>0</deleteMode>
-      <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>CATALOG_PK</name>
-        <identifier class="java.lang.String">5d3533d5-51b3-4e75-9b57-f32ab377aea1</identifier>
-        <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>CATALOG</name>
-          <identifier class="java.lang.String">d865027b-14e0-4f21-b563-643d47b54ade</identifier>
-          <schemaName>ESA</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <schemaName>ESA</schemaName>
-        <type>CONSTRAINT</type>
-      </referenceID>
-    </constraint>
-    <constraint class="oracle.javatools.db.FKConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">fe2f9545-0c53-4e03-83f6-9b5a2afa31a2</identifier>
       </ID>
-      <name>CATALOG_ITEM_ITEM_FK</name>
+      <name>BELONGS_TO_CATALOGS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ITEM_ID</name>
@@ -236,9 +187,42 @@
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c4e96e7a-8f63-4e27-80b2-1bc4822fb1a1</identifier>
+      </ID>
+      <name>HAS_CATALOG_ITEMS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATALOG_ID</name>
+          <identifier class="java.lang.String">3b874f08-9a7c-4f8f-a887-621f8ac28e5c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATALOG_ITEM</name>
+            <identifier class="java.lang.String">c9434cc5-b22f-49e6-a3d0-d1db7e61d69c</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATALOG_PK</name>
+        <identifier class="java.lang.String">5d3533d5-51b3-4e75-9b57-f32ab377aea1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATALOG</name>
+          <identifier class="java.lang.String">d865027b-14e0-4f21-b563-643d47b54ade</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>ESA</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">27998493-afd1-475f-904e-a0bd4e8c75cb</identifier>
       </ID>
-      <name>CATALOG_ITEM_ITEM_VERSION_FK</name>
+      <name>USING_VERSION_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ITEM_VERSION_ID</name>

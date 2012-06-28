@@ -41,12 +41,6 @@
         </dataTypeID>
       </dataTypeUsage>
       <notNull>true</notNull>
-      <properties>
-        <entry>
-          <key>Comment</key>
-          <value class="java.lang.String">@replacementFor</value>
-        </entry>
-      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -63,12 +57,6 @@
         </dataTypeID>
       </dataTypeUsage>
       <notNull>true</notNull>
-      <properties>
-        <entry>
-          <key>Comment</key>
-          <value class="java.lang.String">@replacedBy</value>
-        </entry>
-      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -152,7 +140,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">c3f507f8-c2d9-4725-950a-25a15b49f6ee</identifier>
       </ID>
-      <name>REPLACEMENT_ITEM_ITEM_FK</name>
+      <name>REPLACEMENT_FOR_ITEMS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ITEM_ID</name>
@@ -185,7 +173,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">ae1bb6f1-1740-4755-ad2c-7fbf114d7337</identifier>
       </ID>
-      <name>REPLACEMENT_ITEM_ITEM_FK1</name>
+      <name>REPLACEMENT_ITEMS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>REPLACEMENT_ITEM_ID</name>

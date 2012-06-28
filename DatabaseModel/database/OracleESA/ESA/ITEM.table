@@ -108,6 +108,12 @@
         </dataTypeID>
       </dataTypeUsage>
       <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">@fk:providesItems:@relation:OneToMany</value>
+        </entry>
+      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -267,6 +273,12 @@
         </dataTypeID>
       </dataTypeUsage>
       <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">@fk:governsItems:@relation:OneToMany</value>
+        </entry>
+      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -431,7 +443,7 @@
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
-          <typeName>DOUBLE PRECISION</typeName>
+          <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
       <notNull>false</notNull>
@@ -573,7 +585,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">6c1f7db4-50f0-459e-8662-6f1407a1f6fc</identifier>
       </ID>
-      <name>ITEM_PARTY_FK</name>
+      <name>VENDOR_ITEM_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>VENDOR_PARTY_ID</name>
