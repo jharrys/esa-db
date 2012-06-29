@@ -47,7 +47,7 @@ public class GenGroovyObjects {
         ResultSet rs;
         String sql = 
             "select decode(data_type, 'VARCHAR2','String',\n" + 
-            "                         'NUMBER', 'Integer', \n" + 
+            "                         'NUMBER', 'BigDecimal', \n" + 
             "                         'DATE', 'Date',\n" + 
             "                         'FLOAT', 'BigDecimal', \n" + 
             "                         data_type||' not supported')||' '||\n" +
@@ -92,6 +92,7 @@ public class GenGroovyObjects {
         while( rs.next() ){
             temp += "        "+rs.getString(1)+"\n";
         }
+        temp += "\n";
         
         ps.close();
         
@@ -103,16 +104,20 @@ public class GenGroovyObjects {
         PreparedStatement ps;
         ResultSet rs;
         String sql = 
-            "select\n" +
-            "  lower(substr(ucc.column_name,1,1))||\n" +
-            "  substr(replace(initcap(ucc.column_name),'_',''),2)||\n" +
-            "  ' nullable: false' as attribute,\n" +
+            "select\n" + 
+            "  lower(substr(tc.column_name,1,1))||\n" + 
+            "  substr(replace(initcap(tc.column_name),'_',''),2)||\n" + 
+            "  ' nullable: '||decode( uc.constraint_type, NULL,'true','false') as attribute,\n" + 
             "  uc.search_condition\n" + 
-            "from user_constraints uc,\n" + 
-            "  user_cons_columns ucc\n" + 
-            "where uc.table_name= ? \n" + 
-            "  and ucc.constraint_name = uc.constraint_name\n" + 
-            "  and uc.constraint_type='C'";
+            "from user_constraints uc, \n" + 
+            "  user_cons_columns ucc,\n" + 
+            "  user_tab_columns tc\n" + 
+            "where tc.table_name= ?\n" + 
+            "  and ucc.table_name(+) = tc.table_name\n" + 
+            "  and ucc.column_name(+) = tc.column_name\n" + 
+            "  and ucc.constraint_name = uc.constraint_name(+)\n" + 
+            "  and ( uc.constraint_type = 'C' or uc.constraint_type is null )\n" + 
+            "order by tc.column_id";
 
         ps = this.connection.prepareStatement(sql);
         ps.setString(1, tableName );
@@ -120,9 +125,7 @@ public class GenGroovyObjects {
         rs = ps.executeQuery();
         
         while( rs.next() ){
-            if( rs.getString(2).contains("IS NOT NULL") ){
-                temp += "        "+rs.getString(1)+"\n";
-            }
+            temp += "        "+rs.getString(1)+"\n";
         }
         
         ps.close();
@@ -134,6 +137,8 @@ public class GenGroovyObjects {
         String temp = "";
         PreparedStatement ps;
         ResultSet rs;
+        int rowCount = 0;
+        
         String sql = 
             "select\n" + 
             "  lower(substr(ucc_fk.constraint_name,1,1))||\n" + 
@@ -156,12 +161,15 @@ public class GenGroovyObjects {
         
         temp = "    static hasMany = [\n";
         while( rs.next() ){
-            temp += "        "+rs.getString(1)+",\n";
+            rowCount++;
+            temp += "        "+rs.getString(1)+",\n";;
         }
         temp = temp.substring(0,temp.length()-2);
-        temp += "\n    ]";
+        temp += "\n    ]\n\n";
         
         ps.close();
+        
+        if( rowCount == 0 ){ return(""); }
         
         return(temp);
     }
@@ -170,6 +178,8 @@ public class GenGroovyObjects {
         String temp = "";
         PreparedStatement ps;
         ResultSet rs;
+        int rowCount = 0;
+        
         String sql = 
             "select\n" +
             "  lower(substr(ucc_fk.column_name,1,1))||\n" +
@@ -189,17 +199,18 @@ public class GenGroovyObjects {
         
         rs = ps.executeQuery();
         
+        temp = "    static belongsTo = [\n";
         while( rs.next() ){
-            if(rs.isFirst()){ temp = "    static belongsTo = [\n"; }
-            
+            rowCount++;
             temp += "        "+rs.getString(1)+",\n";
-            
-            if( rs.isLast() ){ temp += "\n    ]"; }
         }
         temp = temp.substring(0,temp.length()-2);
+        temp += "\n    ]\n\n";
         
         ps.close();
         
+        if( rowCount == 0 ){ return(""); }
+
         return(temp);
     }
 
@@ -207,11 +218,12 @@ public class GenGroovyObjects {
         String temp = "";
         PreparedStatement ps;
         ResultSet rs;
+        int rowCount = 0;
         
         String sql = 
             "select\n" + 
             "  lower(substr(ucc_fk.constraint_name,1,1))||substr(replace(initcap(replace(ucc_fk.constraint_name,'_FK','')),'_',''),2)||\n" + 
-            "  ' joinTable: [name: '''||ucc_fk.table_name||''', key: '''||ucc_fk.column_name||''']'\n" + 
+            "  ' joinTable: [ name: '''||ucc_fk.table_name||''', key: '''||ucc_fk.column_name||''']'\n" + 
             "from user_constraints uc,\n" + 
             "  user_constraints uc_fk,\n" + 
             "  user_cons_columns ucc_pk,\n" + 
@@ -228,10 +240,52 @@ public class GenGroovyObjects {
         rs = ps.executeQuery();
         
         while( rs.next() ){
+            rowCount++;
             temp += "        "+rs.getString(1)+"\n";
         }
+        temp += "\n";
         
         ps.close();
+        
+        if(rowCount == 0 ){ return(""); }
+        
+        return(temp);
+    }
+
+    private String getListOfBelongsToMappings(String tableName) throws SQLException {
+        String temp = "";
+        PreparedStatement ps;
+        ResultSet rs;
+        int rowCount = 0;
+        
+        String sql = 
+            "select\n" + 
+            "  lower(substr(ucc_fk.column_name,1,1))||\n" + 
+            "  substr(replace(initcap(replace(ucc_fk.column_name,'_ID','')),'_',''),2)||\n" + 
+            "  ' joinTable{ name:'''||uc_pk.table_name||''' key: '''||ucc_fk.column_name||''' }'\n" + 
+            "from \n" + 
+            "  user_constraints uc_fk, \n" + 
+            "  user_cons_columns ucc_fk, \n" + 
+            "  user_constraints uc_pk \n" + 
+            "where uc_fk.table_name= ?\n" + 
+            "  and ucc_fk.constraint_name = uc_fk.constraint_name \n" + 
+            "  and uc_pk.constraint_name = uc_fk.r_constraint_name \n" + 
+            "  and uc_fk.constraint_type='R'";
+
+        ps = this.connection.prepareStatement(sql);
+        ps.setString(1, tableName );
+        
+        rs = ps.executeQuery();
+        
+        while( rs.next() ){
+            rowCount++;
+            temp += "        "+rs.getString(1)+"\n";
+        }
+        temp += "\n";
+        
+        ps.close();
+        
+        if(rowCount == 0 ){ return(""); }
         
         return(temp);
     }
@@ -256,14 +310,16 @@ public class GenGroovyObjects {
             temp+= "import java.util.Date\n";
             temp+= "import java.math.BigDecimal\n\n";
             temp+= "class "+rs.getString(1)+" {\n\n";
-            temp+= this.getListOfColumns(rs.getString(2))+"\n\n";
-            temp+= this.getListOfHasMany(rs.getString(2))+"\n";
+            temp+= this.getListOfColumns(rs.getString(2))+"\n";
+            temp+= this.getListOfHasMany(rs.getString(2));
+            temp+= this.getListOfBelongsTo(rs.getString(2));
             temp+= "    static mapping = {\n\n";
             temp+= "        id generator:'sequence', params:[sequence:'"+rs.getString(2)+"_SEQ']\n";
             temp+= "        table '"+rs.getString(2)+"'\n";
             temp+= "        version false\n\n";
-            temp+= this.getListOfHasManyMappings(rs.getString(2))+"\n";
-            temp+= this.getListOfMappings(rs.getString(2))+"\n";
+            temp+= this.getListOfHasManyMappings(rs.getString(2));
+            temp+= this.getListOfBelongsToMappings(rs.getString(2));
+            temp+= this.getListOfMappings(rs.getString(2));
             temp+= "    }\n\n";
             temp+= "    static constraints = {\n\n";
             temp+= this.getListOfConstraints(rs.getString(2))+"\n";
