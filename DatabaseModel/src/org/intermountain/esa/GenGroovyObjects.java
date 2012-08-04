@@ -326,7 +326,6 @@ public class GenGroovyObjects {
             temp = "";
             temp = "package org.ihc.esa.domain\n\n";
             temp+= "import java.util.Date\n";
-            temp+= "import java.math.BigDecimal\n\n";
             temp+= "class "+rs.getString(1)+" {\n\n";
             temp+= this.getListOfColumns(rs.getString(2))+"\n";
             temp+= this.getListOfHasMany(rs.getString(2));
