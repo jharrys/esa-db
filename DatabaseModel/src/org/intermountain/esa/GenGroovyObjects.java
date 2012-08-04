@@ -1,8 +1,6 @@
 package org.intermountain.esa;
 
 import java.io.BufferedWriter;
-import java.io.File;
-
 import java.io.FileWriter;
 
 import java.io.IOException;
@@ -63,7 +61,13 @@ public class GenGroovyObjects {
         rs = ps.executeQuery();
         
         while( rs.next() ){
-            temp += "    "+rs.getString(1)+"\n";
+        	String s = rs.getString(1);
+        	
+        	// GORM likes to handle id's itself
+        	if (s.equalsIgnoreCase("BigDecimal id"))
+        		continue;
+        	
+            temp += "    " + s + "\n";
         }
         
         ps.close();
@@ -90,7 +94,13 @@ public class GenGroovyObjects {
         rs = ps.executeQuery();
         
         while( rs.next() ){
-            temp += "        "+rs.getString(1)+"\n";
+        	String s = rs.getString(1);
+        	
+        	// GORM likes to handle id's itself
+        	if (s.equalsIgnoreCase("id column: 'ID'"))
+        		continue;
+        	
+            temp += "        " + s +"\n";
         }
         temp += "\n";
         
@@ -125,7 +135,13 @@ public class GenGroovyObjects {
         rs = ps.executeQuery();
         
         while( rs.next() ){
-            temp += "        "+rs.getString(1)+"\n";
+        	String s = rs.getString(1);
+        	
+        	// GORM likes to handle id's itself
+        	if (s.startsWith("id "))
+        		continue;
+        	
+            temp += "        " + s + "\n";
         }
         
         ps.close();
@@ -162,6 +178,7 @@ public class GenGroovyObjects {
         temp = "    static hasMany = [\n";
         while( rs.next() ){
             rowCount++;
+            
             temp += "        "+rs.getString(1)+",\n";;
         }
         temp = temp.substring(0,temp.length()-2);
@@ -202,6 +219,7 @@ public class GenGroovyObjects {
         temp = "    static belongsTo = [\n";
         while( rs.next() ){
             rowCount++;
+       
             temp += "        "+rs.getString(1)+",\n";
         }
         temp = temp.substring(0,temp.length()-2);
@@ -262,7 +280,7 @@ public class GenGroovyObjects {
             "select\n" + 
             "  lower(substr(ucc_fk.column_name,1,1))||\n" + 
             "  substr(replace(initcap(replace(ucc_fk.column_name,'_ID','')),'_',''),2)||\n" + 
-            "  ' joinTable{ name:'''||uc_pk.table_name||''' key: '''||ucc_fk.column_name||''' }'\n" + 
+            "  ' joinTable: [ name:'''||uc_pk.table_name||''', key: '''||ucc_fk.column_name||''' ]'\n" + 
             "from \n" + 
             "  user_constraints uc_fk, \n" + 
             "  user_cons_columns ucc_fk, \n" + 
@@ -334,31 +352,6 @@ public class GenGroovyObjects {
         return(temp);
     }
     
-//    private void getListOfPOJOs(){
-//        String objectName;
-//        String tableName;
-//        String temp = "";
-//        
-//        temp += "import java.io.Serializable;\n\n" + 
-//                "import java.math.BigDecimal;\n\n" + 
-//                "import java.util.Date;\n\n" + 
-//                "import javax.persistence.Column;\n" + 
-//                "import javax.persistence.Entity;\n" + 
-//                "import javax.persistence.Id;\n" + 
-//                "import javax.persistence.JoinColumn;\n" + 
-//                "import javax.persistence.ManyToOne;\n" + 
-//                "import javax.persistence.NamedQueries;\n" + 
-//                "import javax.persistence.NamedQuery;\n" + 
-//                "import javax.persistence.Table;\n" + 
-//                "import javax.persistence.Temporal;\n" + 
-//                "import javax.persistence.TemporalType;\n\n";
-//        temp += "@Entity\n" + 
-//                "@NamedQueries( { @NamedQuery(name = \""+objectName+".findAll\", query = \"select o from "+objectName+" o\") })\n" + 
-//                "@Table(name = \""+tableName+"\")\n";
-//        temp += "public class "+objectName+" implements Serializable {";
-//        temp += "}";
-//    }
-//    
     protected void finalize() throws SQLException {
         this.connection.close();
     }
