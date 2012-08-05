@@ -141,6 +141,10 @@ public class GenGroovyObjects {
         	if (s.startsWith("id "))
         		continue;
         	
+        	// For GORM to autotimestamp we need to NOT declare constraints on creationDate or updateDat
+        	if (s.startsWith("creationDate ") || s.startsWith("updateDate "))
+        		continue;
+        	
             temp += "        " + s + "\n";
         }
         
