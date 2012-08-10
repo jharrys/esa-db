@@ -11,6 +11,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class GenGroovyObjects {
     
@@ -343,10 +346,19 @@ public class GenGroovyObjects {
 	        
 	        rs = ps.executeQuery();
 	        
+	        Format fullFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss Z");
+	        Format yearFormat = new SimpleDateFormat("yyyy");
+	        String fullDate = fullFormat.format(new Date());
+	        String yearDate = yearFormat.format(new Date());
+	        
 	        while( rs.next() ){
 	            System.out.println("Building object "+rs.getString(1));
 	            code = "";
 	            code = "package " + this.packageName + "\n\n";
+	            code+= "/***************************************************************************\n";
+	            code+= "\tGenerated code by GenGroovyObjects [" + fullDate + "]\n";
+	            code+= "\tCopyright " + yearDate + " by Intermountain Healthcare\n";
+	            code+= "***************************************************************************/\n\n";
 	            code+= "import java.util.Date\n";
 	            code+= "class "+rs.getString(1)+" {\n\n";
 	            code+= this.getListOfColumns(rs.getString(2))+"\n";
