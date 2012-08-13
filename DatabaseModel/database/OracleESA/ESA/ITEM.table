@@ -82,7 +82,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">40</value>
+            <value class="java.lang.Long">1</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
@@ -92,6 +92,28 @@
       </dataTypeUsage>
       <default class="java.lang.String">&apos;N&apos;</default>
       <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">47d37144-1065-47eb-b6b0-c61ad33a6c5c</identifier>
+      </ID>
+      <name>DOCUMENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">59451c5f-2191-43df-9bb9-18ea434db70d</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">The document is used to identify the exception or deviation documentation for the Item.</value>
+        </entry>
+      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -548,6 +570,39 @@
     </column>
   </columns>
   <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">725fe4b1-4cf6-4604-800c-8167e6061034</identifier>
+      </ID>
+      <name>EXCEPTION_DOCUMENT_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DOCUMENT_ID</name>
+          <identifier class="java.lang.String">47d37144-1065-47eb-b6b0-c61ad33a6c5c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ITEM</name>
+            <identifier class="java.lang.String">e1e490fa-14b0-4c7d-b950-beb42f12ed19</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>ESA</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>DOCUMENT_PK</name>
+        <identifier class="java.lang.String">afda8508-76cb-4088-a9dd-8e1940d94c32</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>DOCUMENT</name>
+          <identifier class="java.lang.String">8b60a67e-bbd4-40fc-bd4c-267d31fc4bd0</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">7d1c10d3-9e43-4ff3-801e-ff2cb1dd96b0</identifier>
