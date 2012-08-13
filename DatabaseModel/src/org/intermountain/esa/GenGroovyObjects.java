@@ -1,6 +1,7 @@
 package org.intermountain.esa;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 
 import java.io.IOException;
@@ -10,6 +11,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class GenGroovyObjects {
     
@@ -18,23 +22,37 @@ public class GenGroovyObjects {
     private String sid = "esa";
     private String user = "esa";
     private String password = "esa";
-    private String fileLocation = "C:\\crap\\";
-        
+    private String fileLocation = System.getProperty("java.io.tmpdir") + "esa-ui-domain-model";
+    private String calculatedFileLocation = null;
+    private String packageName = "org.ihc.esa.domain";
+    private boolean directoryIsSet = false;
     private String url = "jdbc:oracle:thin:@"+this.hostIp+":"+this.port+":"+this.sid;
-    
     private Connection connection = null;
     
     public GenGroovyObjects() throws ClassNotFoundException, SQLException {
-        this.getDatabaseConnection();
+    	this(""); // leave default fileLocation
+    }
+
+    public GenGroovyObjects(String path) throws ClassNotFoundException, SQLException {
+    	if (path != null && path != "") {
+    		this.fileLocation = path;
+    	}
+    	
+    	calculatedFileLocation = fileLocation + File.separator + packageName.replace('.', File.separatorChar);
+    	
+    	if ((directoryIsSet=isDirectorySet())) {
+    		this.setDatabaseConnection();
+    	}
     }
     
     private void saveGroovyObject( String objectName, String objectSource ) throws IOException {
-        BufferedWriter out = new BufferedWriter(new FileWriter(this.fileLocation+objectName+".groovy"));
+    	String file = this.calculatedFileLocation + File.separator + objectName + ".groovy";
+    	BufferedWriter out = new BufferedWriter(new FileWriter(file));
         out.write(objectSource);
         out.close();
     }
     
-    private void getDatabaseConnection() throws ClassNotFoundException, SQLException {
+    private void setDatabaseConnection() throws ClassNotFoundException, SQLException {
         Class.forName("oracle.jdbc.OracleDriver");
         this.connection = DriverManager.getConnection(this.url, this.user, this.password);
     }
@@ -142,7 +160,7 @@ public class GenGroovyObjects {
         		continue;
         	
         	// For GORM to autotimestamp we need to NOT declare constraints on creationDate or updateDat
-        	if (s.startsWith("creationDate ") || s.startsWith("updateDate "))
+        	if (s.startsWith("dateCreated ") || s.startsWith("lastUpdated "))
         		continue;
         	
             temp += "        " + s + "\n";
@@ -312,55 +330,88 @@ public class GenGroovyObjects {
         return(temp);
     }
 
-    private String getListOfObjects() throws SQLException, IOException {
-        String temp = "";
-        PreparedStatement ps;
-        ResultSet rs;
-        String sql = 
-            "select\n" + 
-            "  replace(initcap(table_name),'_','') object, table_name\n" + 
-            "from user_tables";
+    private String generate() throws SQLException, IOException {
+    	
+    	String code = "";
 
-        ps = this.connection.prepareStatement(sql);
-        
-        rs = ps.executeQuery();
-        
-        while( rs.next() ){
-            System.out.println("Building object "+rs.getString(1));
-            temp = "";
-            temp = "package org.ihc.esa.domain\n\n";
-            temp+= "import java.util.Date\n";
-            temp+= "class "+rs.getString(1)+" {\n\n";
-            temp+= this.getListOfColumns(rs.getString(2))+"\n";
-            temp+= this.getListOfHasMany(rs.getString(2));
-            temp+= this.getListOfBelongsTo(rs.getString(2));
-            temp+= "    static mapping = {\n\n";
-            temp+= "        id generator:'sequence', params:[sequence:'"+rs.getString(2)+"_SEQ']\n";
-            temp+= "        table '"+rs.getString(2)+"'\n";
-            temp+= "        version false\n\n";
-            temp+= this.getListOfHasManyMappings(rs.getString(2));
-            temp+= this.getListOfBelongsToMappings(rs.getString(2));
-            temp+= this.getListOfMappings(rs.getString(2));
-            temp+= "    }\n\n";
-            temp+= "    static constraints = {\n\n";
-            temp+= this.getListOfConstraints(rs.getString(2))+"\n";
-            temp+= "    }\n\n";
-            temp+= "}";
-            
-            this.saveGroovyObject(rs.getString(1), temp);
-        }
-        
-        ps.close();
-        
-        return(temp);
+    	if (directoryIsSet) {
+	        PreparedStatement ps;
+	        ResultSet rs;
+	        String sql = 
+	            "select\n" + 
+	            "  replace(initcap(table_name),'_','') object, table_name\n" + 
+	            "from user_tables";
+	
+	        ps = this.connection.prepareStatement(sql);
+	        
+	        rs = ps.executeQuery();
+	        
+	        Format fullFormat = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss Z");
+	        Format yearFormat = new SimpleDateFormat("yyyy");
+	        String fullDate = fullFormat.format(new Date());
+	        String yearDate = yearFormat.format(new Date());
+	        
+	        while( rs.next() ){
+	            System.out.println("Building object "+rs.getString(1));
+	            code = "";
+	            code = "package " + this.packageName + "\n\n";
+	            code+= "/***************************************************************************\n";
+	            code+= "\tGenerated code by GenGroovyObjects [" + fullDate + "]\n";
+	            code+= "\tCopyright " + yearDate + " by Intermountain Healthcare\n";
+	            code+= "***************************************************************************/\n\n";
+	            code+= "import java.util.Date\n";
+	            code+= "class "+rs.getString(1)+" {\n\n";
+	            code+= this.getListOfColumns(rs.getString(2))+"\n";
+	            code+= this.getListOfHasMany(rs.getString(2));
+	            code+= this.getListOfBelongsTo(rs.getString(2));
+	            code+= "    static mapping = {\n\n";
+	            code+= "        id generator:'sequence', params:[sequence:'"+rs.getString(2)+"_SEQ']\n";
+	            code+= "        table '"+rs.getString(2)+"'\n";
+	            code+= "        version false\n\n";
+	            code+= this.getListOfHasManyMappings(rs.getString(2));
+	            code+= this.getListOfBelongsToMappings(rs.getString(2));
+	            code+= this.getListOfMappings(rs.getString(2));
+	            code+= "    }\n\n";
+	            code+= "    static constraints = {\n\n";
+	            code+= this.getListOfConstraints(rs.getString(2))+"\n";
+	            code+= "    }\n\n";
+	            code+= "}";
+	            
+	            this.saveGroovyObject(rs.getString(1), code);
+	        }
+	        
+	        ps.close();
+    	} else {
+    		System.out.println("Directory is not valid, unable to generate code. Invalid path: " + this.calculatedFileLocation);
+    	}
+    	
+        return(code);
     }
     
     protected void finalize() throws SQLException {
         this.connection.close();
     }
 
+    private boolean isDirectorySet() {
+		java.io.File f = new File(calculatedFileLocation);
+		boolean returnValue = false;
+		
+		if (!f.exists()) {
+			returnValue = f.mkdirs();
+		} else if (f.isFile()) {
+			returnValue = false;
+			System.out.println(f.toString() + " is a file. I need a !@#$ directory, dude.");
+		} else {
+			returnValue = true;
+		}
+		
+		return returnValue;
+    }
+    
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
-        GenGroovyObjects genGroovyObjects = new GenGroovyObjects();
-        System.out.println(genGroovyObjects.getListOfObjects());
+    	String path = args.length > 0 ? args[0]:"";
+		GenGroovyObjects domain = new GenGroovyObjects(path);
+		System.out.println("code to be generated here --> " + domain.fileLocation);
+		System.out.println(domain.generate());
     }
 }
