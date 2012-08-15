@@ -225,9 +225,10 @@
    <url n="sourceIdentifier" path="OracleESA.offlinedb"/>
    <value n="sourceProviderType" v="offlinedb"/>
    <value n="spoolCommands" v="false"/>
-   <url n="sqlFile" path="build_esa.sql"/>
+   <url n="sqlFile" path="../../src/sqlScripts/build_esa.sql"/>
    <value n="sqlPlus" v="true"/>
    <url n="targetIdentifier" path="OracleESA.offlinedb"/>
+   <value n="targetProviderType" v="offlinedb"/>
    <hash n="targets">
       <hash n="oracle.ideimpl.db.transfer.DDLTransferTarget"/>
    </hash>

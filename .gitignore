@@ -2,3 +2,7 @@
 bin
 .project
 .classpath
+.data
+.adf
+classes
+adfmsrc
