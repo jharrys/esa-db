@@ -44,6 +44,34 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8e86a641-ea01-473c-9fc0-307ab12fa43b</identifier>
+      </ID>
+      <name>SIRP_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fe1f3c28-c2f5-433f-86da-49021e1a03ea</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">256</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">SIRP stands for Security Incident Response Program.</value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">31ab037e-5fee-4f45-8b15-714689a15d94</identifier>
       </ID>
       <name>REQUESTOR</name>
