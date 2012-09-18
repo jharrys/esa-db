@@ -4,3 +4,4 @@
 @lookup_element_seed_data.sql
 @form_seed_data.sql
 @form_field_seed_data.sql
+@sequence_update.sql
