@@ -2,7 +2,7 @@ set serveroutput on
 declare
     cursor c1 is 
         select 'select nvl(max(id),0) from '||replace(sequence_name, '_SEQ', '') sql_text, sequence_name 
-        from user_sequences;
+        from user_sequences where sequence_name <> 'ESA_USER_ESA_ROLE_SEQ' and sequence_name <> 'HIBERNATE_SEQUENCE';
         
     alter_sequence_text varchar2(1024);
     TYPE generic_cursor_type IS REF CURSOR;
