@@ -7,4 +7,5 @@
 @form_field_seed_data.sql
 @item_seed_data_from_eisa_excel.sql
 @party_seed_data.sql
+purge recyclebin;
 @sequence_update.sql
