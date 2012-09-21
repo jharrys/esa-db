@@ -95,6 +95,97 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f6e27793-6373-45b4-a7e8-587dc29772a7</identifier>
+      </ID>
+      <name>EXCEPTION</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cb53ff56-ecf8-4509-afde-5b8ceb684d57</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5619369c-2ca1-40ad-9f72-d5e8d0325d9d</identifier>
+      </ID>
+      <name>DEVIATION</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9527e0e5-141c-4273-92f4-404969226f36</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">28f136e6-04f8-4243-bd2a-9780e1606318</identifier>
+      </ID>
+      <name>EXCEPTION_REQUIRED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f3cc0489-b783-45f8-aee3-6345404fc6b7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">672ff7d4-002d-482d-bbac-e96621382088</identifier>
+      </ID>
+      <name>EXCEPTION_CRITERIA</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">11e479d8-b457-470a-a473-d463f21d3e91</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2048</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">47d37144-1065-47eb-b6b0-c61ad33a6c5c</identifier>
       </ID>
       <name>DOCUMENT_ID</name>
@@ -494,6 +585,50 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9d50fff3-8215-4ebe-9a6e-d0fb331ff937</identifier>
+      </ID>
+      <name>USEFUL_LIFE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5271dccd-654d-4323-9ace-f78d6dde5353</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">128</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">37d8dccd-5076-465b-b075-dce791e3c2e4</identifier>
+      </ID>
+      <name>COMMENTS</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7736937d-e0b5-431f-ac6b-face4c03fcc7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4000</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">43698489-a8ca-4ec0-b839-b724cbfeaad0</identifier>
       </ID>
       <name>DATE_CREATED</name>
@@ -585,7 +720,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
