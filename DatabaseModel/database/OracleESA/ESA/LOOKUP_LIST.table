@@ -289,6 +289,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The lookup_list is ued to provide a consistant method for defining pick lists or lists of values.  The lookup_lists can be defined in one of two ways, fixed or sql.  The fixed list elemetns are defined in the lookup_elements table.  The sql select section of the sql lookup list must have the format of select &lt;value element&gt; value, &lt;display element&gt; display.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

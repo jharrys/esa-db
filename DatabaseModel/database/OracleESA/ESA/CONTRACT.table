@@ -201,6 +201,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">This is used to track the contracts associated with items.  There is no contract module this is identified in other systems.  This will alow the purchasing organization research the terms and conditions of the contract or associated discounts and breaches of contract.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

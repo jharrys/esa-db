@@ -293,6 +293,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The item_units_conversion table is used to allow for the conversion of items from the default ordering unit of measure.  there for a ordering unit of measure may be a case.  If each case has 144 item.  The units conversion can be used to calculate  how many each of the given item has been orderd base on the defaut unit of measuer as well as the cost.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

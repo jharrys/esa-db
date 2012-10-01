@@ -303,6 +303,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The item version is used to track the version of an item, its release and decommition/desupported dates.  This will allow a road map to be defined and plan  the enterprise road map.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

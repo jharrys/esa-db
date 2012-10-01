@@ -223,6 +223,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The catalog is a method for grouping items which can be orderd much in the same way  as a paper based catalog.  This is only used to identify or name the catalog.  The items for the catalog are established in the catalog_item table.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

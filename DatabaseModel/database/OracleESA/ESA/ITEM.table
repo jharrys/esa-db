@@ -91,7 +91,35 @@
         </dataTypeID>
       </dataTypeUsage>
       <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c551b67a-6b4a-4d81-a005-042fac9f4ae3</identifier>
+      </ID>
+      <name>STANDARD_TYPE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d2a246f4-7f9d-4125-8623-87688ea3f60a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
       <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">This identifies what type of standard the item is. Corporate, Department, Select Heath, Intermountain and so on.  The selection choice is defined as a LOOKUP_LIST</value>
+        </entry>
+      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -114,7 +142,7 @@
         </dataTypeID>
       </dataTypeUsage>
       <default class="java.lang.String">&apos;N&apos;</default>
-      <notNull>false</notNull>
+      <notNull>true</notNull>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -137,7 +165,36 @@
         </dataTypeID>
       </dataTypeUsage>
       <default class="java.lang.String">&apos;N&apos;</default>
-      <notNull>false</notNull>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a8187116-20a2-4e64-8db4-3a03c9cc4967</identifier>
+      </ID>
+      <name>IN_SERVICE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4064a84e-22ef-45a1-9eb7-97736d75d083</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">This field indicates if the itme or configuration is currently inservice within the organization.  Possible values are Y or N</value>
+        </entry>
+      </properties>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -224,7 +281,7 @@
       <properties>
         <entry>
           <key>Comment</key>
-          <value class="java.lang.String">@fk:providesItems:@relation:OneToMany</value>
+          <value class="java.lang.String">id of the Pary who is the vendor of the item</value>
         </entry>
       </properties>
     </column>
@@ -876,6 +933,10 @@
     </indexe>
   </indexes>
   <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The Item is used to define any element that is part of a configuration, or an orderable item within a catalog.  Each of the various items can be defined as a standard for the organization.  It also supports exceptions and deviations from standards.  It is up to the organization to define how and were to apply standards, exceptions and deviaitons.</value>
+    </entry>
     <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>

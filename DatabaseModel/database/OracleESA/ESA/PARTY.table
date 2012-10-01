@@ -355,6 +355,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The party table is used to store organizations and people.  These are elements that are physical bodies or logical business units.  The granularity of organizations is for the business units to decide.  This is not intended to be for accounts, locations or items.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

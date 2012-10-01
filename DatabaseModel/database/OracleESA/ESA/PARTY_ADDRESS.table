@@ -289,6 +289,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The party_address is used to define relationships between a party and a physical address.  As the data is cleansed it allows for possible relationships to be established between various parties.  people sharring the same address are possibly related as common employees of the same organization or relationship of parent and child if sharing the same home address.  This is also where the use and type of address is defined.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>
