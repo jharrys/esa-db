@@ -223,6 +223,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">This table is used to define the various forms available for use.  It is similar to defining a template for data entry.  Cascading Style Sheets are used to format the forms for data input.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

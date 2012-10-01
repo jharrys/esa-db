@@ -133,10 +133,15 @@ CREATE TABLE ESA.FORM_FIELD
 , PAGE_NUMBER NUMBER 
 , SECTION_NUMBER NUMBER NOT NULL 
 , ORDER_NUMBER NUMBER 
+, REQUIRED VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, INTERNAL_ONLY VARCHAR2(1) DEFAULT 'N' NOT NULL 
 , QUESTION VARCHAR2(4000) NOT NULL 
 , SEARCH_LISTING VARCHAR2(1) DEFAULT 'N' 
 , DATA_TYPE VARCHAR2(20) 
 , MULTI_SELECT VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, DEFAULT_VALUE_STRING VARCHAR2(4000) 
+, DEFAULT_VALUE_FLOAT NUMBER 
+, DEFAULT_VALUE_DATE DATE 
 , LOOKUP_LIST_ID NUMBER 
 , FORM_INPUT_TYPE VARCHAR2(40) 
 , CSS_CLASS VARCHAR2(128) 
@@ -157,9 +162,11 @@ CREATE TABLE ESA.ITEM
   ID NUMBER NOT NULL 
 , EXTERNAL_ID VARCHAR2(256) 
 , SOURCE_SYSTEM VARCHAR2(256) 
-, STANDARD VARCHAR2(1) DEFAULT 'N' 
-, EXCEPTION VARCHAR2(1) DEFAULT 'N' 
-, DEVIATION VARCHAR2(1) DEFAULT 'N' 
+, STANDARD VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, STANDARD_TYPE VARCHAR2(40) 
+, EXCEPTION VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, DEVIATION VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, IN_SERVICE VARCHAR2(1) DEFAULT 'N' NOT NULL 
 , EXCEPTION_REQUIRED VARCHAR2(1) DEFAULT 'N' NOT NULL 
 , EXCEPTION_CRITERIA VARCHAR2(2048) 
 , DOCUMENT_ID NUMBER 
@@ -339,7 +346,7 @@ CREATE TABLE ESA.QUESTION_RESPONSE
 , UPDATED_BY VARCHAR2(40) NOT NULL 
 , FORM_FIELD_ID NUMBER 
 , DOCUMENT_ID NUMBER 
-, STRING_VALUE VARCHAR2(1024) 
+, STRING_VALUE VARCHAR2(4000) 
 , FLOAT_VALUE NUMBER 
 , DATE_VALUE DATE 
 , CONSTRAINT QUESTION_RESPONSE_PK PRIMARY KEY 
@@ -728,11 +735,57 @@ REFERENCES ESA.ROLE
 )
 ENABLE;
 
+COMMENT ON TABLE ESA.ADDRESS IS 'This table is used to store the addresses of the various parties.  This includes companiens, organizations, or persons.  multiple parties can share the same address.  This also provides the ability to identify relationships between various parties.';
+
+COMMENT ON TABLE ESA.CATALOG IS 'The catalog is a method for grouping items which can be orderd much in the same way  as a paper based catalog.  This is only used to identify or name the catalog.  The items for the catalog are established in the catalog_item table.';
+
+COMMENT ON TABLE ESA.CATALOG_ITEM IS 'This table is used to store the relationship between a catalog and the various items in the catalog.  This allows for items to be contained with in several catalogs.';
+
+COMMENT ON TABLE ESA.CONFIGURATION_CATALOG IS 'This table is used to identify items that are part of a configuration.  It is similar to the catalog however this allows for version of an item to be tracted.';
+
+COMMENT ON TABLE ESA.CONTRACT IS 'This is used to track the contracts associated with items.  There is no contract module this is identified in other systems.  This will alow the purchasing organization research the terms and conditions of the contract or associated discounts and breaches of contract.';
+
+COMMENT ON TABLE ESA.DOCUMENT IS 'This table is used to track the instances of forms.  When a user fills out a form an instance of that form is created and the mater record is stored here.  The details about the document, answers to the form questions is stored in the question_response table.';
+
+COMMENT ON TABLE ESA.FORM IS 'This table is used to define the various forms available for use.  It is similar to defining a template for data entry.  Cascading Style Sheets are used to format the forms for data input.';
+
+COMMENT ON TABLE ESA.FORM_FIELD IS 'This defines the text and questions of the forms.  and can be broken up into pages section and order.  The questions are grouped first by page, then section and finaly order.  The page number is independant of the section and order.  Howver the order is dependant within the section.  Therefor a scection can be split accross several pages.  This is up to the desingner of the form.  Cascading Style Sheets can be used to format the page layouts.';
+
+COMMENT ON TABLE ESA.ITEM IS 'The Item is used to define any element that is part of a configuration, or an orderable item within a catalog.  Each of the various items can be defined as a standard for the organization.  It also supports exceptions and deviations from standards.  It is up to the organization to define how and were to apply standards, exceptions and deviaitons.';
+
+COMMENT ON TABLE ESA.ITEM_UNITS_CONVERSION IS 'The item_units_conversion table is used to allow for the conversion of items from the default ordering unit of measure.  there for a ordering unit of measure may be a case.  If each case has 144 item.  The units conversion can be used to calculate  how many each of the given item has been orderd base on the defaut unit of measuer as well as the cost.';
+
+COMMENT ON TABLE ESA.ITEM_VERSION IS 'The item version is used to track the version of an item, its release and decommition/desupported dates.  This will allow a road map to be defined and plan  the enterprise road map.';
+
+COMMENT ON TABLE ESA.LOOKUP_ELEMENT IS 'The lookup_element is used to define the elements of the lookup_lists for the applicaiton.  The elements defined in this table are part of the fixed lookup_list type.';
+
+COMMENT ON TABLE ESA.LOOKUP_LIST IS 'The lookup_list is ued to provide a consistant method for defining pick lists or lists of values.  The lookup_lists can be defined in one of two ways, fixed or sql.  The fixed list elemetns are defined in the lookup_elements table.  The sql select section of the sql lookup list must have the format of select <value element> value, <display element> display.';
+
+COMMENT ON TABLE ESA.PARTY IS 'The party table is used to store organizations and people.  These are elements that are physical bodies or logical business units.  The granularity of organizations is for the business units to decide.  This is not intended to be for accounts, locations or items.';
+
+COMMENT ON TABLE ESA.PARTY_ADDRESS IS 'The party_address is used to define relationships between a party and a physical address.  As the data is cleansed it allows for possible relationships to be established between various parties.  people sharring the same address are possibly related as common employees of the same organization or relationship of parent and child if sharing the same home address.  This is also where the use and type of address is defined.';
+
+COMMENT ON TABLE ESA.PARTY_RELATIONSHIP IS 'The party_relationship table is used to define the relationship between various parties.  Such as employer and employee.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This flag indicates if a field is requierd or not.  The default value is N.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.INTERNAL_ONLY IS 'This flag is used to indicate the question is for internal use only and should not be presented to the user filling out the form.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_STRING IS 'This set if there is a default value for a string data type.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_FLOAT IS 'this is set if there is a default value for the float data type.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_DATE IS 'this is used if there is a default value for the date data type.';
+
 COMMENT ON COLUMN ESA.FORM_FIELD.FORM_INPUT_TYPE IS 'defines the type of UI input to use on the form shuch as a check box, combo box, text box and so on.';
+
+COMMENT ON COLUMN ESA.ITEM.STANDARD_TYPE IS 'This identifies what type of standard the item is. Corporate, Department, Select Heath, Intermountain and so on.  The selection choice is defined as a LOOKUP_LIST';
+
+COMMENT ON COLUMN ESA.ITEM.IN_SERVICE IS 'This field indicates if the itme or configuration is currently inservice within the organization.  Possible values are Y or N';
 
 COMMENT ON COLUMN ESA.ITEM.DOCUMENT_ID IS 'The document is used to identify the exception or deviation documentation for the Item.';
 
-COMMENT ON COLUMN ESA.ITEM.VENDOR_PARTY_ID IS '@fk:providesItems:@relation:OneToMany';
+COMMENT ON COLUMN ESA.ITEM.VENDOR_PARTY_ID IS 'id of the Pary who is the vendor of the item';
 
 COMMENT ON COLUMN ESA.ITEM.INTERMOUNTAIN_ITEM_NUMBER IS 'Used to be the MMIS number';
 

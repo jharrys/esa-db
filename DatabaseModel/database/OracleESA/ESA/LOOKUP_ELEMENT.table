@@ -272,6 +272,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">The lookup_element is used to define the elements of the lookup_lists for the applicaiton.  The elements defined in this table are part of the fixed lookup_list type.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>

@@ -355,6 +355,10 @@
   </indexes>
   <properties>
     <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">This table is used to store the addresses of the various parties.  This includes companiens, organizations, or persons.  multiple parties can share the same address.  This also provides the ability to identify relationships between various parties.</value>
+    </entry>
+    <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
     </entry>
