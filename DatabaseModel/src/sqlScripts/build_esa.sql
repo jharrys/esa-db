@@ -133,8 +133,8 @@ CREATE TABLE ESA.FORM_FIELD
 , PAGE_NUMBER NUMBER 
 , SECTION_NUMBER NUMBER NOT NULL 
 , ORDER_NUMBER NUMBER 
-, REQUIRED VARCHAR2(20) DEFAULT 'N' NOT NULL 
-, INTERNAL_ONLY VARCHAR2(20) 
+, REQUIRED VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, INTERNAL_ONLY VARCHAR2(1) DEFAULT 'N' NOT NULL 
 , QUESTION VARCHAR2(4000) NOT NULL 
 , SEARCH_LISTING VARCHAR2(1) DEFAULT 'N' 
 , DATA_TYPE VARCHAR2(20) 
@@ -767,9 +767,9 @@ COMMENT ON TABLE ESA.PARTY_ADDRESS IS 'The party_address is used to define relat
 
 COMMENT ON TABLE ESA.PARTY_RELATIONSHIP IS 'The party_relationship table is used to define the relationship between various parties.  Such as employer and employee.';
 
-COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This indicates if a field is requierd or not.  The default value is N.';
+COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This flag indicates if a field is requierd or not.  The default value is N.';
 
-COMMENT ON COLUMN ESA.FORM_FIELD.INTERNAL_ONLY IS 'This field is used to indicate the question is for internal use only and should not be presented to the user filling out the form.';
+COMMENT ON COLUMN ESA.FORM_FIELD.INTERNAL_ONLY IS 'This flag is used to indicate the question is for internal use only and should not be presented to the user filling out the form.';
 
 COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_STRING IS 'This set if there is a default value for a string data type.';
 

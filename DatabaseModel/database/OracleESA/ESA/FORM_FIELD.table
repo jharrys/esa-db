@@ -107,7 +107,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">20</value>
+            <value class="java.lang.Long">1</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
@@ -120,7 +120,7 @@
       <properties>
         <entry>
           <key>Comment</key>
-          <value class="java.lang.String">This indicates if a field is requierd or not.  The default value is N.</value>
+          <value class="java.lang.String">This flag indicates if a field is requierd or not.  The default value is N.</value>
         </entry>
       </properties>
     </column>
@@ -136,7 +136,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">20</value>
+            <value class="java.lang.Long">1</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
@@ -144,11 +144,12 @@
           <typeName>VARCHAR2</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>false</notNull>
+      <default class="java.lang.String">&apos;N&apos;</default>
+      <notNull>true</notNull>
       <properties>
         <entry>
           <key>Comment</key>
-          <value class="java.lang.String">This field is used to indicate the question is for internal use only and should not be presented to the user filling out the form.</value>
+          <value class="java.lang.String">This flag is used to indicate the question is for internal use only and should not be presented to the user filling out the form.</value>
         </entry>
       </properties>
     </column>
