@@ -133,10 +133,15 @@ CREATE TABLE ESA.FORM_FIELD
 , PAGE_NUMBER NUMBER 
 , SECTION_NUMBER NUMBER NOT NULL 
 , ORDER_NUMBER NUMBER 
+, REQUIRED VARCHAR2(20) DEFAULT 'N' NOT NULL 
+, INTERNAL_ONLY VARCHAR2(20) 
 , QUESTION VARCHAR2(4000) NOT NULL 
 , SEARCH_LISTING VARCHAR2(1) DEFAULT 'N' 
 , DATA_TYPE VARCHAR2(20) 
 , MULTI_SELECT VARCHAR2(1) DEFAULT 'N' NOT NULL 
+, DEFAULT_VALUE_STRING VARCHAR2(4000) 
+, DEFAULT_VALUE_FLOAT NUMBER 
+, DEFAULT_VALUE_DATE DATE 
 , LOOKUP_LIST_ID NUMBER 
 , FORM_INPUT_TYPE VARCHAR2(40) 
 , CSS_CLASS VARCHAR2(128) 
@@ -341,7 +346,7 @@ CREATE TABLE ESA.QUESTION_RESPONSE
 , UPDATED_BY VARCHAR2(40) NOT NULL 
 , FORM_FIELD_ID NUMBER 
 , DOCUMENT_ID NUMBER 
-, STRING_VALUE VARCHAR2(1024) 
+, STRING_VALUE VARCHAR2(4000) 
 , FLOAT_VALUE NUMBER 
 , DATE_VALUE DATE 
 , CONSTRAINT QUESTION_RESPONSE_PK PRIMARY KEY 
@@ -761,6 +766,16 @@ COMMENT ON TABLE ESA.PARTY IS 'The party table is used to store organizations an
 COMMENT ON TABLE ESA.PARTY_ADDRESS IS 'The party_address is used to define relationships between a party and a physical address.  As the data is cleansed it allows for possible relationships to be established between various parties.  people sharring the same address are possibly related as common employees of the same organization or relationship of parent and child if sharing the same home address.  This is also where the use and type of address is defined.';
 
 COMMENT ON TABLE ESA.PARTY_RELATIONSHIP IS 'The party_relationship table is used to define the relationship between various parties.  Such as employer and employee.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This indicates if a field is requierd or not.  The default value is N.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.INTERNAL_ONLY IS 'This field is used to indicate the question is for internal use only and should not be presented to the user filling out the form.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_STRING IS 'This set if there is a default value for a string data type.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_FLOAT IS 'this is set if there is a default value for the float data type.';
+
+COMMENT ON COLUMN ESA.FORM_FIELD.DEFAULT_VALUE_DATE IS 'this is used if there is a default value for the date data type.';
 
 COMMENT ON COLUMN ESA.FORM_FIELD.FORM_INPUT_TYPE IS 'defines the type of UI input to use on the form shuch as a check box, combo box, text box and so on.';
 

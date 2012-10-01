@@ -146,7 +146,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">1024</value>
+            <value class="java.lang.Long">4000</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
