@@ -288,6 +288,49 @@
         <type>INDEX</type>
       </indexID>
     </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f5c0c683-0f1e-42af-b81a-f64f10988477</identifier>
+      </ID>
+      <name>QUESTION_RESPONSE_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>DOCUMENT_ID</name>
+          <identifier class="java.lang.String">860dff34-5621-4a14-8acb-a9a8d6a02c21</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>QUESTION_RESPONSE</name>
+            <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>FORM_FIELD_ID</name>
+          <identifier class="java.lang.String">94d71fee-061e-420d-bd16-3976c7eaace1</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>QUESTION_RESPONSE</name>
+            <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>QUESTION_RESPONSE_UK1</name>
+        <identifier class="java.lang.String">3346ad5e-532e-40ea-be32-4c2862ce7008</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>QUESTION_RESPONSE</name>
+          <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>ESA</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
   </constraints>
   <indexes>
     <indexe>
@@ -307,6 +350,68 @@
             <objectID class="oracle.javatools.db.IdentifierBasedID">
               <name>ID</name>
               <identifier class="java.lang.String">d48c69ff-13ef-42d2-8b66-4973e24a5ea4</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>QUESTION_RESPONSE</name>
+                <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
+                <schemaName>ESA</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>ESA</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3346ad5e-532e-40ea-be32-4c2862ce7008</identifier>
+      </ID>
+      <name>QUESTION_RESPONSE_UK1</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">46fb7cef-9602-4254-80c3-a44136bec422</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">ce11f8b2-a55c-4bfc-8892-cb55c9c2655b</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>DOCUMENT_ID</name>
+              <identifier class="java.lang.String">860dff34-5621-4a14-8acb-a9a8d6a02c21</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>QUESTION_RESPONSE</name>
+                <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
+                <schemaName>ESA</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3645bb15-8149-440a-8127-c3329e4f1857</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">495c1b2e-376b-4730-b5e1-c88e8e64279e</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>FORM_FIELD_ID</name>
+              <identifier class="java.lang.String">94d71fee-061e-420d-bd16-3976c7eaace1</identifier>
               <parent class="oracle.javatools.db.IdentifierBasedID">
                 <name>QUESTION_RESPONSE</name>
                 <identifier class="java.lang.String">cbb71a2f-545c-48b9-a82d-727f13f119d0</identifier>
