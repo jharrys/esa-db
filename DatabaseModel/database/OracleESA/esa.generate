@@ -261,6 +261,61 @@
          <value n="schemaName" v="ESA"/>
          <value n="type" v="SEQUENCE"/>
       </hash>
+      <hash>
+         <value n="name" v="ESA_ROLE"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ESA_ROLE_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ESA_USER"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ESA_USER_ESA_ROLE"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ESA_USER_ESA_ROLE_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ESA_USER_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="HIBERNATE_SEQUENCE"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="REGISTRATION_CODE"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="REGISTRATION_CODE_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SPRING_SECURITY_EVENT"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SPRING_SECURITY_EVENT_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
    </list>
    <url n="sourceIdentifier" path="OracleESA.offlinedb"/>
    <value n="sourceProviderType" v="offlinedb"/>
