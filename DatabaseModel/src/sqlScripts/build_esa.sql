@@ -57,6 +57,22 @@ CREATE TABLE ESA.CATALOG_ITEM
   ENABLE 
 );
 
+PROMPT create table 'CATEGORY'
+CREATE TABLE ESA.CATEGORY 
+(
+  ID NUMBER NOT NULL 
+, TAXONOMY VARCHAR2(4000) NOT NULL 
+, CREATION_DATE DATE NOT NULL 
+, CREATED_BY VARCHAR2(40) NOT NULL 
+, UPDATE_DATE DATE NOT NULL 
+, UPDATED_BY VARCHAR2(40) NOT NULL 
+, CONSTRAINT CATEGORY_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
 PROMPT create table 'CONFIGURATION_CATALOG'
 CREATE TABLE ESA.CONFIGURATION_CATALOG 
 (
@@ -201,6 +217,23 @@ CREATE TABLE ESA.ITEM
   ENABLE 
 );
 
+PROMPT create table 'ITEM_CATEGORY'
+CREATE TABLE ESA.ITEM_CATEGORY 
+(
+  ID NUMBER NOT NULL 
+, ITEM_ID NUMBER NOT NULL 
+, CATEGORY_ID NUMBER NOT NULL 
+, CREATION_DATE DATE NOT NULL 
+, CREATED_BY VARCHAR2(40) NOT NULL 
+, UPDATE_DATE DATE NOT NULL 
+, UPDATED_BY VARCHAR2(40) NOT NULL 
+, CONSTRAINT ITEM_CATEGORY_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
 PROMPT create table 'ITEM_UNITS_CONVERSION'
 CREATE TABLE ESA.ITEM_UNITS_CONVERSION 
 (
@@ -272,6 +305,24 @@ CREATE TABLE ESA.LOOKUP_LIST
 , LAST_UPDATED DATE NOT NULL 
 , UPDATED_BY VARCHAR2(40) NOT NULL 
 , CONSTRAINT LOOKUP_LIST_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
+PROMPT create table 'NOTE'
+CREATE TABLE ESA.NOTE 
+(
+  ID NUMBER NOT NULL 
+, ITEM_ID NUMBER NOT NULL 
+, NOTE_TYPE VARCHAR2(40) 
+, TEXT VARCHAR2(4000) NOT NULL 
+, CREATION_DATE DATE NOT NULL 
+, CREATED_BY VARCHAR2(40) NOT NULL 
+, UPDATE_DATE DATE NOT NULL 
+, UPDATED_BY VARCHAR2(40) NOT NULL 
+, CONSTRAINT NOTE_PK PRIMARY KEY 
   (
     ID 
   )
@@ -588,6 +639,30 @@ REFERENCES ESA.PARTY
 )
 ENABLE;
 
+PROMPT alter table 'ITEM_CATEGORY'
+ALTER TABLE ESA.ITEM_CATEGORY
+ADD CONSTRAINT ITEM_CATEGORY_CATEGORY_FK FOREIGN KEY
+(
+  CATEGORY_ID 
+)
+REFERENCES ESA.CATEGORY
+(
+  ID 
+)
+ENABLE;
+
+PROMPT alter table 'ITEM_CATEGORY'
+ALTER TABLE ESA.ITEM_CATEGORY
+ADD CONSTRAINT ITEM_CATEGORY_ITEM_FK FOREIGN KEY
+(
+  ITEM_ID 
+)
+REFERENCES ESA.ITEM
+(
+  ID 
+)
+ENABLE;
+
 PROMPT alter table 'ITEM_UNITS_CONVERSION'
 ALTER TABLE ESA.ITEM_UNITS_CONVERSION
 ADD CONSTRAINT ITEM_CONVERSIONS_FK FOREIGN KEY
@@ -619,6 +694,18 @@ ADD CONSTRAINT LOOKUP_ELEMENT_LOOKUP_LIST_FK FOREIGN KEY
   LOOKUP_LIST_ID 
 )
 REFERENCES ESA.LOOKUP_LIST
+(
+  ID 
+)
+ENABLE;
+
+PROMPT alter table 'NOTE'
+ALTER TABLE ESA.NOTE
+ADD CONSTRAINT ITEM_NOTES_FK FOREIGN KEY
+(
+  ID 
+)
+REFERENCES ESA.ITEM
 (
   ID 
 )
@@ -762,6 +849,8 @@ COMMENT ON TABLE ESA.FORM_FIELD IS 'This defines the text and questions of the f
 
 COMMENT ON TABLE ESA.ITEM IS 'The Item is used to define any element that is part of a configuration, or an orderable item within a catalog.  Each of the various items can be defined as a standard for the organization.  It also supports exceptions and deviations from standards.  It is up to the organization to define how and were to apply standards, exceptions and deviaitons.';
 
+COMMENT ON TABLE ESA.ITEM_CATEGORY IS 'The item_category table is used to add an item to a defined category.  An item can belong to many differnt categories.';
+
 COMMENT ON TABLE ESA.ITEM_UNITS_CONVERSION IS 'The item_units_conversion table is used to allow for the conversion of items from the default ordering unit of measure.  there for a ordering unit of measure may be a case.  If each case has 144 item.  The units conversion can be used to calculate  how many each of the given item has been orderd base on the defaut unit of measuer as well as the cost.';
 
 COMMENT ON TABLE ESA.ITEM_VERSION IS 'The item version is used to track the version of an item, its release and decommition/desupported dates.  This will allow a road map to be defined and plan  the enterprise road map.';
@@ -770,11 +859,15 @@ COMMENT ON TABLE ESA.LOOKUP_ELEMENT IS 'The lookup_element is used to define the
 
 COMMENT ON TABLE ESA.LOOKUP_LIST IS 'The lookup_list is ued to provide a consistant method for defining pick lists or lists of values.  The lookup_lists can be defined in one of two ways, fixed or sql.  The fixed list elemetns are defined in the lookup_elements table.  The sql select section of the sql lookup list must have the format of select <value element> value, <display element> display.';
 
+COMMENT ON TABLE ESA.NOTE IS 'This table is used to create notes regarding the items.  It can be used for insturctions or comments';
+
 COMMENT ON TABLE ESA.PARTY IS 'The party table is used to store organizations and people.  These are elements that are physical bodies or logical business units.  The granularity of organizations is for the business units to decide.  This is not intended to be for accounts, locations or items.';
 
 COMMENT ON TABLE ESA.PARTY_ADDRESS IS 'The party_address is used to define relationships between a party and a physical address.  As the data is cleansed it allows for possible relationships to be established between various parties.  people sharring the same address are possibly related as common employees of the same organization or relationship of parent and child if sharing the same home address.  This is also where the use and type of address is defined.';
 
 COMMENT ON TABLE ESA.PARTY_RELATIONSHIP IS 'The party_relationship table is used to define the relationship between various parties.  Such as employer and employee.';
+
+COMMENT ON COLUMN ESA.CATEGORY.TAXONOMY IS 'This is used to define the taxonomy of a category.  It is also the unique name.  This will look similar to a path expresson.';
 
 COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This flag indicates if a field is requierd or not.  The default value is N.';
 
@@ -804,6 +897,8 @@ COMMENT ON COLUMN ESA.ITEM.CONTRACT_ID IS '@fk:governsItems:@relation:OneToMany'
 
 COMMENT ON COLUMN ESA.ITEM.MANUFACTURER_CATALOG_NUMBER IS 'Manufacturer part number';
 
+COMMENT ON COLUMN ESA.NOTE.NOTE_TYPE IS 'this is a pick list that describes the type of note.  The possible values are defined in the NoteType lookup list';
+
 COMMENT ON COLUMN ESA.PARTY_ADDRESS.PARTY_ID IS '@parties';
 
 COMMENT ON COLUMN ESA.PARTY_ADDRESS.ADDRESS_ID IS '@addresses';
@@ -816,6 +911,9 @@ CREATE SEQUENCE ESA.CATALOG_ITEM_SEQ NOCACHE;
 
 PROMPT create sequence 'CATALOG_SEQ'
 CREATE SEQUENCE ESA.CATALOG_SEQ NOCACHE;
+
+PROMPT create sequence 'CATEGORY_SEQ'
+CREATE SEQUENCE ESA.CATEGORY_SEQ INCREMENT BY 1 START WITH 1 NOCACHE;
 
 PROMPT create sequence 'CONFIGURATION_CATALOG_SEQ'
 CREATE SEQUENCE ESA.CONFIGURATION_CATALOG_SEQ NOCACHE;
@@ -832,6 +930,9 @@ CREATE SEQUENCE ESA.FORM_FIELD_SEQ NOCACHE;
 PROMPT create sequence 'FORM_SEQ'
 CREATE SEQUENCE ESA.FORM_SEQ NOCACHE;
 
+PROMPT create sequence 'ITEM_CATEGORY_SEQ'
+CREATE SEQUENCE ESA.ITEM_CATEGORY_SEQ INCREMENT BY 1 START WITH 1 NOCACHE;
+
 PROMPT create sequence 'ITEM_SEQ'
 CREATE SEQUENCE ESA.ITEM_SEQ NOCACHE;
 
@@ -846,6 +947,9 @@ CREATE SEQUENCE ESA.LOOKUP_ELEMENT_SEQ NOCACHE;
 
 PROMPT create sequence 'LOOKUP_LIST_SEQ'
 CREATE SEQUENCE ESA.LOOKUP_LIST_SEQ NOCACHE;
+
+PROMPT create sequence 'NOTE_SEQ'
+CREATE SEQUENCE ESA.NOTE_SEQ INCREMENT BY 1 START WITH 1 NOCACHE;
 
 PROMPT create sequence 'PARTY_ADDRESS_SEQ'
 CREATE SEQUENCE ESA.PARTY_ADDRESS_SEQ NOCACHE;

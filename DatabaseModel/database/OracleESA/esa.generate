@@ -221,6 +221,36 @@
          <value n="schemaName" v="ESA"/>
          <value n="type" v="SEQUENCE"/>
       </hash>
+      <hash>
+         <value n="name" v="CATEGORY"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ITEM_CATEGORY"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="NOTE"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORY_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="NOTE_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ITEM_CATEGORY_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
    </list>
    <url n="sourceIdentifier" path="OracleESA.offlinedb"/>
    <value n="sourceProviderType" v="offlinedb"/>
