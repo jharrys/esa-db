@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">2a777a69-0e81-4990-bc43-10bf321afaa4</identifier>
+  </ID>
+  <name>SPRING_SECURITY_EVENT_SEQ</name>
+  <cacheFlag>false</cacheFlag>
+  <cycleFlag>false</cycleFlag>
+  <incrementBy>1</incrementBy>
+  <lastNumber>2</lastNumber>
+  <maxValue>9999999999999999999999999999</maxValue>
+  <minValue>1</minValue>
+  <orderFlag>false</orderFlag>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">esa@esa</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>SPRING_SECURITY_EVENT_SEQ</name>
+        <identifier class="java.math.BigDecimal">82538</identifier>
+        <schemaName>ESA</schemaName>
+        <type>SEQUENCE</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</sequence>
