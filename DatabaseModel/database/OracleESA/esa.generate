@@ -251,6 +251,16 @@
          <value n="schemaName" v="ESA"/>
          <value n="type" v="SEQUENCE"/>
       </hash>
+      <hash>
+         <value n="name" v="CONFIGURATION_PARAMETER"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CONFIGURATION_PARAMETER_SEQ"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
    </list>
    <url n="sourceIdentifier" path="OracleESA.offlinedb"/>
    <value n="sourceProviderType" v="offlinedb"/>
