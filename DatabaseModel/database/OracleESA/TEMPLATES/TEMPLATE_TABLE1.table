@@ -30,7 +30,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">43112c91-d63c-4519-b33a-372a833bda67</identifier>
       </ID>
-      <name>CREATION_DATE</name>
+      <name>DATE_CREATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">699c35cc-e807-41d2-94a3-54796dc097bc</identifier>
@@ -68,7 +68,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">dd8a882d-0a35-4e2c-a9f2-58bdfc36fe8b</identifier>
       </ID>
-      <name>UPDATE_DATE</name>
+      <name>LAST_UPDATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">b0e17185-2cc6-4de3-8515-3d69656d80b9</identifier>
@@ -119,7 +119,6 @@
             <schemaName>TEMPLATES</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>TEMPLATES</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -162,7 +161,6 @@
                 <schemaName>TEMPLATES</schemaName>
                 <type>TABLE</type>
               </parent>
-              <schemaName>TEMPLATES</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>

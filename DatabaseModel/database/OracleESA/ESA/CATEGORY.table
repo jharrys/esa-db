@@ -58,7 +58,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">d12b5f50-9a7e-4be1-917f-c9f0fa0366a5</identifier>
       </ID>
-      <name>CREATION_DATE</name>
+      <name>DATE_CREATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">f16d3a1f-c458-40ea-9d74-a66bde0ba358</identifier>
@@ -96,7 +96,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">a3b8174f-6d37-4999-abb4-1b6317a7ed9d</identifier>
       </ID>
-      <name>UPDATE_DATE</name>
+      <name>LAST_UPDATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">72c9983b-1cc4-464e-86bf-07b46c5a430e</identifier>
