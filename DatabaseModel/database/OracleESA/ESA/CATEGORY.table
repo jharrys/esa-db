@@ -28,9 +28,47 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1ff9348e-1a1d-4549-8593-140b3c2a6a9d</identifier>
+      </ID>
+      <name>PARENT_CATEGORY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9ed8c294-82aa-46f6-a0ba-7c048253dcd1</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">909afdc3-3260-47f6-9c42-bb727e9ba28d</identifier>
+      </ID>
+      <name>PARENT_CATEGORY_PATH</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d781485c-20d8-4397-8d5c-7930fb798f51</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4000</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">ab4cf7cd-a896-4f65-8fbc-d81d857b56b0</identifier>
       </ID>
-      <name>TAXONOMY</name>
+      <name>NAME</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">9c82d719-143b-4146-afb0-974bd14c842c</identifier>
@@ -38,7 +76,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">4000</value>
+            <value class="java.lang.Long">128</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
@@ -132,6 +170,40 @@
     </column>
   </columns>
   <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1d5babdd-ffc7-4a1b-95c4-9cade08bf44d</identifier>
+      </ID>
+      <name>SUB_CATEGORY_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARENT_CATEGORY_ID</name>
+          <identifier class="java.lang.String">1ff9348e-1a1d-4549-8593-140b3c2a6a9d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY</name>
+            <identifier class="java.lang.String">896f6610-2342-437a-b22c-93708ac0d79d</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>ESA</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_PK</name>
+        <identifier class="java.lang.String">d8908e21-f505-4356-a0f6-ea4167d1049e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY</name>
+          <identifier class="java.lang.String">896f6610-2342-437a-b22c-93708ac0d79d</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>ESA</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
     <constraint class="oracle.javatools.db.PKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">d8908e21-f505-4356-a0f6-ea4167d1049e</identifier>

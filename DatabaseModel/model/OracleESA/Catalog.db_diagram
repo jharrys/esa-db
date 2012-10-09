@@ -2030,7 +2030,7 @@
       <waypoint x='600.0' y='75.0'/>
     </contained>
     <contained xmi:type='DI:GraphNode' xmi:id='id069e1322-53df-4e31-b672-c000c1601cf5'>
-      <anchorage xmi:id='idfb1b6d54-3cef-45c8-a05f-36dafb8370fb' graphEdge='id5fd538fd-b19a-498e-aa37-fa067cbbe830'/>
+      <anchorage xmi:id='idfb1b6d54-3cef-45c8-a05f-36dafb8370fb' graphEdge='id22f53098-b74f-4413-9d99-9d7fc498469a id22f53098-b74f-4413-9d99-9d7fc498469a id5fd538fd-b19a-498e-aa37-fa067cbbe830'/>
       <contained xmi:type='DI:GraphNode' xmi:id='ida525a28f-d26e-4b7c-9102-d47f7cd2d003'>
         <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
         <size height='100.0' width='100.0'/>
@@ -2068,7 +2068,7 @@
             </contained>
             <contained xmi:type='DI:GraphNode' xmi:id='id3a1318ec-afff-48d6-9605-8a1bff89f8e7'>
               <property key='id' value='ObjectText'/>
-              <property key='preferredWidth' value='165.0'/>
+              <property key='preferredWidth' value='242.0'/>
               <property key='visible' value='true'/>
               <property key='editable' value='true'/>
               <property key='fixedWidth' value='false'/>
@@ -2117,7 +2117,7 @@
             </contained>
             <contained xmi:type='DI:GraphNode' xmi:id='id401b7c19-1ab9-4278-b1e5-d6ee1f1a2f3c'>
               <property key='id' value='ObjectText'/>
-              <property key='preferredWidth' value='162.35938'/>
+              <property key='preferredWidth' value='260.35938'/>
               <property key='visible' value='true'/>
               <property key='editable' value='true'/>
               <property key='fixedWidth' value='false'/>
@@ -2472,6 +2472,38 @@
       <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='DB:I:CONSTRAINT:5d9b7afe-c8be-4b50-ad71-8fdb2346ecfa:I:TABLE:c87d0d9d-b8a1-476e-a7f0-5ecbc022a6c6:Provider:0e360b66-5377-4bb3-a3ce-5aa35f699c29'/>
       <waypoint x='1230.0' y='450.0'/>
       <waypoint x='1500.0' y='450.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id22f53098-b74f-4413-9d99-9d7fc498469a' anchor='idfb1b6d54-3cef-45c8-a05f-36dafb8370fb idfb1b6d54-3cef-45c8-a05f-36dafb8370fb'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id80bb7cbf-df87-4e59-9805-7e2ab03985a4'>
+        <position x='4.0' y='-25.47607421875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id3d3ea168-dc4b-4b7d-a011-1308f55e20f8'>
+        <position x='-26.167261123657227' y='-3.369019031524658'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id1364498d-3a44-4c88-94c4-bbbfc8204b7c'>
+        <position x='-15.0335693359375' y='-3.369019031524658'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id48986f37-0c27-471b-af19-9b8d9970bff0'>
+        <position x='4.0' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property key='lineWidth' value='1.0'/>
+      <property key='showCardinality' value='true'/>
+      <property key='font' value='SansSerif,plain,11'/>
+      <property key='showStereotype' value='false'/>
+      <property key='lineColor' value='#646464'/>
+      <property key='EdgeType' value='1'/>
+      <property key='fontColor' value='#0'/>
+      <property key='showAssocName' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='DB:I:CONSTRAINT:1d5babdd-ffc7-4a1b-95c4-9cade08bf44d:I:TABLE:896f6610-2342-437a-b22c-93708ac0d79d:Provider:0e360b66-5377-4bb3-a3ce-5aa35f699c29'/>
+      <waypoint x='2250.0' y='450.0'/>
+      <waypoint x='2325.0' y='450.0'/>
+      <waypoint x='2325.0' y='675.0'/>
+      <waypoint x='2100.0' y='675.0'/>
+      <waypoint x='2100.0' y='600.0'/>
     </contained>
     <property key='dbmodeler.provider_id' value='0e360b66-5377-4bb3-a3ce-5aa35f699c29'/>
     <property key='minLayoutDistance' value='40'/>
