@@ -1,4 +1,4 @@
-REM INSERTING into FORM
+-- INSERTING into FORM
 Insert into FORM (ID,NAME,DESCRIPTION,DATE_CREATED,CREATED_BY,LAST_UPDATED,UPDATED_BY) values (1,'EXCEPTION','This document is used to apply for an exception to the supported standard.',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad');
 Insert into FORM (ID,NAME,DESCRIPTION,DATE_CREATED,CREATED_BY,LAST_UPDATED,UPDATED_BY) values (2,'EARB_Recommendation','This document is used to apply for a recommendation for standardization to the EARB committee.',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad');
 Insert into FORM (ID,NAME,DESCRIPTION,DATE_CREATED,CREATED_BY,LAST_UPDATED,UPDATED_BY) values (3,'EARB_Agenda','This document is the EARB committee agenda template.',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad',to_timestamp('13-AUG-12','DD-MON-RR HH.MI.SSXFF AM'),'bulkLoad');
