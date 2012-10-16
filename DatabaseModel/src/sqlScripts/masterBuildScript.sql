@@ -8,5 +8,7 @@
 @lookup_element_seed_data.sql
 @form_field_seed_data.sql
 @item_seed_data.sql
+@document_seed_data.sql
+@question_response_seed_data.sql
 purge recyclebin;
 @sequence_update.sql
