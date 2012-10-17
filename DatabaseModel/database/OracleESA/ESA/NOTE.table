@@ -96,7 +96,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">da2c5a59-5280-49ab-9ca9-37eb493ccb00</identifier>
       </ID>
-      <name>CREATION_DATE</name>
+      <name>DATE_CREATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">f90c593d-c8af-4947-a1fd-39805b9865f6</identifier>
@@ -134,7 +134,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">0f30f9e6-431a-4fbf-a66f-f90cfab800d9</identifier>
       </ID>
-      <name>UPDATE_DATE</name>
+      <name>LAST_UPDATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">10b53d39-6e6e-4534-88b5-bd2e4f0f5382</identifier>
@@ -185,7 +185,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -218,7 +217,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -261,7 +259,6 @@
                 <schemaName>ESA</schemaName>
                 <type>TABLE</type>
               </parent>
-              <schemaName>ESA</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>

@@ -100,7 +100,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">a8f737b1-bd42-4fd2-98fc-e8e09ea42eb6</identifier>
       </ID>
-      <name>DATE_UPDATED</name>
+      <name>LAST_UPDATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">2c3474ee-e94f-41a2-8641-04ccddb59d04</identifier>
