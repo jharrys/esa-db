@@ -192,36 +192,6 @@
          <value n="type" v="SEQUENCE"/>
       </hash>
       <hash>
-         <value n="name" v="ROLE"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="ROLE_SEQ"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="SEQUENCE"/>
-      </hash>
-      <hash>
-         <value n="name" v="ROLE_SERVICE"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="ROLE_SERVICE_SEQ"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="SEQUENCE"/>
-      </hash>
-      <hash>
-         <value n="name" v="SERVICE"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="SERVICE_SEQ"/>
-         <value n="schemaName" v="ESA"/>
-         <value n="type" v="SEQUENCE"/>
-      </hash>
-      <hash>
          <value n="name" v="CATEGORY"/>
          <value n="schemaName" v="ESA"/>
          <value n="type" v="TABLE"/>
