@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">3917313a-9b53-4bed-bf8b-41ec4882326f</identifier>
+  </ID>
+  <name>ATTACHMENT_SEQ</name>
+  <cacheFlag>false</cacheFlag>
+  <cycleFlag>false</cycleFlag>
+  <incrementBy>1</incrementBy>
+  <orderFlag>false</orderFlag>
+  <schema>
+    <name>ESA</name>
+  </schema>
+  <startWith>1</startWith>
+</sequence>
