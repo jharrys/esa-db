@@ -22,6 +22,25 @@ CREATE TABLE ESA.ADDRESS
   ENABLE 
 );
 
+PROMPT create table 'ATTACHMENT'
+CREATE TABLE ESA.ATTACHMENT 
+(
+  ID NUMBER NOT NULL 
+, DOCUMENT_ID NUMBER NOT NULL 
+, NAME VARCHAR2(20) NOT NULL 
+, MIME_TYPE VARCHAR2(40) NOT NULL 
+, ARTIFACT BLOB NOT NULL 
+, DATE_CREATED DATE NOT NULL 
+, CREATED_BY VARCHAR2(40) NOT NULL 
+, LAST_UPDATED DATE NOT NULL 
+, UPDATED_BY VARCHAR2(40) NOT NULL 
+, CONSTRAINT ATTACHMENT_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
 PROMPT create table 'CATALOG'
 CREATE TABLE ESA.CATALOG 
 (
@@ -667,6 +686,18 @@ ADD CONSTRAINT QUESTION_RESPONSE_UK1 UNIQUE
 )
 ENABLE;
 
+PROMPT alter table 'ATTACHMENT'
+ALTER TABLE ESA.ATTACHMENT
+ADD CONSTRAINT ATTACHMENT_DOCUMENT_FK FOREIGN KEY
+(
+  DOCUMENT_ID 
+)
+REFERENCES ESA.DOCUMENT
+(
+  ID 
+)
+ENABLE;
+
 PROMPT alter table 'CATALOG_ITEM'
 ALTER TABLE ESA.CATALOG_ITEM
 ADD CONSTRAINT BELONGS_TO_CATALOGS_FK FOREIGN KEY
@@ -1063,6 +1094,14 @@ COMMENT ON TABLE ESA.PARTY_ADDRESS IS 'The party_address is used to define relat
 
 COMMENT ON TABLE ESA.PARTY_RELATIONSHIP IS 'The party_relationship table is used to define the relationship between various parties.  Such as employer and employee.';
 
+COMMENT ON COLUMN ESA.ATTACHMENT.DOCUMENT_ID IS 'used to associates the artifact to a document.';
+
+COMMENT ON COLUMN ESA.ATTACHMENT.NAME IS 'This is the name of the artifact with out the associated mime type.  The fully qualified artifact name is the NAME.MIME_TYPE';
+
+COMMENT ON COLUMN ESA.ATTACHMENT.MIME_TYPE IS 'this is the mime type of the artificat.  This should be populated from a pick list provided in the LOOKUP_LIST';
+
+COMMENT ON COLUMN ESA.ATTACHMENT.ARTIFACT IS 'This is the atifact associated to the form document.';
+
 COMMENT ON COLUMN ESA.CATEGORY.NAME IS 'This is used to define the taxonomy of a category.  It is also the unique name.  This will look similar to a path expresson.';
 
 COMMENT ON COLUMN ESA.FORM_FIELD.REQUIRED IS 'This flag indicates if a field is requierd or not.  The default value is N.';
@@ -1101,6 +1140,9 @@ COMMENT ON COLUMN ESA.PARTY_ADDRESS.ADDRESS_ID IS '@addresses';
 
 PROMPT create sequence 'ADDRESS_SEQ'
 CREATE SEQUENCE ESA.ADDRESS_SEQ NOCACHE;
+
+PROMPT create sequence 'ATTACHMENT_SEQ'
+CREATE SEQUENCE ESA.ATTACHMENT_SEQ INCREMENT BY 1 START WITH 1 NOCACHE;
 
 PROMPT create sequence 'CATALOG_ITEM_SEQ'
 CREATE SEQUENCE ESA.CATALOG_ITEM_SEQ NOCACHE;
