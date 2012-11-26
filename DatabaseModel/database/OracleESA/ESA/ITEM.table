@@ -526,7 +526,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">20</value>
+            <value class="java.lang.Long">256</value>
           </entry>
         </attributeValues>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
@@ -540,7 +540,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">fb7c7f34-89b6-4f89-8ab3-3e7ae32bd611</identifier>
       </ID>
-      <name>MANUFACTURER_PART_ID</name>
+      <name>MANUFACTURER_PARTY_ID</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">f31aecaf-aa2c-4253-abeb-8e0f8cc5e9c4</identifier>
@@ -824,6 +824,38 @@
           <type>TABLE</type>
         </parent>
         <schemaName>ESA</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b35109b5-de25-40d5-b86a-2799982999d6</identifier>
+      </ID>
+      <name>MANUFACTURER_ITEM_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>MANUFACTURER_PARTY_ID</name>
+          <identifier class="java.lang.String">fb7c7f34-89b6-4f89-8ab3-3e7ae32bd611</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ITEM</name>
+            <identifier class="java.lang.String">e1e490fa-14b0-4c7d-b950-beb42f12ed19</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PARTY_PK</name>
+        <identifier class="java.lang.String">0381d990-0e83-43cc-969e-4fcc353d5f1a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARTY</name>
+          <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
