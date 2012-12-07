@@ -19,3 +19,5 @@ ENABLE;
 
 UPDATE CONFIGURATION_PARAMETER set value='1.2'
 where NAME='database.version';
+
+commit;

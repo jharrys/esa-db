@@ -72,6 +72,33 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0587c1d1-18e2-4a65-9991-399f31d7af24</identifier>
+      </ID>
+      <name>DATA_STEWARD_GROUP_ESA_ROLE_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a9b0a40e-d351-4c5d-8ad5-f57fe54acfd5</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">This is the esa_role.id responsible for the managment of the the item information.</value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">5e92ecb6-3e30-4ed1-bd95-db2b8ee416b2</identifier>
       </ID>
       <name>STANDARD</name>
