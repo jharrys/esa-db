@@ -1,18 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
   <ID class="oracle.javatools.db.IdentifierBasedID">
-    <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+    <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
   </ID>
-  <name>NOTE</name>
+  <name>PROJECT_ARCHITECT</name>
   <columns>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">045bfe92-1c26-41af-adfe-d84c165033ff</identifier>
+        <identifier class="java.lang.String">049bb6d6-248e-43ef-bac6-6148edf18720</identifier>
       </ID>
       <name>ID</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">f9e18a6b-4d73-4967-8112-a96d37440871</identifier>
+          <identifier class="java.lang.String">9efddda0-fc73-40b8-9dbf-20580d88500c</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -28,94 +28,44 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">6c2e2a6c-fca0-4283-8ec7-cf62d2f66b52</identifier>
+        <identifier class="java.lang.String">4840809f-299e-4b39-9e26-1a926651ebcc</identifier>
       </ID>
-      <name>ITEM_ID</name>
+      <name>PARTY_ID</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">f84cae29-5921-497b-99df-c6ff7b8d8206</identifier>
+          <identifier class="java.lang.String">d01832ec-06f4-42f3-b687-b89ef0defedd</identifier>
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>false</notNull>
+      <notNull>true</notNull>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">428577de-f7af-417c-97c0-ce938dfa553a</identifier>
+        <identifier class="java.lang.String">20a1cab3-2e40-4fca-a1fd-e5f8a7a71a44</identifier>
       </ID>
       <name>PROJECT_ID</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">0d1672d3-62c0-48d1-b040-8fa090cf9e9e</identifier>
+          <identifier class="java.lang.String">64e6fb39-1c14-44fa-9a69-5d7415323f2d</identifier>
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>false</notNull>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">3ce2e77d-96c1-40c3-8ab2-cbf8e5be3b8c</identifier>
-      </ID>
-      <name>NOTE_TYPE</name>
-      <dataTypeUsage>
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">e5b66848-9038-4992-be3c-a2d1ae029d3e</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">40</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>Comment</key>
-          <value class="java.lang.String">this is a pick list that describes the type of note.  The possible values are defined in the NoteType lookup list</value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">c594bf0a-527d-4b2d-8133-2d1f74e1735a</identifier>
-      </ID>
-      <name>TEXT</name>
-      <dataTypeUsage>
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">9fbc60f9-3b8e-4ab4-9483-61b859a8e0da</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">4000</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
       <notNull>true</notNull>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">da2c5a59-5280-49ab-9ca9-37eb493ccb00</identifier>
+        <identifier class="java.lang.String">9a46f745-af9f-407f-bbf3-904666077a14</identifier>
       </ID>
       <name>DATE_CREATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">f90c593d-c8af-4947-a1fd-39805b9865f6</identifier>
+          <identifier class="java.lang.String">6f90470a-e97b-46e2-ae62-affdedc635c5</identifier>
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
@@ -126,12 +76,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">fd73d7ae-c64d-4054-9141-2762d4e0e2b1</identifier>
+        <identifier class="java.lang.String">08edc0fe-9e41-48e1-ab20-c9f594e3e10d</identifier>
       </ID>
       <name>CREATED_BY</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">650c3e67-e4e5-4eee-a3c5-2bf592bdfc65</identifier>
+          <identifier class="java.lang.String">255efe2a-20c4-437a-aa85-c4a7ccc4ece1</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -148,12 +98,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">0f30f9e6-431a-4fbf-a66f-f90cfab800d9</identifier>
+        <identifier class="java.lang.String">079a1dd0-ae07-4ab8-9d59-2b30bc5183d5</identifier>
       </ID>
       <name>LAST_UPDATED</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">10b53d39-6e6e-4534-88b5-bd2e4f0f5382</identifier>
+          <identifier class="java.lang.String">5064a8b2-3250-44fd-ac0d-4fb173906eab</identifier>
         </ID>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
@@ -164,12 +114,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">5ccda91d-2c5b-4a86-8c10-4fb1375637bd</identifier>
+        <identifier class="java.lang.String">7f03aa46-8c3a-4664-a493-29ff3c3bd936</identifier>
       </ID>
       <name>UPDATED_BY</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">30b028e0-4428-48cc-81b6-ab506b7c9f19</identifier>
+          <identifier class="java.lang.String">16b5a5e6-bbe7-4f7d-81cf-e667b351aaa0</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -188,30 +138,31 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">74b35e42-11f7-4e62-a010-3532a7363212</identifier>
+        <identifier class="java.lang.String">17da804d-7084-473b-8e8b-d087f2af1451</identifier>
       </ID>
-      <name>ITEM_NOTES_FK</name>
+      <name>ARCHITECT_PROJECTS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>ID</name>
-          <identifier class="java.lang.String">045bfe92-1c26-41af-adfe-d84c165033ff</identifier>
+          <name>PARTY_ID</name>
+          <identifier class="java.lang.String">4840809f-299e-4b39-9e26-1a926651ebcc</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>NOTE</name>
-            <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+            <name>PROJECT_ARCHITECT</name>
+            <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
+          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>ITEM_PK</name>
-        <identifier class="java.lang.String">987d3826-5d9a-4e14-ab1e-9a40c81d64fa</identifier>
+        <name>PARTY_PK</name>
+        <identifier class="java.lang.String">0381d990-0e83-43cc-969e-4fcc353d5f1a</identifier>
         <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>ITEM</name>
-          <identifier class="java.lang.String">e1e490fa-14b0-4c7d-b950-beb42f12ed19</identifier>
+          <name>PARTY</name>
+          <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
           <schemaName>ESA</schemaName>
           <type>TABLE</type>
         </parent>
@@ -220,16 +171,16 @@
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">f597558e-d82a-4b0b-bff8-7e10d01d8f17</identifier>
+        <identifier class="java.lang.String">76e4beef-c698-41eb-b723-cef33871d770</identifier>
       </ID>
-      <name>PROJECT_NOTES_FK</name>
+      <name>PROJECT_ARCHITECTS_FK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>PROJECT_ID</name>
-          <identifier class="java.lang.String">428577de-f7af-417c-97c0-ce938dfa553a</identifier>
+          <identifier class="java.lang.String">20a1cab3-2e40-4fca-a1fd-e5f8a7a71a44</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>NOTE</name>
-            <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+            <name>PROJECT_ARCHITECT</name>
+            <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
@@ -248,35 +199,35 @@
           <schemaName>ESA</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>ESA</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
     <constraint class="oracle.javatools.db.PKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">440e60a8-93b2-4c20-933b-27ae75d466e3</identifier>
+        <identifier class="java.lang.String">b6b7dfa3-102f-4716-93fb-74ee49a1d54f</identifier>
       </ID>
-      <name>NOTE_PK</name>
+      <name>PROJECT_ARCHITECT_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ID</name>
-          <identifier class="java.lang.String">045bfe92-1c26-41af-adfe-d84c165033ff</identifier>
+          <identifier class="java.lang.String">049bb6d6-248e-43ef-bac6-6148edf18720</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>NOTE</name>
-            <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+            <name>PROJECT_ARCHITECT</name>
+            <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
+          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
       <indexID class="oracle.javatools.db.IdentifierBasedID">
-        <name>NOTE_PK</name>
-        <identifier class="java.lang.String">f0f58510-728e-468a-97ec-c7e4e267693b</identifier>
+        <name>PROJECT_ARCHITECT_PK</name>
+        <identifier class="java.lang.String">f65615d6-999a-46bb-837b-bc369a56d055</identifier>
         <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>NOTE</name>
-          <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+          <name>PROJECT_ARCHITECT</name>
+          <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
           <schemaName>ESA</schemaName>
           <type>TABLE</type>
         </parent>
@@ -288,27 +239,28 @@
   <indexes>
     <indexe>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">f0f58510-728e-468a-97ec-c7e4e267693b</identifier>
+        <identifier class="java.lang.String">f65615d6-999a-46bb-837b-bc369a56d055</identifier>
       </ID>
-      <name>NOTE_PK</name>
+      <name>PROJECT_ARCHITECT_PK</name>
       <columnExpressions>
         <columnExpression>
           <ID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">cdfcfe1a-5f54-4431-9c11-cb92e79d623f</identifier>
+            <identifier class="java.lang.String">3f775165-93fe-4d38-b5cd-439f67f9c193</identifier>
           </ID>
           <expression class="oracle.javatools.db.sql.ColumnUsage">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">cddb0f69-e8f6-48f3-9351-b172dd2df603</identifier>
+              <identifier class="java.lang.String">4dc0c3d7-645e-4895-be9a-b551c8562e79</identifier>
             </ID>
             <objectID class="oracle.javatools.db.IdentifierBasedID">
               <name>ID</name>
-              <identifier class="java.lang.String">045bfe92-1c26-41af-adfe-d84c165033ff</identifier>
+              <identifier class="java.lang.String">049bb6d6-248e-43ef-bac6-6148edf18720</identifier>
               <parent class="oracle.javatools.db.IdentifierBasedID">
-                <name>NOTE</name>
-                <identifier class="java.lang.String">2fa3221c-8795-44e0-8269-7aa97ff65744</identifier>
+                <name>PROJECT_ARCHITECT</name>
+                <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
                 <schemaName>ESA</schemaName>
                 <type>TABLE</type>
               </parent>
+              <schemaName>ESA</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>
@@ -326,10 +278,6 @@
     </indexe>
   </indexes>
   <properties>
-    <entry>
-      <key>Comment</key>
-      <value class="java.lang.String">This table is used to create notes regarding the items.  It can be used for insturctions or comments</value>
-    </entry>
     <entry>
       <key>TableType</key>
       <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
