@@ -245,7 +245,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
       <properties>
         <entry>
           <key>Comment</key>
@@ -554,6 +554,38 @@
     </column>
   </columns>
   <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1240cc2f-fb97-457f-8b07-e1414f8e5150</identifier>
+      </ID>
+      <name>ESA_USER_PARTY_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARTY_ID</name>
+          <identifier class="java.lang.String">0412ed74-c235-469c-ba76-c1e0b87d9a82</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ESA_USER</name>
+            <identifier class="java.lang.String">c8b0b042-ae41-4a76-8bc4-c05720783b8a</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PARTY_PK</name>
+        <identifier class="java.lang.String">0381d990-0e83-43cc-969e-4fcc353d5f1a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARTY</name>
+          <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+          <schemaName>ESA</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
     <constraint class="oracle.javatools.db.PKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">63e9f999-4b59-405e-9f24-866aa1747930</identifier>
