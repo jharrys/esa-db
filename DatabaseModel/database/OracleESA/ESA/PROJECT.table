@@ -134,28 +134,6 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">d4978112-1a15-4804-be45-3e65fa8897f6</identifier>
-      </ID>
-      <name>ARCHITECT_PARTY_ID</name>
-      <dataTypeUsage>
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">61754b1a-0159-472a-85d2-6e7fbbfcf78e</identifier>
-        </ID>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
-          <typeName>NUMBER</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>Comment</key>
-          <value class="java.lang.String">Reference to the architect in the party table.  The party should be populated with a someone who has an enterprise architect role.</value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">bc6f45a0-0753-425a-832a-7d34a071a3de</identifier>
       </ID>
       <name>PROJECT_MANAGER_PARTY_ID</name>
@@ -300,39 +278,6 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">65bcd788-dcbd-4626-bfff-5226fc1cffbf</identifier>
-      </ID>
-      <name>ARCHITECT_PARTY_FK</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>ARCHITECT_PARTY_ID</name>
-          <identifier class="java.lang.String">d4978112-1a15-4804-be45-3e65fa8897f6</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>PROJECT</name>
-            <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
-            <schemaName>ESA</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <schemaName>ESA</schemaName>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <deleteMode>0</deleteMode>
-      <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>PARTY_PK</name>
-        <identifier class="java.lang.String">0381d990-0e83-43cc-969e-4fcc353d5f1a</identifier>
-        <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>PARTY</name>
-          <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
-          <schemaName>ESA</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <type>CONSTRAINT</type>
-      </referenceID>
-    </constraint>
-    <constraint class="oracle.javatools.db.FKConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">51e4867a-3d5f-418f-8ea8-a9c021943bf4</identifier>
       </ID>
       <name>PROJECT_MANAGER_PARTY_FK</name>
@@ -346,7 +291,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -379,7 +323,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -422,7 +365,6 @@
                 <schemaName>ESA</schemaName>
                 <type>TABLE</type>
               </parent>
-              <schemaName>ESA</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>
