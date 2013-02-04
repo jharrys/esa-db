@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<sequence xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">9041e0c0-882c-42a6-8af7-75787cee87ea</identifier>
+  </ID>
+  <name>PROJECT_ALIAS_SEQ</name>
+  <cacheFlag>false</cacheFlag>
+  <cycleFlag>false</cycleFlag>
+  <orderFlag>false</orderFlag>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</sequence>

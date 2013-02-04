@@ -110,6 +110,34 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">47a57d93-fe3d-4105-af42-7b6ccb72af7c</identifier>
+      </ID>
+      <name>DOCUMENT_REFERENCE_URL</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">90db0ee4-6f64-4228-b92b-f88f9a3e5e62</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4000</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">This is to proide a url reference to a document to support the note.</value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">da2c5a59-5280-49ab-9ca9-37eb493ccb00</identifier>
       </ID>
       <name>DATE_CREATED</name>
@@ -233,7 +261,6 @@
             <schemaName>ESA</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>ESA</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
