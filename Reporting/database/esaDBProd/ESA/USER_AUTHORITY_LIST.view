@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">bba9d940-d600-4051-b2d2-26c04793850c</identifier>
+  </ID>
+  <name>USER_AUTHORITY_LIST</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">cd8234d6-6dab-480f-98eb-5595655e6f43</identifier>
+    </ID>
+    <SQLText>select
+  er.authority AUTHORITY,
+  p.name FULL_NAME,
+  p.id PARTY_ID
+from
+  esa_role er,
+  esa_user_esa_role euer,
+  esa_user eu,
+  party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d0d579f5-0704-4c8b-891c-1fd6bcc2cc77</identifier>
+        </ID>
+        <alias>AUTHORITY</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">a24475ef-ae8e-47eb-9a97-eac920e6ff91</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">477831ca-80dc-481d-9026-d86a9f50c051</identifier>
+        </ID>
+        <alias>FULL_NAME</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fae17391-078a-47eb-a52e-be1e9766caff</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8169f738-ec79-4dc4-bbc2-91ffc3881211</identifier>
+        </ID>
+        <alias>PARTY_ID</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">49e36e35-5e7a-441c-9b7e-27891767b230</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>select
+  er.authority AUTHORITY,
+  p.name FULL_NAME,
+  p.id PARTY_ID
+from
+  esa_role er,
+  esa_user_esa_role euer,
+  esa_user eu,
+  party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">53946512-88e3-4868-874e-008b9333550a</identifier>
+      </ID>
+      <name>AUTHORITY</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>AUTHORITY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_AUTHORITY_LIST</name>
+              <identifier class="java.math.BigDecimal">99032</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">acbf03cf-a5ea-4036-9910-a891a5e99c93</identifier>
+      </ID>
+      <name>FULL_NAME</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FULL_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_AUTHORITY_LIST</name>
+              <identifier class="java.math.BigDecimal">99032</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0a9f61cf-4721-460e-a249-f8277754ff0a</identifier>
+      </ID>
+      <name>PARTY_ID</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PARTY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>USER_AUTHORITY_LIST</name>
+              <identifier class="java.math.BigDecimal">99032</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">esaDBProd</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>USER_AUTHORITY_LIST</name>
+        <identifier class="java.math.BigDecimal">99032</identifier>
+        <schemaName>ESA</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</view>

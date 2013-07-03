@@ -1,0 +1,197 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">77ffbbc5-abd9-45fb-9a1d-df1a05255d6b</identifier>
+  </ID>
+  <name>UNASSIGNED_PROJECT_REPORT</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">011a4c82-63f2-42ce-89aa-3e3d80c5ded1</identifier>
+    </ID>
+    <SQLText>select
+  p.id PROJECT_ACID#,
+  p.name PROJECT_NAME,
+  p.type PROJECT_TYPE,
+  p.status PROJECT_STATUS
+from
+  project p
+where not exists (select pa.project_id
+                  from project_architect pa
+                  where pa.project_id=p.id)</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">76ab92f0-1281-4c96-8215-7db81bcc795c</identifier>
+        </ID>
+        <alias>PROJECT_ACID#</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ddbcb4bf-9fe7-41a7-b8b7-1f62210c8558</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ee911b04-8856-418e-968d-902678576a17</identifier>
+        </ID>
+        <alias>PROJECT_NAME</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e000a4ae-007e-4f38-9f18-22c5dce17af7</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">691fd2fd-acae-4cbb-9f6a-bc05e9eda890</identifier>
+        </ID>
+        <alias>PROJECT_TYPE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">dabe5703-4a78-40d0-965e-d483af876774</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0e230933-da49-4bd5-8246-30784795ce00</identifier>
+        </ID>
+        <alias>PROJECT_STATUS</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c99c49c3-065c-468f-831c-f00836400b64</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>select
+  p.id PROJECT_ACID#,
+  p.name PROJECT_NAME,
+  p.type PROJECT_TYPE,
+  p.status PROJECT_STATUS
+from
+  project p
+where not exists (select pa.project_id
+                  from project_architect pa
+                  where pa.project_id=p.id)</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">05973d87-c829-415b-bab3-a150a44e3493</identifier>
+      </ID>
+      <name>PROJECT_ACID#</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROJECT_ACID#</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>UNASSIGNED_PROJECT_REPORT</name>
+              <identifier class="java.math.BigDecimal">99033</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">26301b29-7b53-4e96-b037-4da852920980</identifier>
+      </ID>
+      <name>PROJECT_NAME</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROJECT_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>UNASSIGNED_PROJECT_REPORT</name>
+              <identifier class="java.math.BigDecimal">99033</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4bfda11c-e573-4664-9c17-f0450839e33b</identifier>
+      </ID>
+      <name>PROJECT_TYPE</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROJECT_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>UNASSIGNED_PROJECT_REPORT</name>
+              <identifier class="java.math.BigDecimal">99033</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8fe862a5-6591-4382-aa25-fc88a338cdee</identifier>
+      </ID>
+      <name>PROJECT_STATUS</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROJECT_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>UNASSIGNED_PROJECT_REPORT</name>
+              <identifier class="java.math.BigDecimal">99033</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">esaDBProd</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>UNASSIGNED_PROJECT_REPORT</name>
+        <identifier class="java.math.BigDecimal">99033</identifier>
+        <schemaName>ESA</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</view>

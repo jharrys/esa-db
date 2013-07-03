@@ -1,0 +1,264 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">e112164b-0a88-4a62-82f8-67ddb21a9645</identifier>
+  </ID>
+  <name>EXCEPTION_SUMMARY_REPORT</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">6dcfc6b5-35cb-4029-a161-db30c30cf801</identifier>
+    </ID>
+    <SQLText>select
+  p.id ARCHITECT_PARTY_ID,
+  p.name ARCHITECT_NAME,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;ACTIVE&apos;
+     and pj.type = &apos;EXCEPTION&apos;) ACTIVE_EXCEPTIONS,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;CLOSED&apos;
+     and pj.type = &apos;EXCEPTION&apos;) CLOSED_EXCEPTIONS,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;ONHOLD&apos;
+     and pj.type = &apos;EXCEPTION&apos;) ON_HOLD_EXCEPTIONS
+from esa_role er, esa_user_esa_role euer, esa_user eu, party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id
+  and er.authority = &apos;ROLE_ESA_ARCHITECT&apos; group by p.id, p.name</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">360a0472-55c4-4bc2-9459-4860709545fb</identifier>
+        </ID>
+        <alias>ARCHITECT_PARTY_ID</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ed35fb88-6bef-49ad-ab61-a2c7d98cb578</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ffc6edc7-91ac-4202-8f58-f829a168dce1</identifier>
+        </ID>
+        <alias>ARCHITECT_NAME</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">42489a45-8625-4321-a00b-b8f00c38abcf</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">95ba3254-983b-4328-b929-bb7404729558</identifier>
+        </ID>
+        <alias>ACTIVE_EXCEPTIONS</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">78820c1d-a0ec-4df8-816a-5b562c879ca1</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c49300c0-9da4-49dd-9b65-6fcc6e0c6053</identifier>
+        </ID>
+        <alias>CLOSED_EXCEPTIONS</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f5191bc1-bd46-47f6-9627-1e00037f42ba</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c374356a-3c60-4223-ac56-e717de403272</identifier>
+        </ID>
+        <alias>ON_HOLD_EXCEPTIONS</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">4bd0b0e8-fafc-4e33-b349-ef256568af53</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>select
+  p.id ARCHITECT_PARTY_ID,
+  p.name ARCHITECT_NAME,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;ACTIVE&apos;
+     and pj.type = &apos;EXCEPTION&apos;) ACTIVE_EXCEPTIONS,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;CLOSED&apos;
+     and pj.type = &apos;EXCEPTION&apos;) CLOSED_EXCEPTIONS,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status=&apos;ONHOLD&apos;
+     and pj.type = &apos;EXCEPTION&apos;) ON_HOLD_EXCEPTIONS
+from esa_role er, esa_user_esa_role euer, esa_user eu, party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id
+  and er.authority = &apos;ROLE_ESA_ARCHITECT&apos; group by p.id, p.name</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dee96a9e-96a4-4519-ae53-50d127c61a2b</identifier>
+      </ID>
+      <name>ARCHITECT_PARTY_ID</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ARCHITECT_PARTY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EXCEPTION_SUMMARY_REPORT</name>
+              <identifier class="java.math.BigDecimal">99035</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b8528871-319c-4e2b-815e-eaa914c20bfe</identifier>
+      </ID>
+      <name>ARCHITECT_NAME</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ARCHITECT_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EXCEPTION_SUMMARY_REPORT</name>
+              <identifier class="java.math.BigDecimal">99035</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">38dcc8ec-62ee-4dc2-ae54-bb3ed3632a3e</identifier>
+      </ID>
+      <name>ACTIVE_EXCEPTIONS</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ACTIVE_EXCEPTIONS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EXCEPTION_SUMMARY_REPORT</name>
+              <identifier class="java.math.BigDecimal">99035</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1d70376f-bb52-4a53-b034-3a2f597b5e3f</identifier>
+      </ID>
+      <name>CLOSED_EXCEPTIONS</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CLOSED_EXCEPTIONS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EXCEPTION_SUMMARY_REPORT</name>
+              <identifier class="java.math.BigDecimal">99035</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f8ff55bf-5ce4-4eed-ba17-a46adbfd08c1</identifier>
+      </ID>
+      <name>ON_HOLD_EXCEPTIONS</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ON_HOLD_EXCEPTIONS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EXCEPTION_SUMMARY_REPORT</name>
+              <identifier class="java.math.BigDecimal">99035</identifier>
+              <schemaName>ESA</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">esaDBProd</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>EXCEPTION_SUMMARY_REPORT</name>
+        <identifier class="java.math.BigDecimal">99035</identifier>
+        <schemaName>ESA</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</view>
