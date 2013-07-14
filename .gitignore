@@ -6,3 +6,6 @@ bin
 .adf
 classes
 adfmsrc
+/NewReporting/ReportingRestServices/nbproject/private/
+/NewReporting/ReportingRestServices/build/
+/NewReporting/ReportingRestServices/dist/

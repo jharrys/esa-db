@@ -139,6 +139,7 @@
                      </hash>
                      <value n="internalName" v="libraries"/>
                      <list n="selectedLibraries">
+                        <string v="Java EE 1.5 API"/>
                         <string v="JAX-RS Jersey (Bundled)"/>
                      </list>
                      <value n="targetWithinJar" v="WEB-INF/lib"/>

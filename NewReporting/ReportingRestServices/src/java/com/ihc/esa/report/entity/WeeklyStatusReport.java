@@ -8,6 +8,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -20,6 +21,9 @@ import javax.persistence.Table;
 })
 @Table(name = "WEEKLY_STATUS_REPORT")
 public class WeeklyStatusReport implements Serializable {
+    @Id
+    @Column(name="VIEW_ROW_ID", insertable = false)
+    private BigDecimal viewRowId;
     @Column(name="ARCHITECT_NAME", length = 128, insertable = false)
     private String architectName;
     @Column(name="ARCHITECT_PARTY_ID", nullable = false, insertable = false)
@@ -52,11 +56,21 @@ public class WeeklyStatusReport implements Serializable {
     public WeeklyStatusReport() {
     }
 
-    public WeeklyStatusReport(String architectName, BigDecimal architectPartyId, BigDecimal projectAcidNumber,
-                              String projectName, String lastNote, String projectStatus, String projectType,
-                              Date dateCreated, Date lastUpdated, Date dateStart, Date dateCompleted,
-                              BigDecimal projectDuration) {
-        super();
+    public WeeklyStatusReport(BigDecimal viewRowId,
+                              String architectName,
+                              BigDecimal architectPartyId,
+                              BigDecimal projectAcidNumber,
+                              String projectName,
+                              String lastNote,
+                              String projectStatus,
+                              String projectType,
+                              Date dateCreated,
+                              Date lastUpdated,
+                              Date dateStart,
+                              Date dateCompleted,
+                              BigDecimal projectDuration,
+                              BigDecimal projectActivityDuration) {
+        this.viewRowId = viewRowId;
         this.architectName = architectName;
         this.architectPartyId = architectPartyId;
         this.projectAcidNumber = projectAcidNumber;
@@ -69,6 +83,15 @@ public class WeeklyStatusReport implements Serializable {
         this.dateStart = dateStart;
         this.dateCompleted = dateCompleted;
         this.projectDuration = projectDuration;
+        this.projectActivityDuration = projectActivityDuration;
+    }
+
+    public void setViewRowId(BigDecimal viewRowId) {
+        this.viewRowId = viewRowId;
+    }
+
+    public BigDecimal getViewRowId() {
+        return viewRowId;
     }
 
     public void setArchitectName(String architectName) {
@@ -177,6 +200,7 @@ public class WeeklyStatusReport implements Serializable {
     
     public String toTableRow(){
         return( "<tr>"+
+                "<td align=\"right\">"+this.viewRowId+"</td>"+
                 "<td align=\"right\">"+this.architectPartyId+"</td>"+
                 "<td>"+this.architectName+"</td>"+
                 "<td align=\"right\">"+this.projectAcidNumber+"</td>"+

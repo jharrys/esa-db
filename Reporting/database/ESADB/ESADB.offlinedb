@@ -1,6 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
-   <value n="id" v="a48e63fb-44aa-4608-af4d-eb6c70aaee26"/>
-   <value n="name" v="ESADB"/>
-   <value n="offlineDBSchema" v="ESA"/>
-</ProviderSettings>

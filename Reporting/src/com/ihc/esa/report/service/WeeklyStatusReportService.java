@@ -31,48 +31,13 @@ public class WeeklyStatusReportService {
                                                     .setParameter("id", Long.valueOf(esaId))
                                                     .getResultList();
         
-        String report = 
-        "<html>" +
-        "  <head>\n" + 
-        "    <meta http-equiv=\"content-type\" " +
-        "          content=\"text/html;" +
-        "          charset=Cp1252\">\n" + 
-        "    <!-- base href=\"http://apexdev.us.oracle.com:7778/pls/apx11w/\" -->\n" + 
-        "    <style type=\"text/css\">" +
-        "    </style>" +
-        "  </head>" +
-        "  <body>" +
-        "    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
-        "      <tr>" +
-        "        <th>PARTY_ID</th>\n" +
-        "        <th>ARCHITECT_NAME</th>\n" + 
-        "        <th>PROJECT_ACID#</th>\n" + 
-        "        <th>PROJECT_NAME</th>\n" + 
-        "        <th>STATUS</th>\n" + 
-        "        <th>TYPE</th>\n" + 
-        "        <th>NOTE</th>\n" +
-        "      </tr>" +
-        "      <tbody id=\"data\">";
+        StringBuffer report = new StringBuffer();
         
         for( WeeklyStatusReport row: dataList ){
-            report += 
-                "        <tr><td align=\"right\">"+row.getArchitectPartyId()+"</td>"+
-                "<td>"+row.getArchitectName()+"</td>"+
-                "<td align=\"right\">"+row.getProjectAcid_()+"</td>"+
-                "<td>"+row.getProjectName()+"</td>"+
-                "<td>"+row.getProjectStatus()+"</td>"+
-                "<td>"+row.getProjectType()+"</td>"+
-                "<td>"+row.getProjectNote()+"</td>"+
-                "</tr>\n";
+            report.append(row.toTableRow());
         }
         
-        report+=
-        "      </tbody>\n" +
-        "    </table>\n" +
-        "  </body>\n" +
-        "</html>\n";
-        
         em.close();
-        return( Response.status(200).entity(report).build() );
+        return( Response.status(200).entity(report.toString()).build() );
     }
 }
