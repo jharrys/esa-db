@@ -33,11 +33,17 @@ public class EvaluationSummaryReport implements Serializable {
     public EvaluationSummaryReport() {
     }
 
-    public EvaluationSummaryReport(BigDecimal activeEvaluations, String architectName, BigDecimal architectPartyId,
-                                   BigDecimal closedEvaluations, BigDecimal onHoldEvaluations) {
-        this.activeEvaluations = activeEvaluations;
-        this.architectName = architectName;
+    public EvaluationSummaryReport(
+            BigDecimal viewRowId,
+            BigDecimal architectPartyId,
+            String architectName,
+            BigDecimal activeEvaluations,
+            BigDecimal closedEvaluations,
+            BigDecimal onHoldEvaluations) {
+        this.viewRowId = viewRowId;
         this.architectPartyId = architectPartyId;
+        this.architectName = architectName;
+        this.activeEvaluations = activeEvaluations;
         this.closedEvaluations = closedEvaluations;
         this.onHoldEvaluations = onHoldEvaluations;
     }
@@ -83,26 +89,26 @@ public class EvaluationSummaryReport implements Serializable {
         this.onHoldEvaluations = onHoldEvaluations;
     }
 
-    @Override
-    public String toString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append(getClass().getName()+"@"+Integer.toHexString(hashCode()));
-        buffer.append('[');
-        buffer.append("activeEvaluations=");
-        buffer.append(getActiveEvaluations());
-        buffer.append(',');
-        buffer.append("architectName=");
-        buffer.append(getArchitectName());
-        buffer.append(',');
-        buffer.append("architectPartyId=");
-        buffer.append(getArchitectPartyId());
-        buffer.append(',');
-        buffer.append("closedEvaluations=");
-        buffer.append(getClosedEvaluations());
-        buffer.append(',');
-        buffer.append("onHoldEvaluations=");
-        buffer.append(getOnHoldEvaluations());
-        buffer.append(']');
-        return buffer.toString();
+    public BigDecimal getViewRowId() {
+        return viewRowId;
+    }
+
+    public void setViewRowId(BigDecimal viewRowId) {
+        this.viewRowId = viewRowId;
+    }
+
+    public String toHtmlTableRow(){
+        return("<tr id=\""+this.viewRowId+"\" class=\"tableRow\">"+
+               "<td class=\"tableField\" align=\"right\">"+this.viewRowId+"</td>\n"+
+               "<td class=\"tableField\" align=\"right\">"+this.architectPartyId+"</td>\n"+
+               "<td class=\"tableField\">"+this.architectName+"</td>\n"+
+               "<td class=\"tableField\" align=\"right\">"+this.activeEvaluations+"</td>\n"+
+               "<td class=\"tableField\" align=\"right\">"+this.closedEvaluations+"</td>\n"+
+               "<td class=\"tableField\" align=\"right\">"+this.onHoldEvaluations+"</td>\n"+
+               "</tr>");
+    }
+    
+    public static String getHtmlTableHeaders(){
+        return("<tr><th>View Row Id</th><th>Architect Party Id</th><th>Architect Name</th><th>Active Evaluations</th><th>Closed Evaluations</th><th>On Hold Evaluations</th></tr>");
     }
 }

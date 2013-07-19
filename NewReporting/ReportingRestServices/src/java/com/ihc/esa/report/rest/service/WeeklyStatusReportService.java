@@ -39,20 +39,70 @@ public class WeeklyStatusReportService {
     }
 
     @GET
-    @Path("run/{esaId}")
-    @Produces({MediaType.APPLICATION_XHTML_XML})
-    public String runReport(@PathParam("esaId") String esaId){
+    @Path("run")
+    @Produces({MediaType.TEXT_HTML})
+    public String runFindAll(@PathParam("esaId") String esaId){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
-        Collection<WeeklyStatusReport> dataList = em.createNamedQuery("WeeklyStatusReport.byArchitectId")
+        Collection<WeeklyStatusReport> dataList = em.createNamedQuery("WeeklyStatusReport.findAll",com.ihc.esa.report.entity.WeeklyStatusReport.class)
+                                                    .getResultList();
+        
+        StringBuilder report = new StringBuilder();
+        report.append("<!DOCTYPE html>\n");
+        report.append("<html>\n");
+        report.append("<head>\n");
+        report.append("<META http-equiv=\"refresh\" content=\"5;\">\n");
+        report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../public/css/ReportTableStyle.css\"/>\n");
+        report.append("</head>\n");
+        report.append("<body>\n");
+        report.append("<table>\n");
+        report.append(WeeklyStatusReport.getHtmlTableHeaders());
+        for( WeeklyStatusReport row: dataList ){
+            report.append(row.toHtmlTableRow());
+        }
+        report.append("</table>\n</body>\n</html>\n");
+        
+        em.close();
+        return( report.toString() );
+    }
+
+    @GET
+    @Path("runByArchitect/{esaId}")
+    @Produces({MediaType.TEXT_HTML})
+    public String runByArchitectReport(@PathParam("esaId") String esaId){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<WeeklyStatusReport> dataList = em.createNamedQuery("WeeklyStatusReport.byArchitectId",com.ihc.esa.report.entity.WeeklyStatusReport.class)
                                                     .setParameter("id", Long.valueOf(esaId))
                                                     .getResultList();
         
         StringBuilder report = new StringBuilder();
-        
+        report.append("<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<table>");
         for( WeeklyStatusReport row: dataList ){
-            report.append(row.toTableRow());
+            report.append(row.toHtmlTableRow());
         }
+        report.append("</table>\n</body>\n</html>\n");
+        
+        em.close();
+        return( report.toString() );
+    }
+
+    @GET
+    @Path("runByType/{type}")
+    @Produces({MediaType.TEXT_HTML})
+    public String runByTypeReport(@PathParam("type") String type){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<WeeklyStatusReport> dataList = em.createNamedQuery("WeeklyStatusReport.byType",com.ihc.esa.report.entity.WeeklyStatusReport.class)
+                                                    .setParameter("type", Long.valueOf(type))
+                                                    .getResultList();
+        
+        StringBuilder report = new StringBuilder();
+        report.append("<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<table>");
+        for( WeeklyStatusReport row: dataList ){
+            report.append(row.toHtmlTableRow());
+        }
+        report.append("</table>\n</body>\n</html>\n");
         
         em.close();
         return( report.toString() );

@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 
 import java.sql.Date;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,7 +19,8 @@ import javax.persistence.Table;
 @NamedQueries({
   @NamedQuery(name = "WeeklyStatusReport.findAll", query = "select o from WeeklyStatusReport o"),
   @NamedQuery(name = "WeeklyStatusReport.byArchitectId", query = "select o from WeeklyStatusReport o where o.architectPartyId = :id"),
-  @NamedQuery(name = "WeeklyStatusReport.byType", query = "select o from WeeklyStatusReport o where o.projectType = :type")
+  @NamedQuery(name = "WeeklyStatusReport.byType", query = "select o from WeeklyStatusReport o where o.projectType = :type"),
+  @NamedQuery(name = "WeeklyStatusReport.byArchitectAndType", query = "select o from WeeklyStatusReport o where o.projectType = :type and o.architectPartyId = :id")
 })
 @Table(name = "WEEKLY_STATUS_REPORT")
 public class WeeklyStatusReport implements Serializable {
@@ -198,23 +201,42 @@ public class WeeklyStatusReport implements Serializable {
         return projectActivityDuration;
     }
     
-    public String toTableRow(){
-        return( "<tr>"+
-                "<td align=\"right\">"+this.viewRowId+"</td>"+
-                "<td align=\"right\">"+this.architectPartyId+"</td>"+
-                "<td>"+this.architectName+"</td>"+
-                "<td align=\"right\">"+this.projectAcidNumber+"</td>"+
-                "<td>"+this.projectName+"</td>"+
-                "<td>"+this.projectStatus+"</td>"+
-                "<td>"+this.projectType+"</td>"+
-                "<td>"+this.dateCreated+"</td>"+
-                "<td>"+this.lastUpdated+"</td>"+
-                "<td>"+this.dateStart+"</td>"+
-                "<td>"+this.dateCompleted+"</td>"+
-                "<td align=\"right\">"+this.projectDuration+"</td>"+
-                "<td align=\"right\">"+this.projectActivityDuration+"</td>"+
-                "<td>"+this.lastNote+"</td>"+
-                "<tr>\n"
+    public String toHtmlTableRow(){
+        return( "<tr id=\""+this.viewRowId+"\" class=\"tableRow\">"+
+                "<td class=\"tableField\" align=\"right\">"+this.viewRowId+"</td>\n"+
+                "<td class=\"tableField\" align=\"right\">"+this.architectPartyId+"</td>\n"+
+                "<td class=\"tableField\">"+this.architectName+"</td>\n"+
+                "<td class=\"tableField\" align=\"right\"><a href=\"http://solutions/esa-ui/project/show/"+this.projectAcidNumber+"\">"+this.projectAcidNumber+"</a></td>\n"+
+                "<td class=\"tableField\">"+this.projectName+"</td>\n"+
+                "<td class=\"tableField\">"+this.projectStatus+"</td>\n"+
+                "<td class=\"tableField\">"+this.projectType+"</td>\n"+
+                "<td class=\"tableField\">"+this.dateCreated+"</td>\n"+
+                "<td class=\"tableField\">"+this.lastUpdated+"</td>\n"+
+                "<td class=\"tableField\">"+this.dateStart+"</td>\n"+
+                "<td class=\"tableField\">"+this.dateCompleted+"</td>\n"+
+                "<td class=\"tableField\" align=\"right\">"+this.projectDuration+"</td>\n"+
+                "<td class=\"tableField\" align=\"right\">"+this.projectActivityDuration+"</td>\n"+
+                "<td class=\"tableField\">"+StringEscapeUtils.escapeHtml4(this.lastNote)+"</td>\n"+
+                "</tr>\n"
               );
+    }
+    
+    public static String getHtmlTableHeaders(){
+        return("<tr>"
+                + "<th>View Row Id</th>"
+                + "<th>Architect Party Id</th>"
+                + "<th>Architect Name</th>"
+                + "<th>ProjectAcid Number</th>"
+                + "<th>Project Name</th>"
+                + "<th>Project Status</th>"
+                + "<th>Project Type</th>"
+                + "<th>Date Created</th>"
+                + "<th>Last Updated</th>"
+                + "<th>Date Start</th>"
+                + "<th>Date Completed</th>"
+                + "<th>Project Duration</th>"
+                + "<th>Project Activity Duration</th>"
+                + "<th>Last Note</th>"
+                + "</tr>");
     }
 }

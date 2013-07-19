@@ -1,0 +1,27 @@
+/* 
+    Document   : ReportTableStyle
+    Created on : Jul 18, 2013, 8:11:28 AM
+    Author     : tssimpso
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+}
+
+table {
+    border: 1px solid black;
+}
