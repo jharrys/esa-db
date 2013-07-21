@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries( { @NamedQuery(name = "ExceptionSummaryReport.findAll",
-                             query = "select o from ExceptionSummaryReport o") })
+                             query = "select o from ExceptionSummaryReport o where o.activeExceptions > 0 or o.onHoldExceptions > 0 order by o.activeExceptions desc") })
 @Table(name = "EXCEPTION_SUMMARY_REPORT")
 public class ExceptionSummaryReport implements Serializable {
     @Id

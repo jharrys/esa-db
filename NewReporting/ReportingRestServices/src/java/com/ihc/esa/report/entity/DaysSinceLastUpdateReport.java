@@ -20,7 +20,9 @@ import org.apache.commons.lang3.StringEscapeUtils;
  */
 @Entity
 @NamedQueries( { @NamedQuery(name = "DaysSinceLastUpdateReport.findAll",
-                             query = "select o from DaysSinceLastUpdateReport o") })
+                             query = "select o from DaysSinceLastUpdateReport o"),
+                 @NamedQuery(name = "DaysSinceLastUpdateReport.byArchitectId",
+                             query = "select o from DaysSinceLastUpdateReport o where o.architectPartyId = :id") })
 @Table(name = "DAYS_SINCE_LAST_UPDATE_REPORT")
 public class DaysSinceLastUpdateReport implements Serializable {
     @Id

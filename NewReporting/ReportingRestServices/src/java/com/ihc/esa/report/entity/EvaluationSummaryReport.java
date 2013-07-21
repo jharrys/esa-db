@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries( { @NamedQuery(name = "EvaluationSummaryReport.findAll",
-                             query = "select o from EvaluationSummaryReport o") })
+                             query = "select o from EvaluationSummaryReport o where o.activeEvaluations > 0 or o.onHoldEvaluations > 0 order by o.activeEvaluations desc") })
 @Table(name = "EVALUATION_SUMMARY_REPORT")
 public class EvaluationSummaryReport implements Serializable {
     @Id

@@ -148,6 +148,7 @@ CREATE OR REPLACE VIEW ESA.DAYS_SINCE_LAST_UPDATE_REPORT AS select
   rownum VIEW_ROW_ID,
   pty.id ARCHITECT_PARTY_ID,
   pty.name ARCHITECT_NAME,
+  p.id PROJECT_ACID_NUMBER,
   p.name PROJECT_NAME,
   round(sysdate - p.last_updated,0) DAYS_SINCE_LAST_UPDATE
 from project p,
@@ -156,4 +157,30 @@ from project p,
 where pa.party_id = pty.id
   and p.id = pa.project_id
   and p.status = 'ACTIVE'
-order by 3 desc;
+order by DAYS_SINCE_LAST_UPDATE desc;
+
+PROMPT create or replace view 'ALL_TYPES_SUMMARY_REPORT'
+CREATE OR REPLACE VIEW ESA.ALL_TYPES_SUMMARY_REPORT AS select
+  rownum VIEW_ROW_ID,
+  p.id ARCHITECT_PARTY_ID,
+  p.name ARCHITECT_NAME,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status='ACTIVE') ACTIVE,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status='CLOSED') CLOSED,
+  (select count(*)
+   from project pj, project_architect pa
+   where pj.id = pa.project_id
+     and pa.party_id = p.id
+     and pj.status='ONHOLD') ON_HOLD
+from esa_role er, esa_user_esa_role euer, esa_user eu, party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id
+  and er.authority = 'ROLE_ESA_ARCHITECT';

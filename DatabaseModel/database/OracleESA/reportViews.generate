@@ -46,6 +46,11 @@
          <value n="schemaName" v="ESA"/>
          <value n="type" v="VIEW"/>
       </hash>
+      <hash>
+         <value n="name" v="ALL_TYPES_SUMMARY_REPORT"/>
+         <value n="schemaName" v="ESA"/>
+         <value n="type" v="VIEW"/>
+      </hash>
    </list>
    <url n="sourceIdentifier" path="OracleESA.offlinedb"/>
    <value n="sourceProviderType" v="offlinedb"/>

@@ -51,7 +51,7 @@ public class ExceptionSummaryReportService {
         report.append("<!DOCTYPE html>\n");
         report.append("<html>\n");
         report.append("<head>\n");
-        report.append("<META http-equiv=\"refresh\" content=\"5;\">\n");
+        report.append("<META http-equiv=\"refresh\" content=\"5\">\n");
         report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../public/css/ReportTableStyle.css\"/>\n");
         report.append("</head>\n");
         report.append("<body>\n");
@@ -63,6 +63,105 @@ public class ExceptionSummaryReportService {
         report.append("</table>\n</body>\n</html>\n");
         
         em.close();
+        return( report.toString() );
+    }
+
+    @GET
+    @Path("runJSONData")
+    @Produces({MediaType.TEXT_PLAIN})
+    public String runJSONData(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<ExceptionSummaryReport> dataList = em.createNamedQuery("ExceptionSummaryReport.findAll",com.ihc.esa.report.entity.ExceptionSummaryReport.class)
+                                                    .getResultList();
+        
+        StringBuilder legend = new StringBuilder();
+        legend.append("\"legend\" : [");
+        StringBuilder dataSets = new StringBuilder();
+        dataSets.append("\"datasets\" : [\n");
+        int i = 1;
+        
+        int stepSize = 255/dataList.size();
+        int nextBlue = 255;
+        int nextRed = 0;
+        String fillColor;
+        String pointColor;
+        for( ExceptionSummaryReport row: dataList ){
+            fillColor = "rgba("+nextRed+",0,"+nextBlue+",.75)";
+            pointColor = "rgba("+nextRed+",0,"+nextBlue+",1)";
+            if(i == 1){ 
+                legend.append("{\"architectName\":\"");
+                legend.append(row.getArchitectName());
+                legend.append("\",\"architectPartyId\":");
+                legend.append(row.getArchitectPartyId());
+                legend.append(",\"rgbaColor\":\"");
+                legend.append(pointColor);
+                legend.append("\"}");
+                dataSets.append("{");
+                dataSets.append("\"fillColor\" : \"");
+                dataSets.append(fillColor);
+                dataSets.append("\",");
+                dataSets.append("\"strokeColor\" : \"");
+                dataSets.append(pointColor);
+                dataSets.append("\",");
+                dataSets.append("\"strokeColor\" : \"");
+                dataSets.append(pointColor);
+                dataSets.append("\",");
+                dataSets.append("\"pointStrokeColor\" : \"#fff\",");
+                dataSets.append("\"data\" : [");
+                dataSets.append(row.getActiveExceptions());
+                dataSets.append(",");
+                dataSets.append(row.getClosedExceptions());
+                dataSets.append(",");
+                dataSets.append(row.getOnHoldExceptions());
+                dataSets.append("]}");
+            }
+            else{
+                legend.append(",\n{\"architectName\":\"");
+                legend.append(row.getArchitectName());
+                legend.append("\",\"architectPartyId\":");
+                legend.append(row.getArchitectPartyId());
+                legend.append(",\"rgbaColor\":\"");
+                legend.append(pointColor);
+                legend.append("\"}");
+                dataSets.append(",\n{");
+                dataSets.append("\"fillColor\" : \"");
+                dataSets.append(fillColor);
+                dataSets.append("\",");
+                dataSets.append("\"strokeColor\" : \"");
+                dataSets.append(pointColor);
+                dataSets.append("\",");
+                dataSets.append("\"strokeColor\" : \"");
+                dataSets.append(pointColor);
+                dataSets.append("\",");
+                dataSets.append("\"pointStrokeColor\" : \"#fff\",");
+                dataSets.append("\"data\" : [");
+                dataSets.append(row.getActiveExceptions());
+                dataSets.append(",");
+                dataSets.append(row.getClosedExceptions());
+                dataSets.append(",");
+                dataSets.append(row.getOnHoldExceptions());
+                dataSets.append("]}");
+            }
+            i++;
+            nextBlue -= stepSize;
+            nextRed += stepSize;
+        }
+        
+        legend.append("]");
+        dataSets.append("]");
+        StringBuilder labels = new StringBuilder();
+        labels.append("\"labels\" : [\"Active\",\"Closed\",\"On Hold\"]");
+        StringBuilder report = new StringBuilder();
+        report.append("{");
+        report.append(legend);
+        report.append(",\n");
+        report.append(labels);
+        report.append(",\n");
+        report.append(dataSets);
+        report.append("}");
+        em.close();
+        
         return( report.toString() );
     }
 

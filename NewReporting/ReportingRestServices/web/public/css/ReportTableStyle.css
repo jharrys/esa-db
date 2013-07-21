@@ -25,3 +25,35 @@ th {
 table {
     border: 1px solid black;
 }
+
+.legendColor{
+    height:20px;
+    width:20px;
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.graphCanvas {
+    float: left;
+    height: 400px;
+    width: 800px;
+    border-bottom: black solid;
+    border-left: black solid;
+    border-right: black solid;
+    border-width: 1px;
+}
+
+.graphLegend {
+}
+
+.graphTitle {
+    clear: both;
+    font-weight: bold;
+    width: 800px;
+    text-align: center;
+    border-top: black solid;
+    border-left: black solid;
+    border-right: black solid;
+    border-width: 1px;
+}

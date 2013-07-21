@@ -1,0 +1,52 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESA Dashboard</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="5">
+        <script type="text/javascript" src="../../js/Chart.js"></script>
+        <script type="text/javascript" src="../../js/jsUtils.js"></script>
+        <link rel="stylesheet" href="../../css/ReportTableStyle.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="graphTitle">All Types Summary</div>
+        <canvas class="graphCanvas" id="allTypesSummary" width="800" height="275"></canvas>
+        <div class="graphLegend" id="allTypesSummaryLegend"></div>
+        <p></p>
+        <div class="graphTitle">Evaluation Summary</div>
+        <canvas class="graphCanvas" id="evaluationSummary" width="800" height="275"></canvas>
+        <div class="graphLegend" id="evaluationSummaryLegend"></div>
+        <p></p>
+        <div class="graphTitle">Project Summary</div>
+        <canvas class="graphCanvas" id="projectSummary" width="800" height="275"></canvas>
+        <div class="graphLegend" id="projectSummaryLegend"></div>
+        <script  type="text/javascript">
+            var ctx = document.getElementById("projectSummary").getContext("2d");
+            var url = window.location.protocol+"//"+window.location.host+"/reports/rest/projectSummaryReport/runJSONData";
+            data=JSON.parse(httpGet(url));
+            var projectSummary = new Chart(ctx).Bar(data,null);
+            
+            document.getElementById("projectSummaryLegend").innerHTML = buildLegend(data.legend);
+        </script>
+        <script  type="text/javascript">
+            var ctx = document.getElementById("evaluationSummary").getContext("2d");
+            var url = window.location.protocol+"//"+window.location.host+"/reports/rest/evaluationSummaryReport/runJSONData";
+            data=JSON.parse(httpGet(url));
+            var projectSummary = new Chart(ctx).Bar(data,null);
+            
+            document.getElementById("evaluationSummaryLegend").innerHTML = buildLegend(data.legend);
+        </script>
+        <script  type="text/javascript">
+            var ctx = document.getElementById("allTypesSummary").getContext("2d");
+            var url = window.location.protocol+"//"+window.location.host+"/reports/rest/allTypesSummaryReport/runJSONData";
+            data=JSON.parse(httpGet(url));
+            var projectSummary = new Chart(ctx).Bar(data,null);
+            
+            document.getElementById("allTypesSummaryLegend").innerHTML = buildLegend(data.legend);
+        </script>
+    </body>
+</html>

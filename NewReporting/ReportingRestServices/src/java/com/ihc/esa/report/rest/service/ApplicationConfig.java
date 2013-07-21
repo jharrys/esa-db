@@ -36,6 +36,8 @@ public class ApplicationConfig extends Application {
      * given list with all resources defined in the project.
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(com.ihc.esa.report.rest.service.AllTypesSummaryReportService.class);
+        resources.add(com.ihc.esa.report.rest.service.DaysSinceLastUpdateReportService.class);
         resources.add(com.ihc.esa.report.rest.service.EvaluationSummaryReportService.class);
         resources.add(com.ihc.esa.report.rest.service.ExceptionSummaryReportService.class);
         resources.add(com.ihc.esa.report.rest.service.ProjectSummaryReportService.class);

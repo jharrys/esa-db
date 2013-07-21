@@ -4,10 +4,11 @@
  */
 package com.ihc.esa.report.rest.service;
 
-import com.ihc.esa.report.entity.ProjectSummaryReport;
+import com.ihc.esa.report.entity.AllTypesSummaryReport;
 import java.util.Collection;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -24,9 +25,9 @@ import javax.ws.rs.core.MediaType;
  *
  * @author tssimpso
  */
-@Path("projectSummaryReport")
+@Path("allTypesSummaryReport")
 @RequestScoped
-public class ProjectSummaryReportService {
+public class AllTypesSummaryReportService {
 
     @Context
     private UriInfo context;
@@ -34,29 +35,29 @@ public class ProjectSummaryReportService {
     /**
      * Creates a new instance of WeeklyStatusReportService
      */
-    public ProjectSummaryReportService() {
+    public AllTypesSummaryReportService() {
     }
 
     @GET
     @Path("run")
     @Produces({MediaType.TEXT_HTML})
-    public String runFindAll(){
+    public String runFindAll(@PathParam("esaId") String esaId){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
-        Collection<ProjectSummaryReport> dataList = em.createNamedQuery("ProjectSummaryReport.findAll",com.ihc.esa.report.entity.ProjectSummaryReport.class)
+        Collection<AllTypesSummaryReport> dataList = em.createNamedQuery("AllTypesSummaryReport.findAll",com.ihc.esa.report.entity.AllTypesSummaryReport.class)
                                                     .getResultList();
         
         StringBuilder report = new StringBuilder();
         report.append("<!DOCTYPE html>\n");
         report.append("<html>\n");
         report.append("<head>\n");
-        report.append("<META http-equiv=\"refresh\" content=\"5\">\n");
+        report.append("<META http-equiv=\"refresh\" content=\"5;\">\n");
         report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../public/css/ReportTableStyle.css\"/>\n");
         report.append("</head>\n");
         report.append("<body>\n");
         report.append("<table>\n");
-        report.append(ProjectSummaryReport.getHtmlTableHeaders());
-        for( ProjectSummaryReport row: dataList ){
+        report.append(AllTypesSummaryReport.getHtmlTableHeaders());
+        for( AllTypesSummaryReport row: dataList ){
             report.append(row.toHtmlTableRow());
         }
         report.append("</table>\n</body>\n</html>\n");
@@ -71,7 +72,7 @@ public class ProjectSummaryReportService {
     public String runJSONData(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
-        Collection<ProjectSummaryReport> dataList = em.createNamedQuery("ProjectSummaryReport.findAll",com.ihc.esa.report.entity.ProjectSummaryReport.class)
+        Collection<AllTypesSummaryReport> dataList = em.createNamedQuery("AllTypesSummaryReport.findAll",com.ihc.esa.report.entity.AllTypesSummaryReport.class)
                                                     .getResultList();
         
         StringBuilder legend = new StringBuilder();
@@ -85,7 +86,7 @@ public class ProjectSummaryReportService {
         int nextRed = 0;
         String fillColor;
         String pointColor;
-        for( ProjectSummaryReport row: dataList ){
+        for( AllTypesSummaryReport row: dataList ){
             fillColor = "rgba("+nextRed+",0,"+nextBlue+",.75)";
             pointColor = "rgba("+nextRed+",0,"+nextBlue+",1)";
             if(i == 1){ 
@@ -108,11 +109,11 @@ public class ProjectSummaryReportService {
                 dataSets.append("\",");
                 dataSets.append("\"pointStrokeColor\" : \"#fff\",");
                 dataSets.append("\"data\" : [");
-                dataSets.append(row.getActiveProjects());
+                dataSets.append(row.getActive());
                 dataSets.append(",");
-                dataSets.append(row.getClosedProjects());
+                dataSets.append(row.getClosed());
                 dataSets.append(",");
-                dataSets.append(row.getOnHoldProjects());
+                dataSets.append(row.getOnHold());
                 dataSets.append("]}");
             }
             else{
@@ -135,11 +136,11 @@ public class ProjectSummaryReportService {
                 dataSets.append("\",");
                 dataSets.append("\"pointStrokeColor\" : \"#fff\",");
                 dataSets.append("\"data\" : [");
-                dataSets.append(row.getActiveProjects());
+                dataSets.append(row.getActive());
                 dataSets.append(",");
-                dataSets.append(row.getClosedProjects());
+                dataSets.append(row.getClosed());
                 dataSets.append(",");
-                dataSets.append(row.getOnHoldProjects());
+                dataSets.append(row.getOnHold());
                 dataSets.append("]}");
             }
             i++;
@@ -172,7 +173,7 @@ public class ProjectSummaryReportService {
     @Produces("text/html")
     public String getHtml() {
         //TODO return proper representation object
-        return("hello this is the project summary report");
+        return("hello this is the all types summary report");
     }
 
     /**
