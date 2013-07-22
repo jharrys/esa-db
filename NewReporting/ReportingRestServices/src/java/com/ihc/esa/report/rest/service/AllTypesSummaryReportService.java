@@ -41,7 +41,7 @@ public class AllTypesSummaryReportService {
     @GET
     @Path("run")
     @Produces({MediaType.TEXT_HTML})
-    public String runFindAll(@PathParam("esaId") String esaId){
+    public String runFindAll(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
         Collection<AllTypesSummaryReport> dataList = em.createNamedQuery("AllTypesSummaryReport.findAll",com.ihc.esa.report.entity.AllTypesSummaryReport.class)
