@@ -99,7 +99,6 @@ public class AllTypesSummaryReport implements Serializable {
     
     public String toHtmlTableRow(){
         return("<tr id=\""+this.viewRowId+"\" class=\"tableRow\">"+
-               "<td class=\"tableField\" align=\"right\">"+this.viewRowId+"</td>\n"+
                "<td class=\"tableField\" align=\"right\">"+this.architectPartyId+"</td>\n"+
                "<td class=\"tableField\">"+this.architectName+"</td>\n"+
                "<td class=\"tableField\" align=\"right\">"+this.active+"</td>\n"+
@@ -109,6 +108,6 @@ public class AllTypesSummaryReport implements Serializable {
     }
     
     public static String getHtmlTableHeaders(){
-        return("<tr><th>View Row Id</th><th>Architect Party Id</th><th>Architect Name</th><th>Active</th><th>Closed</th><th>On Hold</th></tr>");
+        return("<tr><th>Architect Party Id</th><th>Architect Name</th><th>Active</th><th>Closed</th><th>On Hold</th></tr>");
     }
 }

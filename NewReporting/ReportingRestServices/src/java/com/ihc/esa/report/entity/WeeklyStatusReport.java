@@ -203,7 +203,6 @@ public class WeeklyStatusReport implements Serializable {
     
     public String toHtmlTableRow(){
         return( "<tr id=\""+this.viewRowId+"\" class=\"tableRow\">"+
-                "<td class=\"tableField\" align=\"right\">"+this.viewRowId+"</td>\n"+
                 "<td class=\"tableField\" align=\"right\">"+this.architectPartyId+"</td>\n"+
                 "<td class=\"tableField\">"+this.architectName+"</td>\n"+
                 "<td class=\"tableField\" align=\"right\"><a href=\"http://solutions/esa-ui/project/show/"+this.projectAcidNumber+"\">"+this.projectAcidNumber+"</a></td>\n"+
@@ -223,7 +222,6 @@ public class WeeklyStatusReport implements Serializable {
     
     public static String getHtmlTableHeaders(){
         return("<tr>"
-                + "<th>View Row Id</th>"
                 + "<th>Architect Party Id</th>"
                 + "<th>Architect Name</th>"
                 + "<th>ProjectAcid Number</th>"

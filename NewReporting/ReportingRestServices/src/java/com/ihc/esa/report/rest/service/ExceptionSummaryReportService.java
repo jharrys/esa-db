@@ -41,7 +41,35 @@ public class ExceptionSummaryReportService {
     @GET
     @Path("run")
     @Produces({MediaType.TEXT_HTML})
-    public String runFindAll(@PathParam("esaId") String esaId){
+    public String runFindAll(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<ExceptionSummaryReport> dataList = em.createNamedQuery("ExceptionSummaryReport.findAll",com.ihc.esa.report.entity.ExceptionSummaryReport.class)
+                                                    .getResultList();
+        
+        StringBuilder report = new StringBuilder();
+        report.append("<!DOCTYPE html>\n");
+        report.append("<html>\n");
+        report.append("<head>\n");
+        report.append("<META http-equiv=\"refresh\" content=\"5\">\n");
+        report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../public/css/ReportTableStyle.css\"/>\n");
+        report.append("</head>\n");
+        report.append("<body>\n");
+        report.append("<table>\n");
+        report.append(ExceptionSummaryReport.getHtmlTableHeaders());
+        for( ExceptionSummaryReport row: dataList ){
+            report.append(row.toHtmlTableRow());
+        }
+        report.append("</table>\n</body>\n</html>\n");
+        
+        em.close();
+        return( report.toString() );
+    }
+
+    @GET
+    @Path("runTableSegment")
+    @Produces({MediaType.TEXT_HTML})
+    public String runTableSegment(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
         Collection<ExceptionSummaryReport> dataList = em.createNamedQuery("ExceptionSummaryReport.findAll",com.ihc.esa.report.entity.ExceptionSummaryReport.class)

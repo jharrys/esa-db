@@ -183,23 +183,23 @@
       </selectObject>
       <selectObject>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">c5a472a3-f93d-4bfd-b22b-712c0f556245</identifier>
+          <identifier class="java.lang.String">841d0ed0-2ae4-4ecf-ad2e-367b564ce489</identifier>
         </ID>
         <alias>ACTIVE_EVALUATIONS</alias>
         <expression class="oracle.javatools.db.ora.OracleSQLQuery">
           <ID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+            <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
           </ID>
           <distinct>false</distinct>
           <fromObjects>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">a04614ed-44a3-4dba-8841-98b7d92cfc90</identifier>
+                <identifier class="java.lang.String">15611d6b-df60-490b-ac10-ccc550ee4377</identifier>
               </ID>
               <alias>pj</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">2850b302-dfad-4a78-81bd-0adf8a29b2ed</identifier>
+                  <identifier class="java.lang.String">279f5945-60a5-4370-8274-f01272bf2f2a</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT</name>
@@ -212,12 +212,12 @@
             </fromObject>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">e96897a0-f81a-4b4d-b885-4b291d544b2e</identifier>
+                <identifier class="java.lang.String">7a22a7b0-10be-4645-93b1-a3d3d2d3e528</identifier>
               </ID>
               <alias>pa</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">aff26af2-3143-4b6e-bca3-18c3f6a4fdc1</identifier>
+                  <identifier class="java.lang.String">4a2606f8-ccbb-4b7c-8d5a-3843471b9dee</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT_ARCHITECT</name>
@@ -233,16 +233,16 @@
           <selectObjects>
             <selectObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">cdd35d06-34cf-4225-b4af-a22ce599b6e4</identifier>
+                <identifier class="java.lang.String">67a72e38-178e-412d-9780-d0dc1eab9f11</identifier>
               </ID>
               <expression class="oracle.javatools.db.sql.WindowFunction">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">f12f1254-8558-4050-86b0-4fdb67eceefd</identifier>
+                  <identifier class="java.lang.String">2f6b7128-8d2b-4601-a18f-fb6cd8a930f4</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.ColumnKeywordUsage">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">fd51a230-12ea-47e5-9bbf-a0922c6c58bd</identifier>
+                      <identifier class="java.lang.String">c3220f3c-5597-4eb8-8c17-44138a55a291</identifier>
                     </ID>
                     <columnName>*</columnName>
                     <qualified>false</qualified>
@@ -258,28 +258,28 @@
           </selectObjects>
           <whereObject>
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">2d4c0b24-20d2-49bd-88bf-a0a158f52aea</identifier>
+              <identifier class="java.lang.String">2de445d9-2ab0-46a6-85d1-56d80cb4ddd8</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.WhereObject">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">0593b8ac-bb4d-47d6-98e2-3dcc365d3df8</identifier>
+                  <identifier class="java.lang.String">b7607473-8260-49e7-b46c-21d52ab3e318</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">a8c752e5-f251-4db0-b124-361c1e8c9d65</identifier>
+                      <identifier class="java.lang.String">9b4f83e4-0ffe-495f-93ff-7f4f64715127</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">85d37181-0d11-4e01-9583-b74e82ecd9e3</identifier>
+                        <identifier class="java.lang.String">9a59352b-bac8-42cd-b9a2-2e42825f4c9c</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">a04614ed-44a3-4dba-8841-98b7d92cfc90</identifier>
+                        <identifier class="java.lang.String">15611d6b-df60-490b-ac10-ccc550ee4377</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+                          <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -314,13 +314,13 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">89fbb5f2-ab8f-48d7-aff6-2524e03f2f1d</identifier>
+                        <identifier class="java.lang.String">cadb680d-e9d0-4dff-9c93-5778b072fd08</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pa</name>
-                        <identifier class="java.lang.String">e96897a0-f81a-4b4d-b885-4b291d544b2e</identifier>
+                        <identifier class="java.lang.String">7a22a7b0-10be-4645-93b1-a3d3d2d3e528</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+                          <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -354,18 +354,18 @@
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">7d4bb83c-490e-40ba-8825-e16a0c1e11fb</identifier>
+                      <identifier class="java.lang.String">785d14cb-33ba-485c-8387-2685976b9e7f</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">9ef92505-8b8c-4658-8350-b77446ff7b76</identifier>
+                        <identifier class="java.lang.String">510ecf53-f491-44f8-8aac-6b0eaa8fd347</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pa</name>
-                        <identifier class="java.lang.String">e96897a0-f81a-4b4d-b885-4b291d544b2e</identifier>
+                        <identifier class="java.lang.String">7a22a7b0-10be-4645-93b1-a3d3d2d3e528</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+                          <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -400,7 +400,7 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">4fc23435-abe4-402d-a7d4-aac830d6ea57</identifier>
+                        <identifier class="java.lang.String">330cbb3b-d25b-4140-a8f9-520526f345e0</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <identifier class="java.lang.String">95df61b4-cad6-4957-a2b5-d0703549a676</identifier>
@@ -433,18 +433,18 @@
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">b98c7e61-9ae4-4dcc-b427-603372862d53</identifier>
+                      <identifier class="java.lang.String">b5543155-9881-4634-a3c7-47cd479d3648</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">77fe8f95-c374-48b6-8be2-113b5c977871</identifier>
+                        <identifier class="java.lang.String">fd5ba1b8-90b0-47ab-a172-e22cab0c09c7</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">a04614ed-44a3-4dba-8841-98b7d92cfc90</identifier>
+                        <identifier class="java.lang.String">15611d6b-df60-490b-ac10-ccc550ee4377</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+                          <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -479,25 +479,25 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">7b20a18a-6d3e-4223-adc2-66e66ec9db07</identifier>
+                        <identifier class="java.lang.String">ec0f76bf-80c6-40a0-9bb4-8a7e464ec133</identifier>
                       </ID>
                       <SQLText>&apos;ACTIVE&apos;</SQLText>
                     </rightExpression>
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">4e3b01b6-5dc0-41e7-a4b0-de3c298454a8</identifier>
+                      <identifier class="java.lang.String">84640eb3-6415-4521-a666-51efd20bcbe0</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">277d5024-11d0-4685-b491-91d9ac67f7d7</identifier>
+                        <identifier class="java.lang.String">8f4116e7-8517-4e10-8657-a1e44adc8624</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">a04614ed-44a3-4dba-8841-98b7d92cfc90</identifier>
+                        <identifier class="java.lang.String">15611d6b-df60-490b-ac10-ccc550ee4377</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">ba4c35d1-402e-47e9-bf68-9ebf27551b72</identifier>
+                          <identifier class="java.lang.String">683ca80b-7732-4e5e-9f26-4e9c1affb194</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -532,7 +532,7 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">9adf4e60-dce1-4236-b46f-d7546bd61757</identifier>
+                        <identifier class="java.lang.String">0fcddbfc-efaa-4e61-9796-7a54777fba29</identifier>
                       </ID>
                       <SQLText>&apos;EVALUATION&apos;</SQLText>
                     </rightExpression>
@@ -548,23 +548,23 @@
       </selectObject>
       <selectObject>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">975b17c0-58d1-4088-a8e4-cbccbc76d5ad</identifier>
+          <identifier class="java.lang.String">dc75feec-654f-4c05-b21e-f94676f056bf</identifier>
         </ID>
         <alias>CLOSED_EVALUATIONS</alias>
         <expression class="oracle.javatools.db.ora.OracleSQLQuery">
           <ID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
+            <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
           </ID>
           <distinct>false</distinct>
           <fromObjects>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">0e451e7d-7aea-4e65-8394-a407d1a79f07</identifier>
+                <identifier class="java.lang.String">8ec4f305-0489-4a35-9ce0-6b3cf198986e</identifier>
               </ID>
               <alias>pj</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">8748e750-15fa-4a57-861e-d76f4e5b92c5</identifier>
+                  <identifier class="java.lang.String">832d6a03-2565-4763-897b-ea8ea974bd3a</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT</name>
@@ -577,12 +577,12 @@
             </fromObject>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">cd39c8fc-4987-4903-970f-70f43c35ab76</identifier>
+                <identifier class="java.lang.String">f41fd36f-a874-48fe-96ae-fa8288d2aced</identifier>
               </ID>
               <alias>pa</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">6afd1b87-34ab-4afb-9fec-df9b3e485ed6</identifier>
+                  <identifier class="java.lang.String">84456db8-bbd8-4540-9ff4-4ee32be68b88</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT_ARCHITECT</name>
@@ -598,16 +598,16 @@
           <selectObjects>
             <selectObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">944a426b-2aaf-4e18-b700-93982c6a16a4</identifier>
+                <identifier class="java.lang.String">d00b6bb5-f4d0-49cc-a75d-50fee5deb499</identifier>
               </ID>
               <expression class="oracle.javatools.db.sql.WindowFunction">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">7e82343b-b4b4-459d-9fbe-050d5d2ef1c7</identifier>
+                  <identifier class="java.lang.String">0bd3863d-5965-4908-916d-a5dd4884daa0</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.ColumnKeywordUsage">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">ef831896-27be-49e8-88ab-036896282600</identifier>
+                      <identifier class="java.lang.String">e592240a-4838-4c1a-92e8-2d644632a1c0</identifier>
                     </ID>
                     <columnName>*</columnName>
                     <qualified>false</qualified>
@@ -623,28 +623,28 @@
           </selectObjects>
           <whereObject>
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">552f8d83-3b3f-4541-98a4-741ca9d8801a</identifier>
+              <identifier class="java.lang.String">0e4e61b3-aba9-44fd-8c56-466409f1c55c</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.WhereObject">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">affdd4a5-e598-4bd5-8eb3-d7544c954b60</identifier>
+                  <identifier class="java.lang.String">eeceb36d-17b8-40f4-b15a-8b35026553fc</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">a4b920b3-fd89-4f65-abda-6aa7282b16b6</identifier>
+                      <identifier class="java.lang.String">5a246b5b-73d5-4a9f-8075-44ff6471cf03</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">f1735489-5eda-4db6-a328-ecb508f96da6</identifier>
+                        <identifier class="java.lang.String">81f1d6db-8f06-4d6c-98fb-0e301721d074</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">0e451e7d-7aea-4e65-8394-a407d1a79f07</identifier>
+                        <identifier class="java.lang.String">8ec4f305-0489-4a35-9ce0-6b3cf198986e</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
+                          <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -679,13 +679,13 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">4bab6161-8c4e-4b9d-9862-c662b213b716</identifier>
+                        <identifier class="java.lang.String">837bc79f-4b31-4ff3-bccc-93d544b80ea4</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pa</name>
-                        <identifier class="java.lang.String">cd39c8fc-4987-4903-970f-70f43c35ab76</identifier>
+                        <identifier class="java.lang.String">f41fd36f-a874-48fe-96ae-fa8288d2aced</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
+                          <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -717,152 +717,160 @@
                       <qualified>true</qualified>
                     </rightExpression>
                   </argument>
-                  <argument class="oracle.javatools.db.sql.Comparison">
+                  <argument class="oracle.javatools.db.sql.WhereObject">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">e1eb977e-2912-43bf-bf9e-f9ccd2e0585c</identifier>
+                      <identifier class="java.lang.String">197c3cb8-aee6-4760-be3a-7db71b707ed5</identifier>
                     </ID>
-                    <comparator>5</comparator>
-                    <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
-                      <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">b8491b73-b8f5-4885-8a6d-bb10ea48a1f3</identifier>
-                      </ID>
-                      <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
-                        <name>pa</name>
-                        <identifier class="java.lang.String">cd39c8fc-4987-4903-970f-70f43c35ab76</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
-                          <parent class="oracle.javatools.db.IdentifierBasedID">
-                            <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                    <arguments>
+                      <argument class="oracle.javatools.db.sql.Comparison">
+                        <ID class="oracle.javatools.db.IdentifierBasedID">
+                          <identifier class="java.lang.String">975c1148-84bc-4678-a11d-dbaa6b1d2c53</identifier>
+                        </ID>
+                        <comparator>5</comparator>
+                        <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                          <ID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">11c58afd-ef57-49ec-a88d-5d090309d1d0</identifier>
+                          </ID>
+                          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>pa</name>
+                            <identifier class="java.lang.String">f41fd36f-a874-48fe-96ae-fa8288d2aced</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
-                              <name>EVALUATION_SUMMARY_REPORT</name>
-                              <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                              <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
+                              <parent class="oracle.javatools.db.IdentifierBasedID">
+                                <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                                <parent class="oracle.javatools.db.IdentifierBasedID">
+                                  <name>EVALUATION_SUMMARY_REPORT</name>
+                                  <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                                  <schemaName>ESA</schemaName>
+                                  <type>VIEW</type>
+                                </parent>
+                                <type>SQLQuery</type>
+                              </parent>
                               <schemaName>ESA</schemaName>
-                              <type>VIEW</type>
+                              <type>SQLQuery</type>
                             </parent>
-                            <type>SQLQuery</type>
-                          </parent>
-                          <schemaName>ESA</schemaName>
-                          <type>SQLQuery</type>
-                        </parent>
-                        <schemaName>ESA</schemaName>
-                        <type>FROM</type>
-                      </fromObjectID>
-                      <objectID class="oracle.javatools.db.IdentifierBasedID">
-                        <name>PARTY_ID</name>
-                        <identifier class="java.lang.String">4840809f-299e-4b39-9e26-1a926651ebcc</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <name>PROJECT_ARCHITECT</name>
-                          <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
-                          <schemaName>ESA</schemaName>
-                          <type>TABLE</type>
-                        </parent>
-                        <type>COLUMN</type>
-                      </objectID>
-                      <outerJoin>false</outerJoin>
-                      <qualified>true</qualified>
-                    </leftExpression>
-                    <priorOnLeft>false</priorOnLeft>
-                    <priorOnRight>false</priorOnRight>
-                    <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
-                      <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">d9f1f677-58f5-4e9d-a108-6bfa42238e4f</identifier>
-                      </ID>
-                      <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">95df61b4-cad6-4957-a2b5-d0703549a676</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
-                          <parent class="oracle.javatools.db.IdentifierBasedID">
-                            <name>EVALUATION_SUMMARY_REPORT</name>
-                            <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
                             <schemaName>ESA</schemaName>
-                            <type>VIEW</type>
-                          </parent>
-                          <type>SQLQuery</type>
-                        </parent>
-                        <type>FROM</type>
-                      </fromObjectID>
-                      <objectID class="oracle.javatools.db.IdentifierBasedID">
-                        <name>ID</name>
-                        <identifier class="java.lang.String">e469c3a8-290c-4a56-8573-798ace896966</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <name>PARTY</name>
-                          <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
-                          <schemaName>ESA</schemaName>
-                          <type>TABLE</type>
-                        </parent>
-                        <type>COLUMN</type>
-                      </objectID>
-                      <outerJoin>false</outerJoin>
-                      <qualified>true</qualified>
-                    </rightExpression>
-                  </argument>
-                  <argument class="oracle.javatools.db.sql.Comparison">
-                    <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">85f667ee-5af2-4fff-913e-41708b304d01</identifier>
-                    </ID>
-                    <comparator>5</comparator>
-                    <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
-                      <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">3a5a3d69-28e0-4806-b795-fdc3f59b0bc6</identifier>
-                      </ID>
-                      <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
-                        <name>pj</name>
-                        <identifier class="java.lang.String">0e451e7d-7aea-4e65-8394-a407d1a79f07</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
-                          <parent class="oracle.javatools.db.IdentifierBasedID">
-                            <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                            <type>FROM</type>
+                          </fromObjectID>
+                          <objectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>PARTY_ID</name>
+                            <identifier class="java.lang.String">4840809f-299e-4b39-9e26-1a926651ebcc</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
-                              <name>EVALUATION_SUMMARY_REPORT</name>
-                              <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                              <name>PROJECT_ARCHITECT</name>
+                              <identifier class="java.lang.String">73aba017-f265-41a8-a624-939dc9eb91f1</identifier>
                               <schemaName>ESA</schemaName>
-                              <type>VIEW</type>
+                              <type>TABLE</type>
                             </parent>
-                            <type>SQLQuery</type>
-                          </parent>
-                          <schemaName>ESA</schemaName>
-                          <type>SQLQuery</type>
-                        </parent>
-                        <schemaName>ESA</schemaName>
-                        <type>FROM</type>
-                      </fromObjectID>
-                      <objectID class="oracle.javatools.db.IdentifierBasedID">
-                        <name>STATUS</name>
-                        <identifier class="java.lang.String">a9240abb-f243-457f-8145-d917cdacf284</identifier>
-                        <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <name>PROJECT</name>
-                          <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
-                          <schemaName>ESA</schemaName>
-                          <type>TABLE</type>
-                        </parent>
-                        <type>COLUMN</type>
-                      </objectID>
-                      <outerJoin>false</outerJoin>
-                      <qualified>true</qualified>
-                    </leftExpression>
-                    <priorOnLeft>false</priorOnLeft>
-                    <priorOnRight>false</priorOnRight>
-                    <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
-                      <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">7a816d40-6f03-4711-95f6-c5632c53660a</identifier>
-                      </ID>
-                      <SQLText>&apos;CLOSED&apos;</SQLText>
-                    </rightExpression>
+                            <type>COLUMN</type>
+                          </objectID>
+                          <outerJoin>false</outerJoin>
+                          <qualified>true</qualified>
+                        </leftExpression>
+                        <priorOnLeft>false</priorOnLeft>
+                        <priorOnRight>false</priorOnRight>
+                        <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+                          <ID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">538bc0da-8cb8-4974-a697-707b52db42bd</identifier>
+                          </ID>
+                          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">95df61b4-cad6-4957-a2b5-d0703549a676</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                              <parent class="oracle.javatools.db.IdentifierBasedID">
+                                <name>EVALUATION_SUMMARY_REPORT</name>
+                                <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                                <schemaName>ESA</schemaName>
+                                <type>VIEW</type>
+                              </parent>
+                              <type>SQLQuery</type>
+                            </parent>
+                            <type>FROM</type>
+                          </fromObjectID>
+                          <objectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>ID</name>
+                            <identifier class="java.lang.String">e469c3a8-290c-4a56-8573-798ace896966</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <name>PARTY</name>
+                              <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+                              <schemaName>ESA</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <type>COLUMN</type>
+                          </objectID>
+                          <outerJoin>false</outerJoin>
+                          <qualified>true</qualified>
+                        </rightExpression>
+                      </argument>
+                      <argument class="oracle.javatools.db.sql.Comparison">
+                        <ID class="oracle.javatools.db.IdentifierBasedID">
+                          <identifier class="java.lang.String">fb8e2d6f-32ca-4c70-a688-d0918854a315</identifier>
+                        </ID>
+                        <comparator>5</comparator>
+                        <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                          <ID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">0b2e87fe-9735-49c3-b25e-57c4f0357867</identifier>
+                          </ID>
+                          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>pj</name>
+                            <identifier class="java.lang.String">8ec4f305-0489-4a35-9ce0-6b3cf198986e</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
+                              <parent class="oracle.javatools.db.IdentifierBasedID">
+                                <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                                <parent class="oracle.javatools.db.IdentifierBasedID">
+                                  <name>EVALUATION_SUMMARY_REPORT</name>
+                                  <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                                  <schemaName>ESA</schemaName>
+                                  <type>VIEW</type>
+                                </parent>
+                                <type>SQLQuery</type>
+                              </parent>
+                              <schemaName>ESA</schemaName>
+                              <type>SQLQuery</type>
+                            </parent>
+                            <schemaName>ESA</schemaName>
+                            <type>FROM</type>
+                          </fromObjectID>
+                          <objectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>STATUS</name>
+                            <identifier class="java.lang.String">a9240abb-f243-457f-8145-d917cdacf284</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <name>PROJECT</name>
+                              <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
+                              <schemaName>ESA</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <type>COLUMN</type>
+                          </objectID>
+                          <outerJoin>false</outerJoin>
+                          <qualified>true</qualified>
+                        </leftExpression>
+                        <priorOnLeft>false</priorOnLeft>
+                        <priorOnRight>false</priorOnRight>
+                        <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+                          <ID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">68190b23-c911-432e-a6a2-f69d37936919</identifier>
+                          </ID>
+                          <SQLText>&apos;CLOSED&apos;</SQLText>
+                        </rightExpression>
+                      </argument>
+                    </arguments>
+                    <operator>372</operator>
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">31cfd2ae-bc8b-4a28-b74b-5adae13a13b6</identifier>
+                      <identifier class="java.lang.String">2c61e2e9-6609-4008-8727-5a9508d9be48</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">e03e246f-ce40-4a24-a4f4-5e4ebcce67a9</identifier>
+                        <identifier class="java.lang.String">0014733c-9c25-4543-93fe-73f4da3ebd46</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">0e451e7d-7aea-4e65-8394-a407d1a79f07</identifier>
+                        <identifier class="java.lang.String">8ec4f305-0489-4a35-9ce0-6b3cf198986e</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d460c2b4-34cd-4fc6-abd3-5bfb1cb70f7a</identifier>
+                          <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -897,10 +905,83 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">55bb8e90-9ca1-48cf-bd01-97825b3c6984</identifier>
+                        <identifier class="java.lang.String">128ba73a-5132-4582-a027-8df6e1e10430</identifier>
                       </ID>
                       <SQLText>&apos;EVALUATION&apos;</SQLText>
                     </rightExpression>
+                  </argument>
+                  <argument class="oracle.javatools.db.sql.SetOperation">
+                    <ID class="oracle.javatools.db.IdentifierBasedID">
+                      <identifier class="java.lang.String">0cf344df-4c55-4d99-90bd-b577632baf67</identifier>
+                    </ID>
+                    <arguments>
+                      <argument class="oracle.javatools.db.sql.ColumnUsage">
+                        <ID class="oracle.javatools.db.IdentifierBasedID">
+                          <identifier class="java.lang.String">d1ee004c-4e1e-4275-a32d-ac288a8bc4d4</identifier>
+                        </ID>
+                        <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                          <name>pj</name>
+                          <identifier class="java.lang.String">8ec4f305-0489-4a35-9ce0-6b3cf198986e</identifier>
+                          <parent class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">0c0dd244-7a5b-45c8-8651-1fd3c6e3c467</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
+                              <parent class="oracle.javatools.db.IdentifierBasedID">
+                                <name>EVALUATION_SUMMARY_REPORT</name>
+                                <identifier class="java.lang.String">3ec36329-256f-4bd9-91b6-a66aea3112e8</identifier>
+                                <schemaName>ESA</schemaName>
+                                <type>VIEW</type>
+                              </parent>
+                              <type>SQLQuery</type>
+                            </parent>
+                            <schemaName>ESA</schemaName>
+                            <type>SQLQuery</type>
+                          </parent>
+                          <schemaName>ESA</schemaName>
+                          <type>FROM</type>
+                        </fromObjectID>
+                        <objectID class="oracle.javatools.db.IdentifierBasedID">
+                          <name>LAST_UPDATED</name>
+                          <identifier class="java.lang.String">667dd04c-8e3c-4f08-af23-f1e6c6447689</identifier>
+                          <parent class="oracle.javatools.db.IdentifierBasedID">
+                            <name>PROJECT</name>
+                            <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
+                            <schemaName>ESA</schemaName>
+                            <type>TABLE</type>
+                          </parent>
+                          <type>COLUMN</type>
+                        </objectID>
+                        <outerJoin>false</outerJoin>
+                        <qualified>true</qualified>
+                      </argument>
+                      <argument class="oracle.javatools.db.sql.ArithmeticOperation">
+                        <ID class="oracle.javatools.db.IdentifierBasedID">
+                          <identifier class="java.lang.String">fc37dc54-7757-46eb-a6af-e64fccd08d0a</identifier>
+                        </ID>
+                        <arguments>
+                          <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                            <ID class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">f9d3c4d2-6a92-4168-baf0-a220a41544aa</identifier>
+                            </ID>
+                            <SQLText>SYSDATE</SQLText>
+                          </argument>
+                          <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                            <ID class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">daac3eef-d28c-4811-aab0-c9c8edf113ba</identifier>
+                            </ID>
+                            <SQLText>7</SQLText>
+                          </argument>
+                        </arguments>
+                        <operator>11</operator>
+                      </argument>
+                      <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                        <ID class="oracle.javatools.db.IdentifierBasedID">
+                          <identifier class="java.lang.String">f0d33a83-a425-48b3-acbb-d47a2053b542</identifier>
+                        </ID>
+                        <SQLText>SYSDATE</SQLText>
+                      </argument>
+                    </arguments>
+                    <operator>704</operator>
                   </argument>
                 </arguments>
                 <operator>372</operator>
@@ -913,23 +994,23 @@
       </selectObject>
       <selectObject>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">18e2bcbf-e20c-4069-947a-9c03ea050ba2</identifier>
+          <identifier class="java.lang.String">6eee7661-62fd-42ec-9b48-d0630c631a6f</identifier>
         </ID>
         <alias>ON_HOLD_EVALUATIONS</alias>
         <expression class="oracle.javatools.db.ora.OracleSQLQuery">
           <ID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+            <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
           </ID>
           <distinct>false</distinct>
           <fromObjects>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">62b927dc-d9a5-416f-ad68-86694ab677e6</identifier>
+                <identifier class="java.lang.String">c214509e-932e-43aa-b285-c833ddf74bb0</identifier>
               </ID>
               <alias>pj</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">0368896c-2b76-44d1-8c0b-f1ad3fe4442b</identifier>
+                  <identifier class="java.lang.String">f7949d6d-42b5-4839-8339-5b09356b1b25</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT</name>
@@ -942,12 +1023,12 @@
             </fromObject>
             <fromObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">2a277a54-8968-483a-b73f-475110b735b4</identifier>
+                <identifier class="java.lang.String">06746bf0-f929-4183-b2d8-9fa80cf0b10b</identifier>
               </ID>
               <alias>pa</alias>
               <expression class="oracle.javatools.db.sql.RelationUsage">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">0e8c8041-7e5c-46d2-8130-fe465077f061</identifier>
+                  <identifier class="java.lang.String">815a35b1-bf8b-400b-9487-ffc2216cd4fb</identifier>
                 </ID>
                 <objectID class="oracle.javatools.db.IdentifierBasedID">
                   <name>PROJECT_ARCHITECT</name>
@@ -963,16 +1044,16 @@
           <selectObjects>
             <selectObject>
               <ID class="oracle.javatools.db.IdentifierBasedID">
-                <identifier class="java.lang.String">863b6552-71a0-4c59-ab89-e3fdbe7e2a9c</identifier>
+                <identifier class="java.lang.String">8ae9790d-1afc-44d1-912f-20cb1d4723f8</identifier>
               </ID>
               <expression class="oracle.javatools.db.sql.WindowFunction">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">f0bf7b0b-dfef-41ba-932c-2bc1fc7c40a3</identifier>
+                  <identifier class="java.lang.String">79ed2dfb-40b0-4a31-81ba-b89855c6ee7e</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.ColumnKeywordUsage">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">594c2876-d746-490c-9fd6-7ae4c24d37af</identifier>
+                      <identifier class="java.lang.String">89ec345a-9606-4392-bab8-cc36bfedef90</identifier>
                     </ID>
                     <columnName>*</columnName>
                     <qualified>false</qualified>
@@ -988,28 +1069,28 @@
           </selectObjects>
           <whereObject>
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">9677401c-1d8b-4a1e-b52d-414670a122f1</identifier>
+              <identifier class="java.lang.String">41df9986-21f4-4ad8-8c00-360f02a103b0</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.WhereObject">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">a37eed06-34c3-4da2-b7b5-aa66bbe69744</identifier>
+                  <identifier class="java.lang.String">64dbfb84-21f5-43f2-9c1b-af0ad25640b0</identifier>
                 </ID>
                 <arguments>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">a388fac4-e88c-44e5-98cb-318ecede6adb</identifier>
+                      <identifier class="java.lang.String">38c6e2f5-e908-42fd-8429-54918bd9dd93</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">f54cf316-4658-4d70-9899-cd7626297023</identifier>
+                        <identifier class="java.lang.String">9fed7c63-2d93-4c39-9ec2-dc8596ddf889</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">62b927dc-d9a5-416f-ad68-86694ab677e6</identifier>
+                        <identifier class="java.lang.String">c214509e-932e-43aa-b285-c833ddf74bb0</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+                          <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -1044,13 +1125,13 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">206b773f-f1de-4de5-9487-2ef1c76227d5</identifier>
+                        <identifier class="java.lang.String">5307cfd4-f2b1-4b29-94b4-9fac5860ba88</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pa</name>
-                        <identifier class="java.lang.String">2a277a54-8968-483a-b73f-475110b735b4</identifier>
+                        <identifier class="java.lang.String">06746bf0-f929-4183-b2d8-9fa80cf0b10b</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+                          <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -1084,18 +1165,18 @@
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">a217eb7d-a5b8-4357-93d5-8568aef9bf38</identifier>
+                      <identifier class="java.lang.String">ba3f1025-084b-4395-8672-f20b9cd28dbc</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">b8dba491-2d04-423a-880f-ab6da73606d1</identifier>
+                        <identifier class="java.lang.String">15c9ab03-bcbb-4ba2-8635-19ae49d11cbd</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pa</name>
-                        <identifier class="java.lang.String">2a277a54-8968-483a-b73f-475110b735b4</identifier>
+                        <identifier class="java.lang.String">06746bf0-f929-4183-b2d8-9fa80cf0b10b</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+                          <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -1130,7 +1211,7 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">715d358a-a753-402d-8ce9-2446b2bb8841</identifier>
+                        <identifier class="java.lang.String">369fd668-e511-4c4a-8050-76f2d366e76b</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <identifier class="java.lang.String">95df61b4-cad6-4957-a2b5-d0703549a676</identifier>
@@ -1163,18 +1244,18 @@
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">dd447465-6caf-48b5-be8f-7e617de4fbc5</identifier>
+                      <identifier class="java.lang.String">02fd43a9-d739-4616-8b80-383b4b4118c1</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">ecfebc9b-35db-42bd-9bcb-fdaaec5e8db8</identifier>
+                        <identifier class="java.lang.String">062bae0e-9d0f-4c19-bfce-7813f15e5a25</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">62b927dc-d9a5-416f-ad68-86694ab677e6</identifier>
+                        <identifier class="java.lang.String">c214509e-932e-43aa-b285-c833ddf74bb0</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+                          <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -1209,25 +1290,25 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">afd6e20e-3145-46cc-b114-f3eccdc3db59</identifier>
+                        <identifier class="java.lang.String">be6bb12b-98cc-4eb8-9cac-dc78693ea54d</identifier>
                       </ID>
                       <SQLText>&apos;ONHOLD&apos;</SQLText>
                     </rightExpression>
                   </argument>
                   <argument class="oracle.javatools.db.sql.Comparison">
                     <ID class="oracle.javatools.db.IdentifierBasedID">
-                      <identifier class="java.lang.String">ead7a4ed-5362-4409-8397-6478ed86c753</identifier>
+                      <identifier class="java.lang.String">d0cbfdae-1359-4b78-8a90-76bad5bbf1ca</identifier>
                     </ID>
                     <comparator>5</comparator>
                     <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">264f5632-4758-4da6-be25-e11f7e1cacbc</identifier>
+                        <identifier class="java.lang.String">2d31c76a-9483-4885-8398-e7e2918b8d20</identifier>
                       </ID>
                       <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
                         <name>pj</name>
-                        <identifier class="java.lang.String">62b927dc-d9a5-416f-ad68-86694ab677e6</identifier>
+                        <identifier class="java.lang.String">c214509e-932e-43aa-b285-c833ddf74bb0</identifier>
                         <parent class="oracle.javatools.db.IdentifierBasedID">
-                          <identifier class="java.lang.String">d82bf9a2-add4-481e-8b25-b451821fe3ec</identifier>
+                          <identifier class="java.lang.String">4ce60443-ec57-47db-9735-da710186b2bd</identifier>
                           <parent class="oracle.javatools.db.IdentifierBasedID">
                             <identifier class="java.lang.String">c8def7ca-6d3d-4c83-8f5c-f48ade0bafab</identifier>
                             <parent class="oracle.javatools.db.IdentifierBasedID">
@@ -1262,7 +1343,7 @@
                     <priorOnRight>false</priorOnRight>
                     <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                       <ID class="oracle.javatools.db.IdentifierBasedID">
-                        <identifier class="java.lang.String">f91d3d45-a739-4cce-8075-78f5e2945aa8</identifier>
+                        <identifier class="java.lang.String">4903a347-3a3d-4369-834b-0b3a77907368</identifier>
                       </ID>
                       <SQLText>&apos;EVALUATION&apos;</SQLText>
                     </rightExpression>
@@ -1570,7 +1651,8 @@
    where pj.id = pa.project_id
      and pa.party_id = p.id
      and pj.status=&apos;CLOSED&apos;
-     and pj.type = &apos;EVALUATION&apos;) CLOSED_EVALUATIONS,
+     and pj.type = &apos;EVALUATION&apos;
+     and pj.last_updated between sysdate-7 and sysdate) CLOSED_EVALUATIONS,
   (select count(*)
    from project pj, project_architect pa
    where pj.id = pa.project_id

@@ -66,6 +66,27 @@ public class ProjectSummaryReportService {
     }
 
     @GET
+    @Path("runTableSegment")
+    @Produces({MediaType.TEXT_HTML})
+    public String runTableSegment(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<ProjectSummaryReport> dataList = em.createNamedQuery("ProjectSummaryReport.findAll",com.ihc.esa.report.entity.ProjectSummaryReport.class)
+                                                    .getResultList();
+        
+        StringBuilder report = new StringBuilder();
+        report.append("<table>\n");
+        report.append(ProjectSummaryReport.getHtmlTableHeaders());
+        for( ProjectSummaryReport row: dataList ){
+            report.append(row.toHtmlTableRow());
+        }
+        report.append("</table>\n");
+        
+        em.close();
+        return( report.toString() );
+    }
+
+    @GET
     @Path("runJSONData")
     @Produces({MediaType.TEXT_PLAIN})
     public String runJSONData(){

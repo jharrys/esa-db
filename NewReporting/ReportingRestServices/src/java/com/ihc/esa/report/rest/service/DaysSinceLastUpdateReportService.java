@@ -49,7 +49,6 @@ public class DaysSinceLastUpdateReportService {
         report.append("<!DOCTYPE html>\n");
         report.append("<html>\n");
         report.append("<head>\n");
-        report.append("<META http-equiv=\"refresh\" content=\"5\">\n");
         report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../public/css/ReportTableStyle.css\"/>\n");
         report.append("</head>\n");
         report.append("<body>\n");
@@ -79,7 +78,6 @@ public class DaysSinceLastUpdateReportService {
         report.append("<!DOCTYPE html>\n");
         report.append("<html>\n");
         report.append("<head>\n");
-        report.append("<META http-equiv=\"refresh\" content=\"5\">\n");
         report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../../public/css/ReportTableStyle.css\"/>\n");
         report.append("</head>\n");
         report.append("<body>\n");

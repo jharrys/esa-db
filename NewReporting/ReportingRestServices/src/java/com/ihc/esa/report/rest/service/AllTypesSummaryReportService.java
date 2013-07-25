@@ -67,6 +67,28 @@ public class AllTypesSummaryReportService {
     }
 
     @GET
+    @Path("runTableSegment")
+    @Produces({MediaType.TEXT_HTML})
+    public String runTableSegment(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
+        EntityManager em = emf.createEntityManager();
+        Collection<AllTypesSummaryReport> dataList = em.createNamedQuery("AllTypesSummaryReport.findAll",com.ihc.esa.report.entity.AllTypesSummaryReport.class)
+                                                    .getResultList();
+        
+        StringBuilder report = new StringBuilder();
+
+        report.append("<table>\n");
+        report.append(AllTypesSummaryReport.getHtmlTableHeaders());
+        for( AllTypesSummaryReport row: dataList ){
+            report.append(row.toHtmlTableRow());
+        }
+        report.append("</table>\n");
+        
+        em.close();
+        return( report.toString() );
+    }
+
+    @GET
     @Path("runJSONData")
     @Produces({MediaType.TEXT_PLAIN})
     public String runJSONData(){

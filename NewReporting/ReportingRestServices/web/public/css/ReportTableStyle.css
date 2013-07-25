@@ -45,6 +45,8 @@ table {
 }
 
 .graphLegend {
+    float: left;
+    width: 200px;
 }
 
 .graphTitle {
@@ -56,4 +58,14 @@ table {
     border-left: black solid;
     border-right: black solid;
     border-width: 1px;
+}
+
+.graphData {
+
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: 52px;
+    font-weight: bold;
 }
