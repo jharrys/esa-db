@@ -65,20 +65,22 @@ public class DaysSinceLastUpdateReportService {
     
 
     @GET
-    @Path("runByArchitect/{esaId}")
+    @Path("runByArchitect/{esaId}/{days}")
     @Produces({MediaType.TEXT_HTML})
-    public String runByArchitectReport(@PathParam("esaId") String esaId){
+    public String runByArchitectReport(@PathParam("esaId") String esaId,
+                                       @PathParam("days") String days){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jdbc/esa");
         EntityManager em = emf.createEntityManager();
         Collection<DaysSinceLastUpdateReport> dataList = em.createNamedQuery("DaysSinceLastUpdateReport.byArchitectId",com.ihc.esa.report.entity.DaysSinceLastUpdateReport.class)
                                                     .setParameter("id", Long.valueOf(esaId))
+                                                    .setParameter("days", Long.valueOf(days))
                                                     .getResultList();
         
         StringBuilder report = new StringBuilder();
         report.append("<!DOCTYPE html>\n");
         report.append("<html>\n");
         report.append("<head>\n");
-        report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../../public/css/ReportTableStyle.css\"/>\n");
+        report.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"../../../../public/css/ReportTableStyle.css\"/>\n");
         report.append("</head>\n");
         report.append("<body>\n");
         report.append("<table>\n");

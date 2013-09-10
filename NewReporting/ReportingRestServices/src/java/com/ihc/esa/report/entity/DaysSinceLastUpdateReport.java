@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  *
@@ -22,7 +21,7 @@ import org.apache.commons.lang3.StringEscapeUtils;
 @NamedQueries( { @NamedQuery(name = "DaysSinceLastUpdateReport.findAll",
                              query = "select o from DaysSinceLastUpdateReport o"),
                  @NamedQuery(name = "DaysSinceLastUpdateReport.byArchitectId",
-                             query = "select o from DaysSinceLastUpdateReport o where o.architectPartyId = :id") })
+                             query = "select o from DaysSinceLastUpdateReport o where o.architectPartyId = :id and o.daysSinceLastUpdate >= :days" ) })
 @Table(name = "DAYS_SINCE_LAST_UPDATE_REPORT")
 public class DaysSinceLastUpdateReport implements Serializable {
     @Id
