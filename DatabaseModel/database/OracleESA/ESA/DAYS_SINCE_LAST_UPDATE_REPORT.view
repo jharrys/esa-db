@@ -227,40 +227,125 @@
       </selectObject>
       <selectObject>
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">df080424-e695-47ac-82d1-9beeb5f0fbc3</identifier>
+          <identifier class="java.lang.String">dd8272a8-5de0-48c5-b177-b74e4e82740f</identifier>
         </ID>
         <alias>PROJECT_NAME</alias>
-        <expression class="oracle.javatools.db.sql.ColumnUsage">
+        <expression class="oracle.javatools.db.sql.Function">
           <ID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">efa834b5-3a66-4fcd-8e44-7c710073ca7c</identifier>
+            <identifier class="java.lang.String">e462aaae-e919-47be-9f2d-58a8a2ea99f8</identifier>
           </ID>
-          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
-            <identifier class="java.lang.String">6420c23d-7496-4b07-9a91-d1c1a10ca9c6</identifier>
-            <parent class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">52267061-7d44-45d1-8990-099b39685a8d</identifier>
-              <parent class="oracle.javatools.db.IdentifierBasedID">
-                <name>DAYS_SINCE_LAST_UPDATE_REPORT</name>
-                <identifier class="java.lang.String">37404327-e401-424b-ac2d-b37d1f9d87cf</identifier>
-                <schemaName>ESA</schemaName>
-                <type>VIEW</type>
-              </parent>
-              <type>SQLQuery</type>
-            </parent>
-            <type>FROM</type>
-          </fromObjectID>
-          <objectID class="oracle.javatools.db.IdentifierBasedID">
-            <name>NAME</name>
-            <identifier class="java.lang.String">c04fb15e-82ea-4a6a-b3cc-352d174465ad</identifier>
-            <parent class="oracle.javatools.db.IdentifierBasedID">
-              <name>PROJECT</name>
-              <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
-              <schemaName>ESA</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </objectID>
-          <outerJoin>false</outerJoin>
-          <qualified>true</qualified>
+          <arguments>
+            <argument class="oracle.javatools.db.sql.Function">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">e894236b-082c-463d-9c31-f854cb18f1c0</identifier>
+              </ID>
+              <arguments>
+                <argument class="oracle.javatools.db.sql.Function">
+                  <ID class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">0563550c-c7d6-4798-96d6-c9024c726105</identifier>
+                  </ID>
+                  <arguments>
+                    <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                      <ID class="oracle.javatools.db.IdentifierBasedID">
+                        <identifier class="java.lang.String">ca481005-d174-4587-a80d-f4f15ea0854e</identifier>
+                      </ID>
+                      <SQLText>&apos;ACID# &apos;</SQLText>
+                    </argument>
+                    <argument class="oracle.javatools.db.sql.Function">
+                      <ID class="oracle.javatools.db.IdentifierBasedID">
+                        <identifier class="java.lang.String">2785a031-2b43-41ef-9aba-088ad1879445</identifier>
+                      </ID>
+                      <arguments>
+                        <argument class="oracle.javatools.db.sql.ColumnUsage">
+                          <ID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">5632b21a-669b-4257-a74a-8a6fab390eeb</identifier>
+                          </ID>
+                          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                            <identifier class="java.lang.String">6420c23d-7496-4b07-9a91-d1c1a10ca9c6</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <identifier class="java.lang.String">52267061-7d44-45d1-8990-099b39685a8d</identifier>
+                              <parent class="oracle.javatools.db.IdentifierBasedID">
+                                <name>DAYS_SINCE_LAST_UPDATE_REPORT</name>
+                                <identifier class="java.lang.String">37404327-e401-424b-ac2d-b37d1f9d87cf</identifier>
+                                <schemaName>ESA</schemaName>
+                                <type>VIEW</type>
+                              </parent>
+                              <type>SQLQuery</type>
+                            </parent>
+                            <type>FROM</type>
+                          </fromObjectID>
+                          <objectID class="oracle.javatools.db.IdentifierBasedID">
+                            <name>ID</name>
+                            <identifier class="java.lang.String">43ae003f-2782-4c80-a2c6-3ee4802f3384</identifier>
+                            <parent class="oracle.javatools.db.IdentifierBasedID">
+                              <name>PROJECT</name>
+                              <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
+                              <schemaName>ESA</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <type>COLUMN</type>
+                          </objectID>
+                          <outerJoin>false</outerJoin>
+                          <qualified>true</qualified>
+                        </argument>
+                      </arguments>
+                      <distinct>false</distinct>
+                      <function>TO_CHAR</function>
+                      <grouping>false</grouping>
+                      <separator>, </separator>
+                    </argument>
+                  </arguments>
+                  <distinct>false</distinct>
+                  <function>||</function>
+                  <grouping>false</grouping>
+                </argument>
+                <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                  <ID class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">3ea03e79-b37e-4a4a-ac99-224e0760fb6e</identifier>
+                  </ID>
+                  <SQLText>&apos; - &apos;</SQLText>
+                </argument>
+              </arguments>
+              <distinct>false</distinct>
+              <function>||</function>
+              <grouping>false</grouping>
+            </argument>
+            <argument class="oracle.javatools.db.sql.ColumnUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">96b0da3b-3173-499c-92f7-a427b0905ecb</identifier>
+              </ID>
+              <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">6420c23d-7496-4b07-9a91-d1c1a10ca9c6</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">52267061-7d44-45d1-8990-099b39685a8d</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>DAYS_SINCE_LAST_UPDATE_REPORT</name>
+                    <identifier class="java.lang.String">37404327-e401-424b-ac2d-b37d1f9d87cf</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>VIEW</type>
+                  </parent>
+                  <type>SQLQuery</type>
+                </parent>
+                <type>FROM</type>
+              </fromObjectID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>NAME</name>
+                <identifier class="java.lang.String">c04fb15e-82ea-4a6a-b3cc-352d174465ad</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PROJECT</name>
+                  <identifier class="java.lang.String">ed1dbe5f-abbd-40ba-b6d9-e34e87b89de9</identifier>
+                  <schemaName>ESA</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </objectID>
+              <outerJoin>false</outerJoin>
+              <qualified>true</qualified>
+            </argument>
+          </arguments>
+          <distinct>false</distinct>
+          <function>||</function>
+          <grouping>false</grouping>
         </expression>
         <useAs>false</useAs>
       </selectObject>
@@ -592,7 +677,7 @@
   pty.id ARCHITECT_PARTY_ID,
   pty.name ARCHITECT_NAME,
   p.id PROJECT_ACID_NUMBER,
-  p.name PROJECT_NAME,
+  &apos;ACID# &apos;||to_char(p.id)||&apos; - &apos;||p.name PROJECT_NAME,
   round(sysdate - p.last_updated,0) DAYS_SINCE_LAST_UPDATE
 from project p,
   party pty,
@@ -687,13 +772,8 @@ order by DAYS_SINCE_LAST_UPDATE desc</queryString>
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">256</value>
           </entry>
         </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
       </dataTypeUsage>
       <notNull>false</notNull>
     </column>
