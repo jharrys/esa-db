@@ -1,0 +1,571 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+  </ID>
+  <name>USER_AUTHORITY_LIST</name>
+  <SQLQuery class="oracle.javatools.db.ora.OracleSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+    </ID>
+    <distinct>false</distinct>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">da9c7fd4-782a-4a99-bdd5-51db194c7d7c</identifier>
+        </ID>
+        <alias>er</alias>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">92420328-56f1-4a9e-8c10-4ffeaa681c70</identifier>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>ESA_ROLE</name>
+            <identifier class="java.lang.String">2461c229-911c-46e8-a008-3b996a4a8bb5</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+        <with>false</with>
+      </fromObject>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">52264119-8615-4bae-9736-86523827fe18</identifier>
+        </ID>
+        <alias>euer</alias>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e1944e53-977a-4945-b1b8-13283cebf466</identifier>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>ESA_USER_ESA_ROLE</name>
+            <identifier class="java.lang.String">ae661691-a20f-4369-a0c8-2a72d41fc529</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+        <with>false</with>
+      </fromObject>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6da5395e-8ec7-44f5-81f4-52c2c140430b</identifier>
+        </ID>
+        <alias>eu</alias>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8d341d21-e1d7-40fa-9dd2-62981808ac30</identifier>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>ESA_USER</name>
+            <identifier class="java.lang.String">c8b0b042-ae41-4a76-8bc4-c05720783b8a</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+        <with>false</with>
+      </fromObject>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">99b1c757-32a5-4092-8a3a-454fce69bb7c</identifier>
+        </ID>
+        <alias>p</alias>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f7c09203-51d7-4259-91d4-6983aa1809b2</identifier>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PARTY</name>
+            <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+            <schemaName>ESA</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+        <with>false</with>
+      </fromObject>
+    </fromObjects>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c50fe515-9b9b-4268-a077-e6857f503a74</identifier>
+        </ID>
+        <alias>AUTHORITY</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">b968f668-b89e-4cbe-92bb-9c76d6c966fa</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>er</name>
+            <identifier class="java.lang.String">da9c7fd4-782a-4a99-bdd5-51db194c7d7c</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>USER_AUTHORITY_LIST</name>
+                <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                <schemaName>ESA</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>ESA</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>ESA</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>AUTHORITY</name>
+            <identifier class="java.lang.String">b379543b-ed2d-4ce3-bbce-827910e78ecb</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>ESA_ROLE</name>
+              <identifier class="java.lang.String">2461c229-911c-46e8-a008-3b996a4a8bb5</identifier>
+              <schemaName>ESA</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8412d88c-29fa-419b-ad91-cf4ee9b0a8f1</identifier>
+        </ID>
+        <alias>FULL_NAME</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">38fef773-7696-4aad-9af6-423298adb121</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">99b1c757-32a5-4092-8a3a-454fce69bb7c</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>USER_AUTHORITY_LIST</name>
+                <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                <schemaName>ESA</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>ESA</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>ESA</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>NAME</name>
+            <identifier class="java.lang.String">64551241-5333-4f1e-af19-256e885f5fc8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PARTY</name>
+              <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+              <schemaName>ESA</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d2585cd6-0960-4512-8a20-63c0391379f6</identifier>
+        </ID>
+        <alias>PARTY_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">1e739467-a32b-415b-9bb5-d7eee7c0da7f</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">99b1c757-32a5-4092-8a3a-454fce69bb7c</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>USER_AUTHORITY_LIST</name>
+                <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                <schemaName>ESA</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>ESA</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>ESA</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>ID</name>
+            <identifier class="java.lang.String">e469c3a8-290c-4a56-8573-798ace896966</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PARTY</name>
+              <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+              <schemaName>ESA</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <whereObject>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4822da65-de2c-4580-b59b-e5cab7faf911</identifier>
+      </ID>
+      <arguments>
+        <argument class="oracle.javatools.db.sql.WhereObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e46f401e-9883-4636-84a9-4e8a388ebbc2</identifier>
+          </ID>
+          <arguments>
+            <argument class="oracle.javatools.db.sql.Comparison">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">c55666d5-4a97-4b4a-ad58-14325f7f221c</identifier>
+              </ID>
+              <comparator>5</comparator>
+              <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">46eef113-afdd-4b94-a8c3-a0c9da6c2645</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>euer</name>
+                  <identifier class="java.lang.String">52264119-8615-4bae-9736-86523827fe18</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ESA_ROLE_ID</name>
+                  <identifier class="java.lang.String">ebd4123e-2759-430a-8631-1b4cc7b1495b</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>ESA_USER_ESA_ROLE</name>
+                    <identifier class="java.lang.String">ae661691-a20f-4369-a0c8-2a72d41fc529</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </leftExpression>
+              <priorOnLeft>false</priorOnLeft>
+              <priorOnRight>false</priorOnRight>
+              <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">ba4781c0-56c0-42aa-9f5c-4289c19c4be8</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>er</name>
+                  <identifier class="java.lang.String">da9c7fd4-782a-4a99-bdd5-51db194c7d7c</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ID</name>
+                  <identifier class="java.lang.String">7073f3c0-8014-4f51-9377-6d4a94bfd8a2</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>ESA_ROLE</name>
+                    <identifier class="java.lang.String">2461c229-911c-46e8-a008-3b996a4a8bb5</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </rightExpression>
+            </argument>
+            <argument class="oracle.javatools.db.sql.Comparison">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">fea91009-396d-404a-aa22-f376436042ec</identifier>
+              </ID>
+              <comparator>5</comparator>
+              <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">5d9d1a97-bfcf-4d7d-9640-310a4d88a436</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>euer</name>
+                  <identifier class="java.lang.String">52264119-8615-4bae-9736-86523827fe18</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ESA_USER_ID</name>
+                  <identifier class="java.lang.String">7a07a7b1-3b53-4ca7-862b-45d977499081</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>ESA_USER_ESA_ROLE</name>
+                    <identifier class="java.lang.String">ae661691-a20f-4369-a0c8-2a72d41fc529</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </leftExpression>
+              <priorOnLeft>false</priorOnLeft>
+              <priorOnRight>false</priorOnRight>
+              <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">1a778eb3-0c86-47d7-be36-2132a712a9c2</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>eu</name>
+                  <identifier class="java.lang.String">6da5395e-8ec7-44f5-81f4-52c2c140430b</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ID</name>
+                  <identifier class="java.lang.String">be6e52d2-59f0-4d8b-8f00-1bbb7d613c69</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>ESA_USER</name>
+                    <identifier class="java.lang.String">c8b0b042-ae41-4a76-8bc4-c05720783b8a</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </rightExpression>
+            </argument>
+            <argument class="oracle.javatools.db.sql.Comparison">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">166ce33f-f1ac-4e84-854a-0e613b15da8f</identifier>
+              </ID>
+              <comparator>5</comparator>
+              <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">8678ad4c-846e-4646-aba1-6956ae4a8f94</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>p</name>
+                  <identifier class="java.lang.String">99b1c757-32a5-4092-8a3a-454fce69bb7c</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ID</name>
+                  <identifier class="java.lang.String">e469c3a8-290c-4a56-8573-798ace896966</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PARTY</name>
+                    <identifier class="java.lang.String">0930b5c4-dc11-4e82-933b-7b79614200cc</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </leftExpression>
+              <priorOnLeft>false</priorOnLeft>
+              <priorOnRight>false</priorOnRight>
+              <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">93f3b42f-f6ac-4902-ac08-c39cff1fad49</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>eu</name>
+                  <identifier class="java.lang.String">6da5395e-8ec7-44f5-81f4-52c2c140430b</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">c018316b-9fab-4988-b85b-1dc12bd94ced</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>USER_AUTHORITY_LIST</name>
+                      <identifier class="java.lang.String">2f0fca8d-fc8e-47c7-96ad-2a127bac56d0</identifier>
+                      <schemaName>ESA</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>ESA</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>ESA</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>PARTY_ID</name>
+                  <identifier class="java.lang.String">0412ed74-c235-469c-ba76-c1e0b87d9a82</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>ESA_USER</name>
+                    <identifier class="java.lang.String">c8b0b042-ae41-4a76-8bc4-c05720783b8a</identifier>
+                    <schemaName>ESA</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </rightExpression>
+            </argument>
+          </arguments>
+          <operator>372</operator>
+        </argument>
+      </arguments>
+      <operator>372</operator>
+    </whereObject>
+    <queryString>select
+  er.authority AUTHORITY,
+  p.name FULL_NAME,
+  p.id PARTY_ID
+from
+  esa_role er,
+  esa_user_esa_role euer,
+  esa_user eu,
+  party p
+where euer.esa_role_id = er.id
+  and euer.esa_user_id = eu.id
+  and p.id = eu.party_id</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ddac4f8a-018d-40dd-a640-0baf3c3eda9b</identifier>
+      </ID>
+      <name>AUTHORITY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">361ad490-c5ec-4212-a5e0-ddd8ca6a7116</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1024</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>AUTHORITY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ESA_ROLE</name>
+                  <identifier class="java.math.BigDecimal">82523</identifier>
+                  <schemaName>ESA</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6d05a7a0-6cdf-4320-ba9c-da720002a467</identifier>
+      </ID>
+      <name>FULL_NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">80161675-a680-41c0-8a71-3bdadc55a5a1</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">128</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">821d0492-35d3-4a05-8627-6579b52949cb</identifier>
+      </ID>
+      <name>PARTY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1c89b40c-c6d2-45d6-a6f2-25b64a0006e4</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <schema>
+    <name>ESA</name>
+  </schema>
+</view>

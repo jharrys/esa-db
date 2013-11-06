@@ -19,8 +19,10 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ADFContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationSrcContentSet"/>
       <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationLevelMavenPOMContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/MobileResourcesContentSet"/>
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="DatabaseModel/DatabaseModel.jpr"/></hash>
+      <hash><url n="URL" path="Reporting/Reporting.jpr"/></hash>
    </list>
 </jws:workspace>

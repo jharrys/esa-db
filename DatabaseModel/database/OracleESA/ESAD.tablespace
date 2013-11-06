@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tablespace xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">9551c36a-e9c1-4bf5-af66-c2e8b3cfbbff</identifier>
+  </ID>
+  <name>ESAD</name>
+  <fileSpecifications>
+    <fileSpecification>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bff3e692-9903-4739-a9b7-05183bc3bc60</identifier>
+      </ID>
+      <name>ESAD01.DBF</name>
+      <autoExtendProperties>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c1f04146-f8f8-48ef-bceb-cab4a47a630c</identifier>
+        </ID>
+        <autoExtendOn>true</autoExtendOn>
+        <maxSize>4294967296</maxSize>
+        <nextSize>134217728</nextSize>
+      </autoExtendProperties>
+      <directory>/u01/oradata/esa</directory>
+      <fileSize>536870912</fileSize>
+      <reuse>false</reuse>
+    </fileSpecification>
+  </fileSpecifications>
+  <fileType>SMALLFILE</fileType>
+  <properties>
+    <entry>
+      <key>OracleTablespaceProperties</key>
+      <value class="oracle.javatools.db.ora.OracleTablespaceProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9ad617a4-6b57-4516-af1f-1eee40b63444</identifier>
+        </ID>
+        <autoAllocate>false</autoAllocate>
+        <defaultTableCompression>NOCOMPRESS</defaultTableCompression>
+        <extentManagementType>LOCAL</extentManagementType>
+        <forceLogging>false</forceLogging>
+        <logging>LOGGING</logging>
+        <onlineStatus>ONLINE</onlineStatus>
+        <segmentManagement>AUTO</segmentManagement>
+      </value>
+    </entry>
+    <entry>
+      <key>TablespaceType</key>
+      <value class="oracle.javatools.db.Tablespace$TablespaceType">PERMANENT</value>
+    </entry>
+  </properties>
+</tablespace>
